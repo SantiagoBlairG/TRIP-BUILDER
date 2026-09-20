@@ -1,0 +1,151 @@
+[
+  {
+    "id": "colombia",
+    "name": "Colombia",
+    "continent": "South America",
+    "description": "Caribbean colors, mountain mornings, and a warm welcome.",
+    "image": "/images/colombia.jpg",
+    "theme": "colombia",
+    "tags": [
+      "culture",
+      "history",
+      "nature",
+      "hiking",
+      "food",
+      "nightlife",
+      "photography",
+      "beaches",
+      "family",
+      "shopping",
+      "adventure"
+    ],
+    "dailyBudget": {
+      "min": 35,
+      "max": 95
+    },
+    "cityIds": ["medellin", "cartagena", "bogota", "santa-marta"]
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "continent": "Europe",
+    "description": "Neighborhood cafés, grand galleries, and long summer evenings.",
+    "image": "/images/france.jpg",
+    "theme": "france",
+    "tags": [
+      "culture",
+      "photography",
+      "food",
+      "history",
+      "family",
+      "shopping",
+      "nature",
+      "beaches",
+      "wellness"
+    ],
+    "dailyBudget": {
+      "min": 90,
+      "max": 210
+    },
+    "cityIds": ["paris", "lyon", "nice", "bordeaux"]
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "continent": "Europe",
+    "description": "Coastal paths, living history, and meals worth lingering over.",
+    "image": "/images/italy.jpg",
+    "theme": "italy",
+    "tags": [
+      "history",
+      "food",
+      "culture",
+      "nature",
+      "photography",
+      "shopping",
+      "adventure",
+      "beaches",
+      "hiking"
+    ],
+    "dailyBudget": {
+      "min": 75,
+      "max": 185
+    },
+    "cityIds": ["rome", "florence", "venice", "positano"]
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "continent": "Asia",
+    "description": "Quiet gardens, bright city streets, and everyday rituals.",
+    "image": "/images/japan.jpg",
+    "theme": "japan",
+    "tags": [
+      "history",
+      "food",
+      "nature",
+      "photography",
+      "culture",
+      "shopping",
+      "hiking",
+      "wellness",
+      "family",
+      "nightlife"
+    ],
+    "dailyBudget": {
+      "min": 65,
+      "max": 170
+    },
+    "cityIds": ["tokyo", "kyoto", "osaka", "hiroshima"]
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "continent": "Europe",
+    "description": "Late lunches, expressive architecture, and Mediterranean light.",
+    "image": "/images/spain.jpg",
+    "theme": "spain",
+    "tags": [
+      "history",
+      "photography",
+      "food",
+      "beaches",
+      "culture",
+      "nature",
+      "shopping",
+      "nightlife",
+      "family",
+      "adventure"
+    ],
+    "dailyBudget": {
+      "min": 65,
+      "max": 155
+    },
+    "cityIds": ["barcelona", "madrid", "seville", "valencia"]
+  },
+  {
+    "id": "greece",
+    "name": "Greece",
+    "continent": "Europe",
+    "description": "Island afternoons, ancient stories, and tables by the sea.",
+    "image": "/images/greece.jpg",
+    "theme": "greece",
+    "tags": [
+      "history",
+      "culture",
+      "shopping",
+      "food",
+      "photography",
+      "wellness",
+      "hiking",
+      "beaches",
+      "adventure",
+      "family"
+    ],
+    "dailyBudget": {
+      "min": 60,
+      "max": 155
+    },
+    "cityIds": ["athens", "santorini", "chania", "naxos"]
+  }
+]

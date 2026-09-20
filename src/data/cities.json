@@ -1,0 +1,534 @@
+[
+  {
+    "id": "medellin",
+    "countryId": "colombia",
+    "name": "Medellín",
+    "description": "Creative neighborhoods in a green Andean valley.",
+    "image": "/images/cities/medellin.jpg",
+    "recommendedDays": 3,
+    "tags": ["culture", "history", "nature", "hiking", "food", "nightlife"],
+    "coordinates": {
+      "latitude": 6.2442,
+      "longitude": -75.5812
+    },
+    "activityIds": [
+      "medellin-01",
+      "medellin-02",
+      "medellin-03",
+      "medellin-04",
+      "medellin-05",
+      "medellin-06"
+    ]
+  },
+  {
+    "id": "cartagena",
+    "countryId": "colombia",
+    "name": "Cartagena",
+    "description": "Colorful lanes and Caribbean afternoons inside old city walls.",
+    "image": "/images/cities/cartagena.jpg",
+    "recommendedDays": 3,
+    "tags": ["history", "photography", "beaches", "food"],
+    "coordinates": {
+      "latitude": 10.391,
+      "longitude": -75.4794
+    },
+    "activityIds": [
+      "cartagena-01",
+      "cartagena-02",
+      "cartagena-03",
+      "cartagena-04",
+      "cartagena-05",
+      "cartagena-06"
+    ]
+  },
+  {
+    "id": "bogota",
+    "countryId": "colombia",
+    "name": "Bogotá",
+    "description": "High-altitude art, neighborhood cafés, and mountain views.",
+    "image": "/images/cities/bogota.jpg",
+    "recommendedDays": 3,
+    "tags": ["culture", "history", "photography", "food", "family", "shopping"],
+    "coordinates": {
+      "latitude": 4.711,
+      "longitude": -74.0721
+    },
+    "activityIds": [
+      "bogota-01",
+      "bogota-02",
+      "bogota-03",
+      "bogota-04",
+      "bogota-05",
+      "bogota-06"
+    ]
+  },
+  {
+    "id": "santa-marta",
+    "countryId": "colombia",
+    "name": "Santa Marta",
+    "description": "A coastal base for forest trails and Caribbean coves.",
+    "image": "/images/cities/santa-marta.jpg",
+    "recommendedDays": 4,
+    "tags": ["hiking", "adventure", "food", "beaches", "history", "nature"],
+    "coordinates": {
+      "latitude": 11.2408,
+      "longitude": -74.199
+    },
+    "activityIds": [
+      "santa-marta-01",
+      "santa-marta-02",
+      "santa-marta-03",
+      "santa-marta-04",
+      "santa-marta-05",
+      "santa-marta-06"
+    ]
+  },
+  {
+    "id": "paris",
+    "countryId": "france",
+    "name": "Paris",
+    "description": "Neighborhood rituals, riverside walks, and extraordinary art.",
+    "image": "/images/cities/paris.jpg",
+    "recommendedDays": 4,
+    "tags": ["culture", "photography", "food", "history", "family", "shopping"],
+    "coordinates": {
+      "latitude": 48.8566,
+      "longitude": 2.3522
+    },
+    "activityIds": [
+      "paris-01",
+      "paris-02",
+      "paris-03",
+      "paris-04",
+      "paris-05",
+      "paris-06"
+    ]
+  },
+  {
+    "id": "lyon",
+    "countryId": "france",
+    "name": "Lyon",
+    "description": "Old passageways and generous tables at the meeting of two rivers.",
+    "image": "/images/cities/lyon.jpg",
+    "recommendedDays": 3,
+    "tags": ["history", "food", "photography", "nature", "culture", "shopping"],
+    "coordinates": {
+      "latitude": 45.764,
+      "longitude": 4.8357
+    },
+    "activityIds": [
+      "lyon-01",
+      "lyon-02",
+      "lyon-03",
+      "lyon-04",
+      "lyon-05",
+      "lyon-06"
+    ]
+  },
+  {
+    "id": "nice",
+    "countryId": "france",
+    "name": "Nice",
+    "description": "Pebble beaches, old-town markets, and Riviera light.",
+    "image": "/images/cities/nice.jpg",
+    "recommendedDays": 3,
+    "tags": [
+      "beaches",
+      "food",
+      "photography",
+      "culture",
+      "history",
+      "wellness"
+    ],
+    "coordinates": {
+      "latitude": 43.7102,
+      "longitude": 7.262
+    },
+    "activityIds": [
+      "nice-01",
+      "nice-02",
+      "nice-03",
+      "nice-04",
+      "nice-05",
+      "nice-06"
+    ]
+  },
+  {
+    "id": "bordeaux",
+    "countryId": "france",
+    "name": "Bordeaux",
+    "description": "Riverfront stonework, neighborhood tables, and wine stories.",
+    "image": "/images/cities/bordeaux.jpg",
+    "recommendedDays": 3,
+    "tags": ["culture", "photography", "food", "history", "family", "shopping"],
+    "coordinates": {
+      "latitude": 44.8378,
+      "longitude": -0.5792
+    },
+    "activityIds": [
+      "bordeaux-01",
+      "bordeaux-02",
+      "bordeaux-03",
+      "bordeaux-04",
+      "bordeaux-05",
+      "bordeaux-06"
+    ]
+  },
+  {
+    "id": "rome",
+    "countryId": "italy",
+    "name": "Rome",
+    "description": "Ancient landmarks and everyday neighborhood life.",
+    "image": "/images/cities/rome.jpg",
+    "recommendedDays": 4,
+    "tags": ["history", "food", "culture", "nature", "photography"],
+    "coordinates": {
+      "latitude": 41.9028,
+      "longitude": 12.4964
+    },
+    "activityIds": [
+      "rome-01",
+      "rome-02",
+      "rome-03",
+      "rome-04",
+      "rome-05",
+      "rome-06"
+    ]
+  },
+  {
+    "id": "florence",
+    "countryId": "italy",
+    "name": "Florence",
+    "description": "Renaissance galleries, artisan streets, and Tuscan tables.",
+    "image": "/images/cities/florence.jpg",
+    "recommendedDays": 3,
+    "tags": ["culture", "history", "food", "photography", "shopping", "nature"],
+    "coordinates": {
+      "latitude": 43.7696,
+      "longitude": 11.2558
+    },
+    "activityIds": [
+      "florence-01",
+      "florence-02",
+      "florence-03",
+      "florence-04",
+      "florence-05",
+      "florence-06"
+    ]
+  },
+  {
+    "id": "venice",
+    "countryId": "italy",
+    "name": "Venice",
+    "description": "Canals, quiet corners, and lagoon traditions.",
+    "image": "/images/cities/venice.jpg",
+    "recommendedDays": 3,
+    "tags": ["history", "food", "culture", "photography", "adventure"],
+    "coordinates": {
+      "latitude": 45.4408,
+      "longitude": 12.3155
+    },
+    "activityIds": [
+      "venice-01",
+      "venice-02",
+      "venice-03",
+      "venice-04",
+      "venice-05",
+      "venice-06"
+    ]
+  },
+  {
+    "id": "positano",
+    "countryId": "italy",
+    "name": "Positano",
+    "description": "Hillside lanes and long views along the Amalfi Coast.",
+    "image": "/images/cities/positano.jpg",
+    "recommendedDays": 3,
+    "tags": [
+      "beaches",
+      "hiking",
+      "adventure",
+      "food",
+      "history",
+      "photography"
+    ],
+    "coordinates": {
+      "latitude": 40.6281,
+      "longitude": 14.4845
+    },
+    "activityIds": [
+      "positano-01",
+      "positano-02",
+      "positano-03",
+      "positano-04",
+      "positano-05",
+      "positano-06"
+    ]
+  },
+  {
+    "id": "tokyo",
+    "countryId": "japan",
+    "name": "Tokyo",
+    "description": "Distinct neighborhoods, tiny restaurants, and city-scale energy.",
+    "image": "/images/cities/tokyo.jpg",
+    "recommendedDays": 4,
+    "tags": ["history", "food", "nature", "photography", "culture", "shopping"],
+    "coordinates": {
+      "latitude": 35.6762,
+      "longitude": 139.6503
+    },
+    "activityIds": [
+      "tokyo-01",
+      "tokyo-02",
+      "tokyo-03",
+      "tokyo-04",
+      "tokyo-05",
+      "tokyo-06"
+    ]
+  },
+  {
+    "id": "kyoto",
+    "countryId": "japan",
+    "name": "Kyoto",
+    "description": "Temple paths, garden details, and seasonal rituals.",
+    "image": "/images/cities/kyoto.jpg",
+    "recommendedDays": 4,
+    "tags": ["hiking", "food", "nature", "photography", "culture", "wellness"],
+    "coordinates": {
+      "latitude": 35.0116,
+      "longitude": 135.7681
+    },
+    "activityIds": [
+      "kyoto-01",
+      "kyoto-02",
+      "kyoto-03",
+      "kyoto-04",
+      "kyoto-05",
+      "kyoto-06"
+    ]
+  },
+  {
+    "id": "osaka",
+    "countryId": "japan",
+    "name": "Osaka",
+    "description": "Street food, lively arcades, and welcoming neighborhoods.",
+    "image": "/images/cities/osaka.jpg",
+    "recommendedDays": 3,
+    "tags": ["food", "history", "family", "nightlife", "wellness"],
+    "coordinates": {
+      "latitude": 34.6937,
+      "longitude": 135.5023
+    },
+    "activityIds": [
+      "osaka-01",
+      "osaka-02",
+      "osaka-03",
+      "osaka-04",
+      "osaka-05",
+      "osaka-06"
+    ]
+  },
+  {
+    "id": "hiroshima",
+    "countryId": "japan",
+    "name": "Hiroshima",
+    "description": "Reflective history, riverside spaces, and island day trips.",
+    "image": "/images/cities/hiroshima.jpg",
+    "recommendedDays": 2,
+    "tags": ["culture", "history", "photography", "food", "nature", "shopping"],
+    "coordinates": {
+      "latitude": 34.3853,
+      "longitude": 132.4553
+    },
+    "activityIds": [
+      "hiroshima-01",
+      "hiroshima-02",
+      "hiroshima-03",
+      "hiroshima-04",
+      "hiroshima-05",
+      "hiroshima-06"
+    ]
+  },
+  {
+    "id": "barcelona",
+    "countryId": "spain",
+    "name": "Barcelona",
+    "description": "Expressive architecture between neighborhood squares and the sea.",
+    "image": "/images/cities/barcelona.jpg",
+    "recommendedDays": 4,
+    "tags": ["history", "photography", "food", "beaches", "culture", "nature"],
+    "coordinates": {
+      "latitude": 41.3874,
+      "longitude": 2.1686
+    },
+    "activityIds": [
+      "barcelona-01",
+      "barcelona-02",
+      "barcelona-03",
+      "barcelona-04",
+      "barcelona-05",
+      "barcelona-06"
+    ]
+  },
+  {
+    "id": "madrid",
+    "countryId": "spain",
+    "name": "Madrid",
+    "description": "Grand art collections and convivial neighborhood evenings.",
+    "image": "/images/cities/madrid.jpg",
+    "recommendedDays": 3,
+    "tags": ["culture", "nature", "food", "history", "shopping", "nightlife"],
+    "coordinates": {
+      "latitude": 40.4168,
+      "longitude": -3.7038
+    },
+    "activityIds": [
+      "madrid-01",
+      "madrid-02",
+      "madrid-03",
+      "madrid-04",
+      "madrid-05",
+      "madrid-06"
+    ]
+  },
+  {
+    "id": "seville",
+    "countryId": "spain",
+    "name": "Seville",
+    "description": "Shaded courtyards, tiled details, and late-evening walks.",
+    "image": "/images/cities/seville.jpg",
+    "recommendedDays": 3,
+    "tags": ["history", "shopping", "food", "photography", "family", "culture"],
+    "coordinates": {
+      "latitude": 37.3891,
+      "longitude": -5.9845
+    },
+    "activityIds": [
+      "seville-01",
+      "seville-02",
+      "seville-03",
+      "seville-04",
+      "seville-05",
+      "seville-06"
+    ]
+  },
+  {
+    "id": "valencia",
+    "countryId": "spain",
+    "name": "Valencia",
+    "description": "Market mornings, futuristic forms, and long sandy beaches.",
+    "image": "/images/cities/valencia.jpg",
+    "recommendedDays": 3,
+    "tags": ["food", "adventure", "photography", "beaches", "history"],
+    "coordinates": {
+      "latitude": 39.4699,
+      "longitude": -0.3763
+    },
+    "activityIds": [
+      "valencia-01",
+      "valencia-02",
+      "valencia-03",
+      "valencia-04",
+      "valencia-05",
+      "valencia-06"
+    ]
+  },
+  {
+    "id": "athens",
+    "countryId": "greece",
+    "name": "Athens",
+    "description": "Ancient hilltops and lively neighborhood tables.",
+    "image": "/images/cities/athens.jpg",
+    "recommendedDays": 3,
+    "tags": [
+      "history",
+      "culture",
+      "shopping",
+      "food",
+      "photography",
+      "wellness"
+    ],
+    "coordinates": {
+      "latitude": 37.9838,
+      "longitude": 23.7275
+    },
+    "activityIds": [
+      "athens-01",
+      "athens-02",
+      "athens-03",
+      "athens-04",
+      "athens-05",
+      "athens-06"
+    ]
+  },
+  {
+    "id": "santorini",
+    "countryId": "greece",
+    "name": "Santorini",
+    "description": "Volcanic landscapes and villages above the Aegean.",
+    "image": "/images/cities/santorini.jpg",
+    "recommendedDays": 3,
+    "tags": [
+      "hiking",
+      "history",
+      "beaches",
+      "food",
+      "photography",
+      "adventure"
+    ],
+    "coordinates": {
+      "latitude": 36.3932,
+      "longitude": 25.4615
+    },
+    "activityIds": [
+      "santorini-01",
+      "santorini-02",
+      "santorini-03",
+      "santorini-04",
+      "santorini-05",
+      "santorini-06"
+    ]
+  },
+  {
+    "id": "chania",
+    "countryId": "greece",
+    "name": "Chania",
+    "description": "Harbor lanes and Cretan cooking with mountains nearby.",
+    "image": "/images/cities/chania.jpg",
+    "recommendedDays": 3,
+    "tags": ["history", "food", "beaches", "culture", "hiking", "shopping"],
+    "coordinates": {
+      "latitude": 35.5138,
+      "longitude": 24.018
+    },
+    "activityIds": [
+      "chania-01",
+      "chania-02",
+      "chania-03",
+      "chania-04",
+      "chania-05",
+      "chania-06"
+    ]
+  },
+  {
+    "id": "naxos",
+    "countryId": "greece",
+    "name": "Naxos",
+    "description": "Village paths, island produce, and broad sandy shores.",
+    "image": "/images/cities/naxos.jpg",
+    "recommendedDays": 3,
+    "tags": ["photography", "beaches", "food", "history", "hiking", "family"],
+    "coordinates": {
+      "latitude": 37.1036,
+      "longitude": 25.3777
+    },
+    "activityIds": [
+      "naxos-01",
+      "naxos-02",
+      "naxos-03",
+      "naxos-04",
+      "naxos-05",
+      "naxos-06"
+    ]
+  }
+]

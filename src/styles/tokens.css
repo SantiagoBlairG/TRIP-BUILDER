@@ -1,0 +1,69 @@
+:root {
+  --background: #f7f6f2;
+  --foreground: #282d29;
+  --card: #ffffff;
+  --card-foreground: #282d29;
+  --popover: #ffffff;
+  --popover-foreground: #282d29;
+  --primary: #304e40;
+  --primary-foreground: #ffffff;
+  --secondary: #eceee7;
+  --secondary-foreground: #344a3d;
+  --muted: #eeede7;
+  --muted-foreground: #65685f;
+  --accent: #e4eadf;
+  --accent-foreground: #304e40;
+  --destructive: #b13226;
+  --border: #dedfd6;
+  --input: #c8cbc0;
+  --ring: #446753;
+  --route: #e6e8f5;
+  --dates: #f7edbc;
+  --travelers: #f5e1e5;
+  --budget: #deeee4;
+  --transport: #263f67;
+  --warning: #f7d9cd;
+  --recommendation: #eee4f6;
+  --radius: 0.75rem;
+  --radius-card: 1.5rem;
+  --shadow-card: 0 8px 28px rgb(40 45 41 / 4%);
+  --shadow-raised: 0 16px 40px rgb(40 45 41 / 10%);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-layout: 500ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --destination: var(--primary);
+  --destination-soft: var(--secondary);
+  --destination-highlight: var(--dates);
+}
+
+[data-theme="colombia"] {
+  --destination: #28563b;
+  --destination-soft: #f8edc6;
+  --destination-highlight: #f7d9cd;
+}
+[data-theme="france"] {
+  --destination: #304c79;
+  --destination-soft: #e5ecf7;
+  --destination-highlight: #f7edbc;
+}
+[data-theme="italy"] {
+  --destination: #555a2c;
+  --destination-soft: #f0eedc;
+  --destination-highlight: #efd7c7;
+}
+[data-theme="japan"] {
+  --destination: #943f36;
+  --destination-soft: #f8eee2;
+  --destination-highlight: #f4d6cf;
+}
+[data-theme="spain"] {
+  --destination: #923d2a;
+  --destination-soft: #f5e4d4;
+  --destination-highlight: #f6dc98;
+}
+[data-theme="greece"] {
+  --destination: #2356a0;
+  --destination-soft: #e8eff9;
+  --destination-highlight: #f2e7d4;
+}

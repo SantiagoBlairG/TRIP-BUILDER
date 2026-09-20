@@ -1,0 +1,2738 @@
+[
+  {
+    "id": "medellin-01",
+    "countryId": "colombia",
+    "cityId": "medellin",
+    "name": "Comuna 13 street art walk",
+    "description": "Follow murals and neighborhood stories on a guided walk.",
+    "image": "/images/cities/medellin.jpg",
+    "category": "culture",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 6.2402,
+      "longitude": -75.5842
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "medellin-02",
+    "countryId": "colombia",
+    "cityId": "medellin",
+    "name": "Plaza Botero sculpture stroll",
+    "description": "Explore the open-air sculptures around the central plaza.",
+    "image": "/images/cities/medellin.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 6.2422,
+      "longitude": -75.5812
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "medellin-03",
+    "countryId": "colombia",
+    "cityId": "medellin",
+    "name": "Jardín Botánico morning",
+    "description": "Spend a quiet morning among tropical plants and shaded paths.",
+    "image": "/images/cities/medellin.jpg",
+    "category": "nature",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 6.2442,
+      "longitude": -75.5782
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "medellin-04",
+    "countryId": "colombia",
+    "cityId": "medellin",
+    "name": "Arví forest trail",
+    "description": "Take a forest walk in the hills outside the city.",
+    "image": "/images/cities/medellin.jpg",
+    "category": "hiking",
+    "tags": ["Optional"],
+    "durationMinutes": 300,
+    "estimatedCost": 18,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 6.2462,
+      "longitude": -75.5842
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "medellin-05",
+    "countryId": "colombia",
+    "cityId": "medellin",
+    "name": "Laureles coffee tasting",
+    "description": "Compare regional coffees in a neighborhood café.",
+    "image": "/images/cities/medellin.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 90,
+    "estimatedCost": 16,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 6.2482,
+      "longitude": -75.5812
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "medellin-06",
+    "countryId": "colombia",
+    "cityId": "medellin",
+    "name": "El Poblado salsa evening",
+    "description": "Try a beginner-friendly dance session followed by live music.",
+    "image": "/images/cities/medellin.jpg",
+    "category": "nightlife",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 150,
+    "estimatedCost": 25,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 6.2502,
+      "longitude": -75.5782
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["evening"]
+  },
+  {
+    "id": "cartagena-01",
+    "countryId": "colombia",
+    "cityId": "cartagena",
+    "name": "Walled City walking route",
+    "description": "Wander plazas and shaded lanes in the historic center.",
+    "image": "/images/cities/cartagena.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 10.387,
+      "longitude": -75.4824
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "cartagena-02",
+    "countryId": "colombia",
+    "cityId": "cartagena",
+    "name": "Getsemaní mural walk",
+    "description": "Look for painted facades and street art around the neighborhood.",
+    "image": "/images/cities/cartagena.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 10.389,
+      "longitude": -75.4794
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "cartagena-03",
+    "countryId": "colombia",
+    "cityId": "cartagena",
+    "name": "Rosario Islands boat day",
+    "description": "Set aside a full day for a boat excursion and beach time.",
+    "image": "/images/cities/cartagena.jpg",
+    "category": "beaches",
+    "tags": ["Optional"],
+    "durationMinutes": 480,
+    "estimatedCost": 85,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 10.391,
+      "longitude": -75.4764
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "cartagena-04",
+    "countryId": "colombia",
+    "cityId": "cartagena",
+    "name": "San Felipe fortress visit",
+    "description": "Explore the fortress passages and city-facing viewpoints.",
+    "image": "/images/cities/cartagena.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 12,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 10.393,
+      "longitude": -75.4824
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "cartagena-05",
+    "countryId": "colombia",
+    "cityId": "cartagena",
+    "name": "Cartagena arepa tasting",
+    "description": "Taste coastal snacks with a local food guide.",
+    "image": "/images/cities/cartagena.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 90,
+    "estimatedCost": 18,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 10.395,
+      "longitude": -75.4794
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "cartagena-06",
+    "countryId": "colombia",
+    "cityId": "cartagena",
+    "name": "Caribbean cooking workshop",
+    "description": "Prepare a regional lunch in a small-group cooking session.",
+    "image": "/images/cities/cartagena.jpg",
+    "category": "food",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 180,
+    "estimatedCost": 48,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 10.397,
+      "longitude": -75.4764
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bogota-01",
+    "countryId": "colombia",
+    "cityId": "bogota",
+    "name": "Gold Museum visit",
+    "description": "Explore galleries of metalwork and cultural history.",
+    "image": "/images/cities/bogota.jpg",
+    "category": "culture",
+    "tags": ["Must visit"],
+    "durationMinutes": 150,
+    "estimatedCost": 8,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 4.707,
+      "longitude": -74.0751
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "bogota-02",
+    "countryId": "colombia",
+    "cityId": "bogota",
+    "name": "La Candelaria architecture walk",
+    "description": "Trace old streets, courtyards, and colorful facades.",
+    "image": "/images/cities/bogota.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 4.709,
+      "longitude": -74.0721
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bogota-03",
+    "countryId": "colombia",
+    "cityId": "bogota",
+    "name": "Monserrate viewpoint",
+    "description": "Make time for a broad view across the city from the mountain.",
+    "image": "/images/cities/bogota.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 18,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 4.711,
+      "longitude": -74.0691
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bogota-04",
+    "countryId": "colombia",
+    "cityId": "bogota",
+    "name": "Paloquemao market tasting",
+    "description": "Discover tropical fruit and a market breakfast.",
+    "image": "/images/cities/bogota.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 24,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 4.713,
+      "longitude": -74.0751
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bogota-05",
+    "countryId": "colombia",
+    "cityId": "bogota",
+    "name": "Simón Bolívar park picnic",
+    "description": "Bring a picnic and enjoy an easy afternoon outdoors.",
+    "image": "/images/cities/bogota.jpg",
+    "category": "family",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 12,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 4.715,
+      "longitude": -74.0721
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bogota-06",
+    "countryId": "colombia",
+    "cityId": "bogota",
+    "name": "Usaquén craft browsing",
+    "description": "Browse small shops and artisan stalls around the neighborhood.",
+    "image": "/images/cities/bogota.jpg",
+    "category": "shopping",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 4.717,
+      "longitude": -74.0691
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santa-marta-01",
+    "countryId": "colombia",
+    "cityId": "santa-marta",
+    "name": "Tayrona day trip",
+    "description": "Plan a full-day outing for coastal trails and forest scenery.",
+    "image": "/images/cities/santa-marta.jpg",
+    "category": "hiking",
+    "tags": ["Must visit"],
+    "durationMinutes": 540,
+    "estimatedCost": 58,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 11.2368,
+      "longitude": -74.202
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "santa-marta-02",
+    "countryId": "colombia",
+    "cityId": "santa-marta",
+    "name": "Taganga introductory dive",
+    "description": "Join a guided introductory diving session off the coast.",
+    "image": "/images/cities/santa-marta.jpg",
+    "category": "adventure",
+    "tags": ["Optional"],
+    "durationMinutes": 240,
+    "estimatedCost": 90,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 11.2388,
+      "longitude": -74.199
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santa-marta-03",
+    "countryId": "colombia",
+    "cityId": "santa-marta",
+    "name": "Minca coffee outing",
+    "description": "Head into the foothills for coffee and a slower afternoon.",
+    "image": "/images/cities/santa-marta.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 360,
+    "estimatedCost": 45,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 11.2408,
+      "longitude": -74.196
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santa-marta-04",
+    "countryId": "colombia",
+    "cityId": "santa-marta",
+    "name": "Bahía Concha beach afternoon",
+    "description": "Leave time for a beach outing and a simple coastal lunch.",
+    "image": "/images/cities/santa-marta.jpg",
+    "category": "beaches",
+    "tags": ["Optional"],
+    "durationMinutes": 300,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 11.2428,
+      "longitude": -74.202
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santa-marta-05",
+    "countryId": "colombia",
+    "cityId": "santa-marta",
+    "name": "Historic center evening walk",
+    "description": "Explore plazas and old streets as the day cools.",
+    "image": "/images/cities/santa-marta.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 11.2448,
+      "longitude": -74.199
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santa-marta-06",
+    "countryId": "colombia",
+    "cityId": "santa-marta",
+    "name": "Quinta de San Pedro gardens",
+    "description": "Walk through the historic estate and its green grounds.",
+    "image": "/images/cities/santa-marta.jpg",
+    "category": "nature",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 150,
+    "estimatedCost": 14,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 11.2468,
+      "longitude": -74.196
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "paris-01",
+    "countryId": "france",
+    "cityId": "paris",
+    "name": "Louvre highlights visit",
+    "description": "Choose a small set of galleries for an unhurried museum visit.",
+    "image": "/images/cities/paris.jpg",
+    "category": "culture",
+    "tags": ["Must visit"],
+    "durationMinutes": 240,
+    "estimatedCost": 32,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 48.8526,
+      "longitude": 2.3492
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "paris-02",
+    "countryId": "france",
+    "cityId": "paris",
+    "name": "Seine riverside walk",
+    "description": "Follow the river past bridges and changing city views.",
+    "image": "/images/cities/paris.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 48.8546,
+      "longitude": 2.3522
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "paris-03",
+    "countryId": "france",
+    "cityId": "paris",
+    "name": "Le Marais pastry walk",
+    "description": "Taste pastries and take café breaks between neighborhood lanes.",
+    "image": "/images/cities/paris.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 30,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 48.8566,
+      "longitude": 2.3552
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "paris-04",
+    "countryId": "france",
+    "cityId": "paris",
+    "name": "Montmartre side streets",
+    "description": "Explore stairways, small squares, and hillside streets.",
+    "image": "/images/cities/paris.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 48.8586,
+      "longitude": 2.3492
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "paris-05",
+    "countryId": "france",
+    "cityId": "paris",
+    "name": "Luxembourg Gardens afternoon",
+    "description": "Slow down around the gardens and open-air spaces.",
+    "image": "/images/cities/paris.jpg",
+    "category": "family",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 48.8606,
+      "longitude": 2.3522
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "paris-06",
+    "countryId": "france",
+    "cityId": "paris",
+    "name": "Saint-Germain bookshops",
+    "description": "Browse independent shelves and neighborhood shops.",
+    "image": "/images/cities/paris.jpg",
+    "category": "shopping",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 48.8626,
+      "longitude": 2.3552
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "lyon-01",
+    "countryId": "france",
+    "cityId": "lyon",
+    "name": "Vieux Lyon passageways",
+    "description": "Join a walk through the old quarter and its passageways.",
+    "image": "/images/cities/lyon.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 150,
+    "estimatedCost": 15,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.76,
+      "longitude": 4.8327
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "lyon-02",
+    "countryId": "france",
+    "cityId": "lyon",
+    "name": "Halles de Lyon tasting",
+    "description": "Sample regional specialties in the covered food market.",
+    "image": "/images/cities/lyon.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 45,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.762,
+      "longitude": 4.8357
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "lyon-03",
+    "countryId": "france",
+    "cityId": "lyon",
+    "name": "Fourvière viewpoint walk",
+    "description": "Walk up to broad views over the city and rivers.",
+    "image": "/images/cities/lyon.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.764,
+      "longitude": 4.8387
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "lyon-04",
+    "countryId": "france",
+    "cityId": "lyon",
+    "name": "Parc de la Tête d’Or",
+    "description": "Follow lakeside paths and relax in the park.",
+    "image": "/images/cities/lyon.jpg",
+    "category": "nature",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.766,
+      "longitude": 4.8327
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "lyon-05",
+    "countryId": "france",
+    "cityId": "lyon",
+    "name": "Musée des Confluences visit",
+    "description": "Explore a museum where natural history meets human stories.",
+    "image": "/images/cities/lyon.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 180,
+    "estimatedCost": 15,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.768,
+      "longitude": 4.8357
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "lyon-06",
+    "countryId": "france",
+    "cityId": "lyon",
+    "name": "Croix-Rousse silk workshop",
+    "description": "Discover textile traditions and local workshop displays.",
+    "image": "/images/cities/lyon.jpg",
+    "category": "shopping",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 25,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.77,
+      "longitude": 4.8387
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "nice-01",
+    "countryId": "france",
+    "cityId": "nice",
+    "name": "Promenade des Anglais walk",
+    "description": "Enjoy an easy seafront walk with time by the water.",
+    "image": "/images/cities/nice.jpg",
+    "category": "beaches",
+    "tags": ["Must visit"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7062,
+      "longitude": 7.259
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "nice-02",
+    "countryId": "france",
+    "cityId": "nice",
+    "name": "Cours Saleya market tasting",
+    "description": "Try market snacks and explore the surrounding old town.",
+    "image": "/images/cities/nice.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 28,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7082,
+      "longitude": 7.262
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "nice-03",
+    "countryId": "france",
+    "cityId": "nice",
+    "name": "Castle Hill viewpoints",
+    "description": "Climb above the waterfront for layered coastal views.",
+    "image": "/images/cities/nice.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7102,
+      "longitude": 7.265
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "nice-04",
+    "countryId": "france",
+    "cityId": "nice",
+    "name": "Matisse Museum visit",
+    "description": "Set aside an afternoon for the artist’s work and surroundings.",
+    "image": "/images/cities/nice.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 120,
+    "estimatedCost": 15,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7122,
+      "longitude": 7.259
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "nice-05",
+    "countryId": "france",
+    "cityId": "nice",
+    "name": "Old Nice architecture walk",
+    "description": "Wander narrow streets and small squares in the old quarter.",
+    "image": "/images/cities/nice.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7142,
+      "longitude": 7.262
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "nice-06",
+    "countryId": "france",
+    "cityId": "nice",
+    "name": "Coco Beach coastal stroll",
+    "description": "Take a gentle waterside walk east of the port.",
+    "image": "/images/cities/nice.jpg",
+    "category": "wellness",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7162,
+      "longitude": 7.265
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bordeaux-01",
+    "countryId": "france",
+    "cityId": "bordeaux",
+    "name": "Cité du Vin discovery",
+    "description": "Explore exhibitions about wine cultures and traditions.",
+    "image": "/images/cities/bordeaux.jpg",
+    "category": "culture",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 28,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 44.8338,
+      "longitude": -0.5822
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "bordeaux-02",
+    "countryId": "france",
+    "cityId": "bordeaux",
+    "name": "Miroir d’Eau photo walk",
+    "description": "Look for riverfront reflections around the landmark square.",
+    "image": "/images/cities/bordeaux.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 44.8358,
+      "longitude": -0.5792
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bordeaux-03",
+    "countryId": "france",
+    "cityId": "bordeaux",
+    "name": "Marché des Capucins lunch",
+    "description": "Build a relaxed lunch from the market’s food counters.",
+    "image": "/images/cities/bordeaux.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 28,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 44.8378,
+      "longitude": -0.5762
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bordeaux-04",
+    "countryId": "france",
+    "cityId": "bordeaux",
+    "name": "Saint-Pierre quarter walk",
+    "description": "Discover old streets and lively neighborhood squares.",
+    "image": "/images/cities/bordeaux.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 44.8398,
+      "longitude": -0.5822
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bordeaux-05",
+    "countryId": "france",
+    "cityId": "bordeaux",
+    "name": "Jardin Public picnic",
+    "description": "Take a picnic break among the gardens and open lawns.",
+    "image": "/images/cities/bordeaux.jpg",
+    "category": "family",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 15,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 44.8418,
+      "longitude": -0.5792
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "bordeaux-06",
+    "countryId": "france",
+    "cityId": "bordeaux",
+    "name": "Chartrons antique browsing",
+    "description": "Browse antique shops and small galleries in the district.",
+    "image": "/images/cities/bordeaux.jpg",
+    "category": "shopping",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 44.8438,
+      "longitude": -0.5762
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "rome-01",
+    "countryId": "italy",
+    "cityId": "rome",
+    "name": "Colosseum and Forum visit",
+    "description": "Set aside a morning for ancient monuments and archaeological paths.",
+    "image": "/images/cities/rome.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 240,
+    "estimatedCost": 38,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.8988,
+      "longitude": 12.4934
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "rome-02",
+    "countryId": "italy",
+    "cityId": "rome",
+    "name": "Trastevere pasta workshop",
+    "description": "Make fresh pasta and share a small-group meal.",
+    "image": "/images/cities/rome.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 65,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.9008,
+      "longitude": 12.4964
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "rome-03",
+    "countryId": "italy",
+    "cityId": "rome",
+    "name": "Borghese Gallery visit",
+    "description": "Focus on sculptures and paintings in an intimate gallery setting.",
+    "image": "/images/cities/rome.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 120,
+    "estimatedCost": 30,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.9028,
+      "longitude": 12.4994
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "rome-04",
+    "countryId": "italy",
+    "cityId": "rome",
+    "name": "Villa Borghese garden walk",
+    "description": "Find a green pause along the park’s broad pathways.",
+    "image": "/images/cities/rome.jpg",
+    "category": "nature",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.9048,
+      "longitude": 12.4934
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "rome-05",
+    "countryId": "italy",
+    "cityId": "rome",
+    "name": "Testaccio market lunch",
+    "description": "Build a lunch from the neighborhood’s market stalls.",
+    "image": "/images/cities/rome.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 25,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.9068,
+      "longitude": 12.4964
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "rome-06",
+    "countryId": "italy",
+    "cityId": "rome",
+    "name": "Trevi early photo walk",
+    "description": "Start early for a quieter walk around the fountain and nearby streets.",
+    "image": "/images/cities/rome.jpg",
+    "category": "photography",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.9088,
+      "longitude": 12.4994
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "florence-01",
+    "countryId": "italy",
+    "cityId": "florence",
+    "name": "Uffizi highlights visit",
+    "description": "Choose a gallery route through Renaissance paintings.",
+    "image": "/images/cities/florence.jpg",
+    "category": "culture",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7656,
+      "longitude": 11.2528
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "florence-02",
+    "countryId": "italy",
+    "cityId": "florence",
+    "name": "Duomo neighborhood walk",
+    "description": "Explore cathedral-square details and the surrounding streets.",
+    "image": "/images/cities/florence.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7676,
+      "longitude": 11.2558
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "florence-03",
+    "countryId": "italy",
+    "cityId": "florence",
+    "name": "Mercato Centrale tasting",
+    "description": "Sample Tuscan ingredients and prepared dishes at the market.",
+    "image": "/images/cities/florence.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 30,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7696,
+      "longitude": 11.2588
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "florence-04",
+    "countryId": "italy",
+    "cityId": "florence",
+    "name": "Piazzale Michelangelo sunset",
+    "description": "Walk up for the changing light over the river and rooftops.",
+    "image": "/images/cities/florence.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7716,
+      "longitude": 11.2528
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "florence-05",
+    "countryId": "italy",
+    "cityId": "florence",
+    "name": "Oltrarno artisan studios",
+    "description": "Discover small workshops south of the river.",
+    "image": "/images/cities/florence.jpg",
+    "category": "shopping",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 20,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7736,
+      "longitude": 11.2558
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "florence-06",
+    "countryId": "italy",
+    "cityId": "florence",
+    "name": "Boboli Gardens wander",
+    "description": "Explore landscaped paths, terraces, and garden sculpture.",
+    "image": "/images/cities/florence.jpg",
+    "category": "nature",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 180,
+    "estimatedCost": 18,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 43.7756,
+      "longitude": 11.2588
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "venice-01",
+    "countryId": "italy",
+    "cityId": "venice",
+    "name": "Doge’s Palace visit",
+    "description": "Explore ceremonial rooms and Venetian history.",
+    "image": "/images/cities/venice.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.4368,
+      "longitude": 12.3125
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "venice-02",
+    "countryId": "italy",
+    "cityId": "venice",
+    "name": "Rialto market morning",
+    "description": "Browse market produce and stop for small local bites.",
+    "image": "/images/cities/venice.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 25,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.4388,
+      "longitude": 12.3155
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "venice-03",
+    "countryId": "italy",
+    "cityId": "venice",
+    "name": "Dorsoduro art walk",
+    "description": "Pair a gallery visit with a quiet neighborhood walk.",
+    "image": "/images/cities/venice.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 180,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.4408,
+      "longitude": 12.3185
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "venice-04",
+    "countryId": "italy",
+    "cityId": "venice",
+    "name": "Burano color walk",
+    "description": "Take a lagoon outing to streets lined with colorful houses.",
+    "image": "/images/cities/venice.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 300,
+    "estimatedCost": 30,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.4428,
+      "longitude": 12.3125
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "venice-05",
+    "countryId": "italy",
+    "cityId": "venice",
+    "name": "Cannaregio canal stroll",
+    "description": "Follow smaller canals through a residential neighborhood.",
+    "image": "/images/cities/venice.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.4448,
+      "longitude": 12.3155
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "venice-06",
+    "countryId": "italy",
+    "cityId": "venice",
+    "name": "Lagoon rowing introduction",
+    "description": "Try a guided introduction to Venetian rowing traditions.",
+    "image": "/images/cities/venice.jpg",
+    "category": "adventure",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 70,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 45.4468,
+      "longitude": 12.3185
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "positano-01",
+    "countryId": "italy",
+    "cityId": "positano",
+    "name": "Fornillo Beach afternoon",
+    "description": "Follow the coastal path for a relaxed afternoon by the water.",
+    "image": "/images/cities/positano.jpg",
+    "category": "beaches",
+    "tags": ["Must visit"],
+    "durationMinutes": 240,
+    "estimatedCost": 25,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.6241,
+      "longitude": 14.4815
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "positano-02",
+    "countryId": "italy",
+    "cityId": "positano",
+    "name": "Path of the Gods hike",
+    "description": "Allow time for transfers and a scenic hillside hiking outing.",
+    "image": "/images/cities/positano.jpg",
+    "category": "hiking",
+    "tags": ["Optional"],
+    "durationMinutes": 360,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.6261,
+      "longitude": 14.4845
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "positano-03",
+    "countryId": "italy",
+    "cityId": "positano",
+    "name": "Amalfi Coast boat outing",
+    "description": "See the coastline from the water on a small-group excursion.",
+    "image": "/images/cities/positano.jpg",
+    "category": "adventure",
+    "tags": ["Optional"],
+    "durationMinutes": 240,
+    "estimatedCost": 95,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.6281,
+      "longitude": 14.4875
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "positano-04",
+    "countryId": "italy",
+    "cityId": "positano",
+    "name": "Positano lemon cooking class",
+    "description": "Prepare a coastal menu with a bright citrus finish.",
+    "image": "/images/cities/positano.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 80,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.6301,
+      "longitude": 14.4815
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "positano-05",
+    "countryId": "italy",
+    "cityId": "positano",
+    "name": "Santa Maria Assunta visit",
+    "description": "Stop by the church and explore the surrounding lanes.",
+    "image": "/images/cities/positano.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 60,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.6321,
+      "longitude": 14.4845
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "positano-06",
+    "countryId": "italy",
+    "cityId": "positano",
+    "name": "Hillside sunrise photo walk",
+    "description": "Find early light among stairways and coast-facing viewpoints.",
+    "image": "/images/cities/positano.jpg",
+    "category": "photography",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.6341,
+      "longitude": 14.4875
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "tokyo-01",
+    "countryId": "japan",
+    "cityId": "tokyo",
+    "name": "Sensō-ji and Asakusa walk",
+    "description": "Explore temple surroundings and traditional shopping streets.",
+    "image": "/images/cities/tokyo.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.6722,
+      "longitude": 139.6473
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "tokyo-02",
+    "countryId": "japan",
+    "cityId": "tokyo",
+    "name": "Tsukiji outer market breakfast",
+    "description": "Taste a selection of market dishes over a slow morning.",
+    "image": "/images/cities/tokyo.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 30,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.6742,
+      "longitude": 139.6503
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "tokyo-03",
+    "countryId": "japan",
+    "cityId": "tokyo",
+    "name": "Shinjuku Gyoen garden time",
+    "description": "Take a quiet break in spacious landscaped gardens.",
+    "image": "/images/cities/tokyo.jpg",
+    "category": "nature",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 8,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.6762,
+      "longitude": 139.6533
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "tokyo-04",
+    "countryId": "japan",
+    "cityId": "tokyo",
+    "name": "Shibuya evening photo walk",
+    "description": "Explore illuminated streets and the neighborhood’s busy crossings.",
+    "image": "/images/cities/tokyo.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.6782,
+      "longitude": 139.6473
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "tokyo-05",
+    "countryId": "japan",
+    "cityId": "tokyo",
+    "name": "Tokyo National Museum visit",
+    "description": "Discover art and historical objects in the museum galleries.",
+    "image": "/images/cities/tokyo.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 180,
+    "estimatedCost": 12,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.6802,
+      "longitude": 139.6503
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "tokyo-06",
+    "countryId": "japan",
+    "cityId": "tokyo",
+    "name": "Shimokitazawa vintage shops",
+    "description": "Browse independent clothing stores and pause at a café.",
+    "image": "/images/cities/tokyo.jpg",
+    "category": "shopping",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 180,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.6822,
+      "longitude": 139.6533
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "kyoto-01",
+    "countryId": "japan",
+    "cityId": "kyoto",
+    "name": "Fushimi Inari morning walk",
+    "description": "Follow shrine paths uphill at an unhurried pace.",
+    "image": "/images/cities/kyoto.jpg",
+    "category": "hiking",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.0076,
+      "longitude": 135.7651
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "kyoto-02",
+    "countryId": "japan",
+    "cityId": "kyoto",
+    "name": "Nishiki Market tasting",
+    "description": "Sample small dishes while exploring the market streets.",
+    "image": "/images/cities/kyoto.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 28,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.0096,
+      "longitude": 135.7681
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "kyoto-03",
+    "countryId": "japan",
+    "cityId": "kyoto",
+    "name": "Arashiyama riverside walk",
+    "description": "Pair riverside paths with a stroll through the surrounding area.",
+    "image": "/images/cities/kyoto.jpg",
+    "category": "nature",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.0116,
+      "longitude": 135.7711
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "kyoto-04",
+    "countryId": "japan",
+    "cityId": "kyoto",
+    "name": "Higashiyama lane photography",
+    "description": "Look for architectural details along the historic hillside lanes.",
+    "image": "/images/cities/kyoto.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.0136,
+      "longitude": 135.7651
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "kyoto-05",
+    "countryId": "japan",
+    "cityId": "kyoto",
+    "name": "Kyoto tea ceremony",
+    "description": "Join a guided introduction to tea preparation and etiquette.",
+    "image": "/images/cities/kyoto.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 90,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.0156,
+      "longitude": 135.7681
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "kyoto-06",
+    "countryId": "japan",
+    "cityId": "kyoto",
+    "name": "Kyoto sentō relaxation",
+    "description": "Set aside time for a neighborhood public-bath visit.",
+    "image": "/images/cities/kyoto.jpg",
+    "category": "wellness",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 90,
+    "estimatedCost": 10,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.0176,
+      "longitude": 135.7711
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "osaka-01",
+    "countryId": "japan",
+    "cityId": "osaka",
+    "name": "Dōtonbori street-food walk",
+    "description": "Taste small dishes among the canal-side food streets.",
+    "image": "/images/cities/osaka.jpg",
+    "category": "food",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.6897,
+      "longitude": 135.4993
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "osaka-02",
+    "countryId": "japan",
+    "cityId": "osaka",
+    "name": "Osaka Castle park walk",
+    "description": "Explore the castle surroundings and their broad park paths.",
+    "image": "/images/cities/osaka.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 10,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.6917,
+      "longitude": 135.5023
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "osaka-03",
+    "countryId": "japan",
+    "cityId": "osaka",
+    "name": "Kuromon Market tasting",
+    "description": "Try a market lunch from a few different stalls.",
+    "image": "/images/cities/osaka.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 28,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.6937,
+      "longitude": 135.5053
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "osaka-04",
+    "countryId": "japan",
+    "cityId": "osaka",
+    "name": "Osaka Aquarium visit",
+    "description": "Spend an afternoon exploring marine-life exhibits.",
+    "image": "/images/cities/osaka.jpg",
+    "category": "family",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 25,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.6957,
+      "longitude": 135.4993
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "osaka-05",
+    "countryId": "japan",
+    "cityId": "osaka",
+    "name": "Shinsekai evening lights",
+    "description": "Explore neighborhood dining and illuminated streets after dusk.",
+    "image": "/images/cities/osaka.jpg",
+    "category": "nightlife",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.6977,
+      "longitude": 135.5023
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["evening"]
+  },
+  {
+    "id": "osaka-06",
+    "countryId": "japan",
+    "cityId": "osaka",
+    "name": "Nakanoshima riverside pause",
+    "description": "Take a gentle walk between waterways and green spaces.",
+    "image": "/images/cities/osaka.jpg",
+    "category": "wellness",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.6997,
+      "longitude": 135.5053
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "hiroshima-01",
+    "countryId": "japan",
+    "cityId": "hiroshima",
+    "name": "Peace Memorial Museum",
+    "description": "Allow time for a thoughtful visit through the museum’s exhibits.",
+    "image": "/images/cities/hiroshima.jpg",
+    "category": "culture",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 5,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.3813,
+      "longitude": 132.4523
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "hiroshima-02",
+    "countryId": "japan",
+    "cityId": "hiroshima",
+    "name": "Peace Memorial Park walk",
+    "description": "Walk through the memorial grounds at a reflective pace.",
+    "image": "/images/cities/hiroshima.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.3833,
+      "longitude": 132.4553
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "hiroshima-03",
+    "countryId": "japan",
+    "cityId": "hiroshima",
+    "name": "Miyajima island outing",
+    "description": "Set aside a day for ferry travel and island scenery.",
+    "image": "/images/cities/hiroshima.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 480,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.3853,
+      "longitude": 132.4583
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "hiroshima-04",
+    "countryId": "japan",
+    "cityId": "hiroshima",
+    "name": "Hiroshima okonomiyaki lesson",
+    "description": "Learn to prepare a layered regional version of the dish.",
+    "image": "/images/cities/hiroshima.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 40,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.3873,
+      "longitude": 132.4523
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "hiroshima-05",
+    "countryId": "japan",
+    "cityId": "hiroshima",
+    "name": "Shukkeien garden stroll",
+    "description": "Follow garden paths around miniature landscapes and water.",
+    "image": "/images/cities/hiroshima.jpg",
+    "category": "nature",
+    "tags": ["Optional"],
+    "durationMinutes": 90,
+    "estimatedCost": 5,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.3893,
+      "longitude": 132.4553
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "hiroshima-06",
+    "countryId": "japan",
+    "cityId": "hiroshima",
+    "name": "Hondōri shopping walk",
+    "description": "Browse the covered arcade and its side streets.",
+    "image": "/images/cities/hiroshima.jpg",
+    "category": "shopping",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 34.3913,
+      "longitude": 132.4583
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "barcelona-01",
+    "countryId": "spain",
+    "cityId": "barcelona",
+    "name": "Sagrada Família visit",
+    "description": "Explore the basilica’s light, structure, and architectural details.",
+    "image": "/images/cities/barcelona.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 150,
+    "estimatedCost": 38,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.3834,
+      "longitude": 2.1656
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "barcelona-02",
+    "countryId": "spain",
+    "cityId": "barcelona",
+    "name": "Park Güell morning",
+    "description": "Walk through colorful architectural spaces and viewpoints.",
+    "image": "/images/cities/barcelona.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.3854,
+      "longitude": 2.1686
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "barcelona-03",
+    "countryId": "spain",
+    "cityId": "barcelona",
+    "name": "Gràcia tapas evening",
+    "description": "Share small plates around neighborhood squares.",
+    "image": "/images/cities/barcelona.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 45,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.3874,
+      "longitude": 2.1716
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "barcelona-04",
+    "countryId": "spain",
+    "cityId": "barcelona",
+    "name": "Barceloneta beach pause",
+    "description": "Set aside a relaxed afternoon along the seafront.",
+    "image": "/images/cities/barcelona.jpg",
+    "category": "beaches",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.3894,
+      "longitude": 2.1656
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "barcelona-05",
+    "countryId": "spain",
+    "cityId": "barcelona",
+    "name": "Picasso Museum visit",
+    "description": "Explore a focused collection in the old city.",
+    "image": "/images/cities/barcelona.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 150,
+    "estimatedCost": 18,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.3914,
+      "longitude": 2.1686
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "barcelona-06",
+    "countryId": "spain",
+    "cityId": "barcelona",
+    "name": "Montjuïc garden walk",
+    "description": "Follow green paths above the harbor and city streets.",
+    "image": "/images/cities/barcelona.jpg",
+    "category": "nature",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 180,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 41.3934,
+      "longitude": 2.1716
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "madrid-01",
+    "countryId": "spain",
+    "cityId": "madrid",
+    "name": "Prado Museum highlights",
+    "description": "Choose a manageable route through major painting galleries.",
+    "image": "/images/cities/madrid.jpg",
+    "category": "culture",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.4128,
+      "longitude": -3.7068
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "madrid-02",
+    "countryId": "spain",
+    "cityId": "madrid",
+    "name": "Retiro Park afternoon",
+    "description": "Make time for shaded paths and waterside benches.",
+    "image": "/images/cities/madrid.jpg",
+    "category": "nature",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.4148,
+      "longitude": -3.7038
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "madrid-03",
+    "countryId": "spain",
+    "cityId": "madrid",
+    "name": "La Latina tapas walk",
+    "description": "Share a few small plates across neighborhood taverns.",
+    "image": "/images/cities/madrid.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 40,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.4168,
+      "longitude": -3.7008
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "madrid-04",
+    "countryId": "spain",
+    "cityId": "madrid",
+    "name": "Royal Palace visit",
+    "description": "Explore ceremonial spaces and palace surroundings.",
+    "image": "/images/cities/madrid.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.4188,
+      "longitude": -3.7068
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "madrid-05",
+    "countryId": "spain",
+    "cityId": "madrid",
+    "name": "Malasaña independent shops",
+    "description": "Browse small design and vintage stores around the district.",
+    "image": "/images/cities/madrid.jpg",
+    "category": "shopping",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.4208,
+      "longitude": -3.7038
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "madrid-06",
+    "countryId": "spain",
+    "cityId": "madrid",
+    "name": "Madrid flamenco evening",
+    "description": "Plan an evening around an intimate performance.",
+    "image": "/images/cities/madrid.jpg",
+    "category": "nightlife",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 45,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 40.4228,
+      "longitude": -3.7008
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["evening"]
+  },
+  {
+    "id": "seville-01",
+    "countryId": "spain",
+    "cityId": "seville",
+    "name": "Real Alcázar gardens",
+    "description": "Explore palace courtyards and landscaped gardens.",
+    "image": "/images/cities/seville.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.3851,
+      "longitude": -5.9875
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "seville-02",
+    "countryId": "spain",
+    "cityId": "seville",
+    "name": "Triana ceramics walk",
+    "description": "Discover tiled facades and ceramics workshops across the river.",
+    "image": "/images/cities/seville.jpg",
+    "category": "shopping",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 10,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.3871,
+      "longitude": -5.9845
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "seville-03",
+    "countryId": "spain",
+    "cityId": "seville",
+    "name": "Santa Cruz tapas tasting",
+    "description": "Pair a neighborhood stroll with a relaxed tapas meal.",
+    "image": "/images/cities/seville.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 38,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.3891,
+      "longitude": -5.9815
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "seville-04",
+    "countryId": "spain",
+    "cityId": "seville",
+    "name": "Plaza de España photo walk",
+    "description": "Look for tilework, arches, and reflections around the plaza.",
+    "image": "/images/cities/seville.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.3911,
+      "longitude": -5.9875
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "seville-05",
+    "countryId": "spain",
+    "cityId": "seville",
+    "name": "María Luisa Park picnic",
+    "description": "Find a shaded spot for an easy outdoor lunch.",
+    "image": "/images/cities/seville.jpg",
+    "category": "family",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 15,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.3931,
+      "longitude": -5.9845
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "seville-06",
+    "countryId": "spain",
+    "cityId": "seville",
+    "name": "Seville flamenco performance",
+    "description": "Spend an evening with music and dance in a small venue.",
+    "image": "/images/cities/seville.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 90,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.3951,
+      "longitude": -5.9815
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "valencia-01",
+    "countryId": "spain",
+    "cityId": "valencia",
+    "name": "Central Market tasting",
+    "description": "Sample ingredients and snacks in the historic market hall.",
+    "image": "/images/cities/valencia.jpg",
+    "category": "food",
+    "tags": ["Must visit"],
+    "durationMinutes": 120,
+    "estimatedCost": 28,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 39.4659,
+      "longitude": -0.3793
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "valencia-02",
+    "countryId": "spain",
+    "cityId": "valencia",
+    "name": "Turia Gardens cycle",
+    "description": "Rent a bike for a relaxed ride through the urban gardens.",
+    "image": "/images/cities/valencia.jpg",
+    "category": "adventure",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 39.4679,
+      "longitude": -0.3763
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "valencia-03",
+    "countryId": "spain",
+    "cityId": "valencia",
+    "name": "Arts and Sciences photo walk",
+    "description": "Explore the complex’s exterior forms and water reflections.",
+    "image": "/images/cities/valencia.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 39.4699,
+      "longitude": -0.3733
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "valencia-04",
+    "countryId": "spain",
+    "cityId": "valencia",
+    "name": "Malvarrosa beach afternoon",
+    "description": "Leave a free afternoon for the broad city beach.",
+    "image": "/images/cities/valencia.jpg",
+    "category": "beaches",
+    "tags": ["Optional"],
+    "durationMinutes": 240,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 39.4719,
+      "longitude": -0.3793
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "valencia-05",
+    "countryId": "spain",
+    "cityId": "valencia",
+    "name": "Valencian paella workshop",
+    "description": "Learn to prepare a regional rice dish in a guided class.",
+    "image": "/images/cities/valencia.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 240,
+    "estimatedCost": 65,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 39.4739,
+      "longitude": -0.3763
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "valencia-06",
+    "countryId": "spain",
+    "cityId": "valencia",
+    "name": "Silk Exchange visit",
+    "description": "Explore the historic trading hall and its stonework.",
+    "image": "/images/cities/valencia.jpg",
+    "category": "history",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 90,
+    "estimatedCost": 5,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 39.4759,
+      "longitude": -0.3733
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "athens-01",
+    "countryId": "greece",
+    "cityId": "athens",
+    "name": "Acropolis morning visit",
+    "description": "Allow a full morning for the hilltop monuments and views.",
+    "image": "/images/cities/athens.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 180,
+    "estimatedCost": 35,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.9798,
+      "longitude": 23.7245
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "athens-02",
+    "countryId": "greece",
+    "cityId": "athens",
+    "name": "Acropolis Museum galleries",
+    "description": "Explore archaeological displays in the museum below the hill.",
+    "image": "/images/cities/athens.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 180,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.9818,
+      "longitude": 23.7275
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "athens-03",
+    "countryId": "greece",
+    "cityId": "athens",
+    "name": "Monastiraki market browsing",
+    "description": "Wander the market lanes and neighborhood shops.",
+    "image": "/images/cities/athens.jpg",
+    "category": "shopping",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.9838,
+      "longitude": 23.7305
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "athens-04",
+    "countryId": "greece",
+    "cityId": "athens",
+    "name": "Athens meze tasting",
+    "description": "Share small plates and discover regional flavors.",
+    "image": "/images/cities/athens.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 40,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.9858,
+      "longitude": 23.7245
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "athens-05",
+    "countryId": "greece",
+    "cityId": "athens",
+    "name": "Philopappos Hill walk",
+    "description": "Follow paths to broad views over the ancient city.",
+    "image": "/images/cities/athens.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.9878,
+      "longitude": 23.7275
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "athens-06",
+    "countryId": "greece",
+    "cityId": "athens",
+    "name": "National Garden pause",
+    "description": "Take a quiet break on shaded city-center paths.",
+    "image": "/images/cities/athens.jpg",
+    "category": "wellness",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.9898,
+      "longitude": 23.7305
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santorini-01",
+    "countryId": "greece",
+    "cityId": "santorini",
+    "name": "Fira to Oia coastal hike",
+    "description": "Plan a long walk along the caldera-facing path.",
+    "image": "/images/cities/santorini.jpg",
+    "category": "hiking",
+    "tags": ["Must visit"],
+    "durationMinutes": 300,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 36.3892,
+      "longitude": 25.4585
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "santorini-02",
+    "countryId": "greece",
+    "cityId": "santorini",
+    "name": "Akrotiri archaeological visit",
+    "description": "Explore the sheltered remains of an ancient settlement.",
+    "image": "/images/cities/santorini.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 150,
+    "estimatedCost": 22,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 36.3912,
+      "longitude": 25.4615
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santorini-03",
+    "countryId": "greece",
+    "cityId": "santorini",
+    "name": "Perissa beach afternoon",
+    "description": "Spend a slower afternoon beside volcanic sand and sea.",
+    "image": "/images/cities/santorini.jpg",
+    "category": "beaches",
+    "tags": ["Optional"],
+    "durationMinutes": 240,
+    "estimatedCost": 18,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 36.3932,
+      "longitude": 25.4645
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santorini-04",
+    "countryId": "greece",
+    "cityId": "santorini",
+    "name": "Santorini tomato cooking class",
+    "description": "Prepare island-inspired dishes with seasonal ingredients.",
+    "image": "/images/cities/santorini.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 75,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 36.3952,
+      "longitude": 25.4585
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santorini-05",
+    "countryId": "greece",
+    "cityId": "santorini",
+    "name": "Oia early photo walk",
+    "description": "Look for early light across village lanes and sea views.",
+    "image": "/images/cities/santorini.jpg",
+    "category": "photography",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 36.3972,
+      "longitude": 25.4615
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "santorini-06",
+    "countryId": "greece",
+    "cityId": "santorini",
+    "name": "Caldera sailing outing",
+    "description": "Join a boat outing for a different view of the island.",
+    "image": "/images/cities/santorini.jpg",
+    "category": "adventure",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 300,
+    "estimatedCost": 110,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 36.3992,
+      "longitude": 25.4645
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "chania-01",
+    "countryId": "greece",
+    "cityId": "chania",
+    "name": "Venetian harbor walk",
+    "description": "Trace the old waterfront and its surrounding streets.",
+    "image": "/images/cities/chania.jpg",
+    "category": "history",
+    "tags": ["Must visit"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.5098,
+      "longitude": 24.015
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "chania-02",
+    "countryId": "greece",
+    "cityId": "chania",
+    "name": "Cretan cooking workshop",
+    "description": "Prepare a shared meal using regional ingredients.",
+    "image": "/images/cities/chania.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 240,
+    "estimatedCost": 65,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.5118,
+      "longitude": 24.018
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "chania-03",
+    "countryId": "greece",
+    "cityId": "chania",
+    "name": "Nea Chora beach pause",
+    "description": "Take a relaxed break by the water close to town.",
+    "image": "/images/cities/chania.jpg",
+    "category": "beaches",
+    "tags": ["Optional"],
+    "durationMinutes": 180,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.5138,
+      "longitude": 24.021
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "chania-04",
+    "countryId": "greece",
+    "cityId": "chania",
+    "name": "Chania archaeological museum",
+    "description": "Explore objects and stories from the surrounding region.",
+    "image": "/images/cities/chania.jpg",
+    "category": "culture",
+    "tags": ["Rainy day"],
+    "durationMinutes": 150,
+    "estimatedCost": 15,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.5158,
+      "longitude": 24.015
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "chania-05",
+    "countryId": "greece",
+    "cityId": "chania",
+    "name": "Theriso gorge outing",
+    "description": "Set aside time for a guided outing into the nearby gorge area.",
+    "image": "/images/cities/chania.jpg",
+    "category": "hiking",
+    "tags": ["Optional"],
+    "durationMinutes": 300,
+    "estimatedCost": 40,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.5178,
+      "longitude": 24.018
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "chania-06",
+    "countryId": "greece",
+    "cityId": "chania",
+    "name": "Old town artisan lanes",
+    "description": "Browse local workshops along the narrow lanes.",
+    "image": "/images/cities/chania.jpg",
+    "category": "shopping",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 120,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 35.5198,
+      "longitude": 24.021
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "naxos-01",
+    "countryId": "greece",
+    "cityId": "naxos",
+    "name": "Portara sunset walk",
+    "description": "Walk out to the marble gateway for evening island views.",
+    "image": "/images/cities/naxos.jpg",
+    "category": "photography",
+    "tags": ["Must visit"],
+    "durationMinutes": 90,
+    "estimatedCost": 0,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.0996,
+      "longitude": 25.3747
+    },
+    "rating": 4.8,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "naxos-02",
+    "countryId": "greece",
+    "cityId": "naxos",
+    "name": "Agios Prokopios beach day",
+    "description": "Leave a generous stretch of time for sand and sea.",
+    "image": "/images/cities/naxos.jpg",
+    "category": "beaches",
+    "tags": ["Optional"],
+    "durationMinutes": 300,
+    "estimatedCost": 20,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.1016,
+      "longitude": 25.3777
+    },
+    "rating": 4.6,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "naxos-03",
+    "countryId": "greece",
+    "cityId": "naxos",
+    "name": "Naxian cheese tasting",
+    "description": "Discover island cheeses in a guided tasting session.",
+    "image": "/images/cities/naxos.jpg",
+    "category": "food",
+    "tags": ["Optional"],
+    "durationMinutes": 120,
+    "estimatedCost": 32,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.1036,
+      "longitude": 25.3807
+    },
+    "rating": 4.7,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "naxos-04",
+    "countryId": "greece",
+    "cityId": "naxos",
+    "name": "Chalki village walk",
+    "description": "Make an inland outing for village lanes and local architecture.",
+    "image": "/images/cities/naxos.jpg",
+    "category": "history",
+    "tags": ["Optional"],
+    "durationMinutes": 240,
+    "estimatedCost": 18,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.1056,
+      "longitude": 25.3747
+    },
+    "rating": 4.5,
+    "recommendedTimeOfDay": ["afternoon"]
+  },
+  {
+    "id": "naxos-05",
+    "countryId": "greece",
+    "cityId": "naxos",
+    "name": "Mount Zas hiking outing",
+    "description": "Join a guided mountain walk with time for transfers.",
+    "image": "/images/cities/naxos.jpg",
+    "category": "hiking",
+    "tags": ["Optional"],
+    "durationMinutes": 360,
+    "estimatedCost": 45,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.1076,
+      "longitude": 25.3777
+    },
+    "rating": 4.9,
+    "recommendedTimeOfDay": ["morning"]
+  },
+  {
+    "id": "naxos-06",
+    "countryId": "greece",
+    "cityId": "naxos",
+    "name": "Agia Anna family afternoon",
+    "description": "Combine a gentle beach afternoon with a simple seaside snack.",
+    "image": "/images/cities/naxos.jpg",
+    "category": "family",
+    "tags": ["Hidden gem"],
+    "durationMinutes": 180,
+    "estimatedCost": 15,
+    "currency": "USD",
+    "coordinates": {
+      "latitude": 37.1096,
+      "longitude": 25.3807
+    },
+    "rating": 4.4,
+    "recommendedTimeOfDay": ["afternoon"]
+  }
+]

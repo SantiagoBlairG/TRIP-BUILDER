@@ -1,0 +1,513 @@
+[
+  {
+    "id": "japan-spring",
+    "name": "Japan Spring Escape",
+    "status": "upcoming",
+    "countryIds": ["japan"],
+    "route": [
+      {
+        "id": "japan-spring-stop-1",
+        "cityId": "tokyo",
+        "days": 4
+      },
+      {
+        "id": "japan-spring-stop-2",
+        "cityId": "kyoto",
+        "days": 4
+      },
+      {
+        "id": "japan-spring-stop-3",
+        "cityId": "osaka",
+        "days": 2
+      }
+    ],
+    "startDate": "2027-04-05",
+    "endDate": "2027-04-14",
+    "totalDays": 10,
+    "travelers": [
+      {
+        "id": "japan-spring-traveler-1",
+        "name": "Alex",
+        "type": "adult"
+      },
+      {
+        "id": "japan-spring-traveler-2",
+        "name": "Sam",
+        "type": "adult"
+      }
+    ],
+    "travelerType": "couple",
+    "budget": {
+      "level": "balanced",
+      "currency": "USD"
+    },
+    "theme": "japan",
+    "travelStylePriorities": ["food", "culture", "photography"],
+    "savedActivityIds": [
+      "tokyo-01",
+      "tokyo-02",
+      "kyoto-01",
+      "kyoto-02",
+      "osaka-01",
+      "osaka-02"
+    ],
+    "itinerary": [
+      {
+        "id": "japan-spring-day-1",
+        "dayNumber": 1,
+        "cityId": "tokyo",
+        "activities": [
+          {
+            "id": "japan-spring-scheduled-1",
+            "activityId": "tokyo-01",
+            "startTime": "09:00",
+            "durationMinutes": 150,
+            "costPerPerson": 0,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "japan-spring-day-2",
+        "dayNumber": 2,
+        "cityId": "tokyo",
+        "activities": []
+      },
+      {
+        "id": "japan-spring-day-3",
+        "dayNumber": 3,
+        "cityId": "tokyo",
+        "activities": []
+      },
+      {
+        "id": "japan-spring-day-4",
+        "dayNumber": 4,
+        "cityId": "tokyo",
+        "activities": []
+      },
+      {
+        "id": "japan-spring-day-5",
+        "dayNumber": 5,
+        "cityId": "kyoto",
+        "activities": [
+          {
+            "id": "japan-spring-scheduled-5",
+            "activityId": "kyoto-01",
+            "startTime": "09:00",
+            "durationMinutes": 180,
+            "costPerPerson": 0,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "japan-spring-day-6",
+        "dayNumber": 6,
+        "cityId": "kyoto",
+        "activities": []
+      },
+      {
+        "id": "japan-spring-day-7",
+        "dayNumber": 7,
+        "cityId": "kyoto",
+        "activities": []
+      },
+      {
+        "id": "japan-spring-day-8",
+        "dayNumber": 8,
+        "cityId": "kyoto",
+        "activities": []
+      },
+      {
+        "id": "japan-spring-day-9",
+        "dayNumber": 9,
+        "cityId": "osaka",
+        "activities": [
+          {
+            "id": "japan-spring-scheduled-9",
+            "activityId": "osaka-01",
+            "startTime": "09:00",
+            "durationMinutes": 180,
+            "costPerPerson": 35,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "japan-spring-day-10",
+        "dayNumber": 10,
+        "cityId": "osaka",
+        "activities": []
+      }
+    ]
+  },
+  {
+    "id": "france-summer",
+    "name": "Summer in France",
+    "status": "upcoming",
+    "countryIds": ["france"],
+    "route": [
+      {
+        "id": "france-summer-stop-1",
+        "cityId": "paris",
+        "days": 4
+      },
+      {
+        "id": "france-summer-stop-2",
+        "cityId": "lyon",
+        "days": 2
+      },
+      {
+        "id": "france-summer-stop-3",
+        "cityId": "nice",
+        "days": 3
+      }
+    ],
+    "startDate": "2027-07-10",
+    "endDate": "2027-07-18",
+    "totalDays": 9,
+    "travelers": [
+      {
+        "id": "france-summer-traveler-1",
+        "name": "Alex",
+        "type": "adult"
+      },
+      {
+        "id": "france-summer-traveler-2",
+        "name": "Sam",
+        "type": "adult"
+      }
+    ],
+    "travelerType": "couple",
+    "budget": {
+      "level": "balanced",
+      "currency": "USD"
+    },
+    "theme": "france",
+    "travelStylePriorities": ["culture", "food", "beaches"],
+    "savedActivityIds": [
+      "paris-01",
+      "paris-02",
+      "lyon-01",
+      "lyon-02",
+      "nice-01",
+      "nice-02"
+    ],
+    "itinerary": [
+      {
+        "id": "france-summer-day-1",
+        "dayNumber": 1,
+        "cityId": "paris",
+        "activities": [
+          {
+            "id": "france-summer-scheduled-1",
+            "activityId": "paris-01",
+            "startTime": "09:00",
+            "durationMinutes": 240,
+            "costPerPerson": 32,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "france-summer-day-2",
+        "dayNumber": 2,
+        "cityId": "paris",
+        "activities": []
+      },
+      {
+        "id": "france-summer-day-3",
+        "dayNumber": 3,
+        "cityId": "paris",
+        "activities": []
+      },
+      {
+        "id": "france-summer-day-4",
+        "dayNumber": 4,
+        "cityId": "paris",
+        "activities": []
+      },
+      {
+        "id": "france-summer-day-5",
+        "dayNumber": 5,
+        "cityId": "lyon",
+        "activities": [
+          {
+            "id": "france-summer-scheduled-5",
+            "activityId": "lyon-01",
+            "startTime": "09:00",
+            "durationMinutes": 150,
+            "costPerPerson": 15,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "france-summer-day-6",
+        "dayNumber": 6,
+        "cityId": "lyon",
+        "activities": []
+      },
+      {
+        "id": "france-summer-day-7",
+        "dayNumber": 7,
+        "cityId": "nice",
+        "activities": [
+          {
+            "id": "france-summer-scheduled-7",
+            "activityId": "nice-01",
+            "startTime": "09:00",
+            "durationMinutes": 120,
+            "costPerPerson": 0,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "france-summer-day-8",
+        "dayNumber": 8,
+        "cityId": "nice",
+        "activities": []
+      },
+      {
+        "id": "france-summer-day-9",
+        "dayNumber": 9,
+        "cityId": "nice",
+        "activities": []
+      }
+    ]
+  },
+  {
+    "id": "colombian-caribbean",
+    "name": "Colombian Caribbean",
+    "status": "draft",
+    "countryIds": ["colombia"],
+    "route": [
+      {
+        "id": "colombian-caribbean-stop-1",
+        "cityId": "cartagena",
+        "days": 3
+      },
+      {
+        "id": "colombian-caribbean-stop-2",
+        "cityId": "santa-marta",
+        "days": 4
+      }
+    ],
+    "totalDays": 7,
+    "travelers": [
+      {
+        "id": "colombian-caribbean-traveler-1",
+        "name": "Alex",
+        "type": "adult"
+      },
+      {
+        "id": "colombian-caribbean-traveler-2",
+        "name": "Sam",
+        "type": "adult"
+      }
+    ],
+    "travelerType": "couple",
+    "budget": {
+      "level": "balanced",
+      "currency": "USD"
+    },
+    "theme": "colombia",
+    "travelStylePriorities": ["beaches", "hiking", "food"],
+    "savedActivityIds": [
+      "cartagena-01",
+      "cartagena-02",
+      "santa-marta-01",
+      "santa-marta-02"
+    ],
+    "itinerary": [
+      {
+        "id": "colombian-caribbean-day-1",
+        "dayNumber": 1,
+        "cityId": "cartagena",
+        "activities": []
+      },
+      {
+        "id": "colombian-caribbean-day-2",
+        "dayNumber": 2,
+        "cityId": "cartagena",
+        "activities": []
+      },
+      {
+        "id": "colombian-caribbean-day-3",
+        "dayNumber": 3,
+        "cityId": "cartagena",
+        "activities": []
+      },
+      {
+        "id": "colombian-caribbean-day-4",
+        "dayNumber": 4,
+        "cityId": "santa-marta",
+        "activities": []
+      },
+      {
+        "id": "colombian-caribbean-day-5",
+        "dayNumber": 5,
+        "cityId": "santa-marta",
+        "activities": []
+      },
+      {
+        "id": "colombian-caribbean-day-6",
+        "dayNumber": 6,
+        "cityId": "santa-marta",
+        "activities": []
+      },
+      {
+        "id": "colombian-caribbean-day-7",
+        "dayNumber": 7,
+        "cityId": "santa-marta",
+        "activities": []
+      }
+    ]
+  },
+  {
+    "id": "italian-food",
+    "name": "Italian Food Tour",
+    "status": "past",
+    "countryIds": ["italy"],
+    "route": [
+      {
+        "id": "italian-food-stop-1",
+        "cityId": "rome",
+        "days": 3
+      },
+      {
+        "id": "italian-food-stop-2",
+        "cityId": "florence",
+        "days": 3
+      },
+      {
+        "id": "italian-food-stop-3",
+        "cityId": "positano",
+        "days": 3
+      }
+    ],
+    "startDate": "2026-06-01",
+    "endDate": "2026-06-09",
+    "totalDays": 9,
+    "travelers": [
+      {
+        "id": "italian-food-traveler-1",
+        "name": "Alex",
+        "type": "adult"
+      },
+      {
+        "id": "italian-food-traveler-2",
+        "name": "Sam",
+        "type": "adult"
+      }
+    ],
+    "travelerType": "couple",
+    "budget": {
+      "level": "balanced",
+      "currency": "USD"
+    },
+    "theme": "italy",
+    "travelStylePriorities": ["food", "history", "beaches"],
+    "savedActivityIds": [
+      "rome-01",
+      "rome-02",
+      "florence-01",
+      "florence-02",
+      "positano-01",
+      "positano-02"
+    ],
+    "itinerary": [
+      {
+        "id": "italian-food-day-1",
+        "dayNumber": 1,
+        "cityId": "rome",
+        "activities": [
+          {
+            "id": "italian-food-scheduled-1",
+            "activityId": "rome-01",
+            "startTime": "09:00",
+            "durationMinutes": 240,
+            "costPerPerson": 38,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "italian-food-day-2",
+        "dayNumber": 2,
+        "cityId": "rome",
+        "activities": []
+      },
+      {
+        "id": "italian-food-day-3",
+        "dayNumber": 3,
+        "cityId": "rome",
+        "activities": []
+      },
+      {
+        "id": "italian-food-day-4",
+        "dayNumber": 4,
+        "cityId": "florence",
+        "activities": [
+          {
+            "id": "italian-food-scheduled-4",
+            "activityId": "florence-01",
+            "startTime": "09:00",
+            "durationMinutes": 180,
+            "costPerPerson": 35,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "italian-food-day-5",
+        "dayNumber": 5,
+        "cityId": "florence",
+        "activities": []
+      },
+      {
+        "id": "italian-food-day-6",
+        "dayNumber": 6,
+        "cityId": "florence",
+        "activities": []
+      },
+      {
+        "id": "italian-food-day-7",
+        "dayNumber": 7,
+        "cityId": "positano",
+        "activities": [
+          {
+            "id": "italian-food-scheduled-7",
+            "activityId": "positano-01",
+            "startTime": "09:00",
+            "durationMinutes": 240,
+            "costPerPerson": 25,
+            "status": "planned",
+            "notes": "Demo plan — confirm details before travel."
+          }
+        ]
+      },
+      {
+        "id": "italian-food-day-8",
+        "dayNumber": 8,
+        "cityId": "positano",
+        "activities": []
+      },
+      {
+        "id": "italian-food-day-9",
+        "dayNumber": 9,
+        "cityId": "positano",
+        "activities": []
+      }
+    ]
+  }
+]

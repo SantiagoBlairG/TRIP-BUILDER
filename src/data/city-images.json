@@ -1,0 +1,242 @@
+[
+  {
+    "cityId": "medellin",
+    "src": "/images/cities/medellin.jpg",
+    "alt": "Architectural and city views of Medellín",
+    "caption": "Medellín · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:El_Poblado_Medell%C3%ADn.jpg",
+    "credit": "Daniel-1-1",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "cityId": "cartagena",
+    "src": "/images/cities/cartagena.jpg",
+    "alt": "Architectural and city views of Cartagena, Colombia",
+    "caption": "Cartagena, Colombia · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Museo_Naval_del_Caribe.JPG",
+    "credit": "Sgonzalezb",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "cityId": "bogota",
+    "src": "/images/cities/bogota.jpg",
+    "alt": "Architectural and city views of Bogotá",
+    "caption": "Bogotá · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Bogota,_Colombia_(36668708290).jpg",
+    "credit": "Pedro Szekely from Los Angeles, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "cityId": "santa-marta",
+    "src": "/images/cities/santa-marta.jpg",
+    "alt": "Architectural and city views of Santa Marta",
+    "caption": "Santa Marta · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Bah%C3%ADa_de_Santa_Marta.jpg",
+    "credit": "CristhianVarela",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "cityId": "paris",
+    "src": "/images/cities/paris.jpg",
+    "alt": "Architectural and city views of Paris",
+    "caption": "Paris · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_ao%C3%BBt_2014_(2).jpg",
+    "credit": "Yann Caradec from Paris, France",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "cityId": "lyon",
+    "src": "/images/cities/lyon.jpg",
+    "alt": "Architectural and city views of Lyon",
+    "caption": "Lyon · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Lyon-part-dieu-2023.jpg",
+    "credit": "Aldg692VX",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "cityId": "nice",
+    "src": "/images/cities/nice.jpg",
+    "alt": "Architectural and city views of Nice",
+    "caption": "Nice · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_Nice_IMG_1255.jpg",
+    "credit": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "cityId": "bordeaux",
+    "src": "/images/cities/bordeaux.jpg",
+    "alt": "Architectural and city views of Bordeaux",
+    "caption": "Bordeaux · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Bordeaux_Place_de_la_Bourse_de_nuit.jpg",
+    "credit": "Mariette",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Bordeaux_Place_de_la_Bourse_de_nuit.jpg"
+  },
+  {
+    "cityId": "rome",
+    "src": "/images/cities/rome.jpg",
+    "alt": "Architectural and city views of Rome",
+    "caption": "Rome · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain,_Rome,_Italy_2_-_May_2007.jpg",
+    "credit": "Diliff",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  {
+    "cityId": "florence",
+    "src": "/images/cities/florence.jpg",
+    "alt": "Architectural and city views of Florence",
+    "caption": "Florence · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Firenze_-_Piazzale_Michelangelo,_Firenze,_Italy_-_April_6,_2015_02.jpg",
+    "credit": "Giorgio Galeotti",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "cityId": "venice",
+    "src": "/images/cities/venice.jpg",
+    "alt": "Architectural and city views of Venice",
+    "caption": "Venice · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Venezia_aerial_view.jpg",
+    "credit": "kallerna",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "cityId": "positano",
+    "src": "/images/cities/positano.jpg",
+    "alt": "Architectural and city views of Positano",
+    "caption": "Positano · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Positano_Sunset.JPG",
+    "credit": "JeCCo",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "cityId": "tokyo",
+    "src": "/images/cities/tokyo.jpg",
+    "alt": "Architectural and city views of Tokyo",
+    "caption": "Tokyo · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Shinjuku_2009_January.jpg",
+    "credit": "Morio",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "cityId": "kyoto",
+    "src": "/images/cities/kyoto.jpg",
+    "alt": "Architectural and city views of Kyoto",
+    "caption": "Kyoto · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Kyoto,_Japan_(49667780482).jpg",
+    "credit": "Nina R from Africa",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "cityId": "osaka",
+    "src": "/images/cities/osaka.jpg",
+    "alt": "Architectural and city views of Osaka",
+    "caption": "Osaka · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_03bs3200.jpg",
+    "credit": "663highland",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+  },
+  {
+    "cityId": "hiroshima",
+    "src": "/images/cities/hiroshima.jpg",
+    "alt": "Architectural and city views of Hiroshima",
+    "caption": "Hiroshima · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Atomic_Bomb_Dome_and_Motoyaso_River,_Hiroshima,_Northwest_view_20190417_1.jpg",
+    "credit": "DXR",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "cityId": "barcelona",
+    "src": "/images/cities/barcelona.jpg",
+    "alt": "Architectural and city views of Barcelona",
+    "caption": "Barcelona · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Evening_light_over_Barcelona.jpg",
+    "credit": "M McBey",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "cityId": "madrid",
+    "src": "/images/cities/madrid.jpg",
+    "alt": "Architectural and city views of Madrid",
+    "caption": "Madrid · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Madrid_-_Sky_Bar_360%C2%BA_(Hotel_Riu_Plaza_Espa%C3%B1a),_vistas_19.jpg",
+    "credit": "Zarateman",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "cityId": "seville",
+    "src": "/images/cities/seville.jpg",
+    "alt": "Architectural and city views of Seville",
+    "caption": "Seville · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Sevilla_Cathedral_-_Southeast.jpg",
+    "credit": "Ingo Mehling",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "cityId": "valencia",
+    "src": "/images/cities/valencia.jpg",
+    "alt": "Architectural and city views of Valencia",
+    "caption": "Valencia · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Malvarrosa_Beach,_Valencia,_Spain_(29812271043).jpg",
+    "credit": "Boris Dzhingarov",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "cityId": "athens",
+    "src": "/images/cities/athens.jpg",
+    "alt": "Architectural and city views of Athens",
+    "caption": "Athens · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Athens_Acropolis_at_Daybreak.jpg",
+    "credit": "Andrew Parlette",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "cityId": "santorini",
+    "src": "/images/cities/santorini.jpg",
+    "alt": "Architectural and city views of Santorini",
+    "caption": "Santorini · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Imerovigli_02.jpg",
+    "credit": "Berard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "cityId": "chania",
+    "src": "/images/cities/chania.jpg",
+    "alt": "Architectural and city views of Chania",
+    "caption": "Chania · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Old_Venetian_Harbour_in_Chania,_Greece.jpg",
+    "credit": "dronepicr",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "cityId": "naxos",
+    "src": "/images/cities/naxos.jpg",
+    "alt": "Architectural and city views of Naxos (city)",
+    "caption": "Naxos (city) · city inspiration",
+    "source": "https://commons.wikimedia.org/wiki/File:Naxos_%CE%9D%CE%AC%CE%BE%CE%BF%CF%82_2020-08-20_02_Chora_Grotta_and_Vintzi_beaches.jpg",
+    "credit": "Manfred Werner (Tsui)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+]
