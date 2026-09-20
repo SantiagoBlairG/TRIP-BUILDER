@@ -46,7 +46,7 @@ function Photo({
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
             preload={priority}
-            className="card-photo object-cover"
+            className="card-photo scroll-photo object-cover"
             onError={() => setFailed(true)}
           />
         )}

@@ -1,4 +1,5 @@
 import { ArrowUpRight, CalendarDays, Users } from "lucide-react";
+import Link from "next/link";
 import type { City, Country, Trip } from "@/types/travel";
 import { formatTripDates } from "@/lib/format";
 import { getDestinationImage } from "@/data/images";
@@ -12,12 +13,14 @@ export function TripCard({
   countries,
   cities,
   onOpen,
+  href,
   actionLabel = "Open trip",
 }: {
   trip: Trip;
   countries: readonly Country[];
   cities: readonly City[];
   onOpen?: () => void;
+  href?: string;
   actionLabel?: string;
 }) {
   const country = countries.find((item) => item.id === trip.countryIds[0]);
@@ -44,7 +47,9 @@ export function TripCard({
           {trip.totalDays} days
         </span>
       </div>
-      <h3 className="font-display text-3xl leading-tight">{trip.name}</h3>
+      <h3 className="text-2xl font-semibold leading-tight tracking-tight">
+        {trip.name}
+      </h3>
       <p className="text-sm text-muted-foreground">
         {trip.route
           .map(
@@ -64,17 +69,26 @@ export function TripCard({
           {trip.travelers.length} travelers
         </p>
       </div>
-      {onOpen && (
-        <Button
-          type="button"
-          variant="outline"
-          className="w-full justify-between"
-          onClick={onOpen}
-          aria-label={`${actionLabel}: ${trip.name}`}
-        >
-          {actionLabel}
-          <ArrowUpRight aria-hidden="true" />
+      {href ? (
+        <Button asChild variant="outline" className="w-full justify-between">
+          <Link href={href} aria-label={`${actionLabel}: ${trip.name}`}>
+            {actionLabel}
+            <ArrowUpRight aria-hidden="true" />
+          </Link>
         </Button>
+      ) : (
+        onOpen && (
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full justify-between"
+            onClick={onOpen}
+            aria-label={`${actionLabel}: ${trip.name}`}
+          >
+            {actionLabel}
+            <ArrowUpRight aria-hidden="true" />
+          </Button>
+        )
       )}
     </>
   );

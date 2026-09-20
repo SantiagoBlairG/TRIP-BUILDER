@@ -287,7 +287,7 @@ export function CardGallery() {
         <>
           <SectionHeading
             title="Stories waiting to happen."
-            description="Four normalized demo trips · Opening trips and the trip library arrive in Phase 2."
+            description="Four sample adventures · Open a trip to review its route and collected ideas."
           />
           <div className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {demoTrips.map((trip) => (
@@ -296,6 +296,7 @@ export function CardGallery() {
                 trip={trip}
                 countries={countries}
                 cities={cities}
+                href={`/trips/${trip.id}`}
               />
             ))}
           </div>

@@ -16,8 +16,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       >
         Skip to content
       </a>
-      <header className="border-b bg-background">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8 lg:px-12">
+      <header className="glass-surface border-b bg-card">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:px-8">
           <Link
             href="/"
             aria-label="Roam home"
@@ -34,8 +34,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               href="/"
               aria-current={pathname === "/" ? "page" : undefined}
               className={cn(
-                "flex min-h-11 items-center gap-2 rounded-lg px-4 text-sm",
-                pathname === "/"
+                "flex min-h-11 items-center gap-2 rounded-full px-4 text-sm",
+                pathname === "/" || pathname.startsWith("/trips/")
                   ? "bg-secondary font-medium text-secondary-foreground"
                   : "text-muted-foreground hover:bg-muted",
               )}
@@ -47,7 +47,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               href="/builder"
               aria-current={pathname === "/builder" ? "page" : undefined}
               className={cn(
-                "flex min-h-11 items-center gap-2 rounded-lg px-4 text-sm",
+                "flex min-h-11 items-center gap-2 rounded-full px-4 text-sm",
                 pathname === "/builder"
                   ? "bg-secondary font-medium text-secondary-foreground"
                   : "text-muted-foreground hover:bg-muted",
@@ -68,11 +68,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <main
         id="main-content"
         tabIndex={-1}
-        className="mx-auto max-w-7xl px-5 py-10 focus:outline-none sm:px-8 lg:px-12 lg:py-14"
+        className="mx-auto max-w-7xl px-4 py-6 focus:outline-none sm:px-6 lg:px-8 lg:py-8"
       >
         {children}
       </main>
-      <footer className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-5 py-8 text-xs text-muted-foreground sm:flex-row sm:px-8 lg:px-12">
+      <footer className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8">
         <span>A little planning. A lot to look forward to.</span>
         <Link
           href="/card-gallery"

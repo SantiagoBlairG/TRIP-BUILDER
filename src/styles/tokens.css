@@ -1,33 +1,51 @@
 :root {
-  --background: #f7f6f2;
-  --foreground: #282d29;
-  --card: #ffffff;
-  --card-foreground: #282d29;
+  --background: #edf2fb;
+  --foreground: #182b49;
+  --card: rgb(255 255 255 / 76%);
+  --card-foreground: #182b49;
   --popover: #ffffff;
-  --popover-foreground: #282d29;
-  --primary: #304e40;
+  --popover-foreground: #182b49;
+  --primary: #2856bd;
   --primary-foreground: #ffffff;
-  --secondary: #eceee7;
-  --secondary-foreground: #344a3d;
-  --muted: #eeede7;
-  --muted-foreground: #65685f;
-  --accent: #e4eadf;
-  --accent-foreground: #304e40;
+  --secondary: #e3ebfc;
+  --secondary-foreground: #244a91;
+  --muted: #e8eef8;
+  --muted-foreground: #53637b;
+  --accent: #dce7fc;
+  --accent-foreground: #2856bd;
   --destructive: #b13226;
-  --border: #dedfd6;
-  --input: #c8cbc0;
-  --ring: #446753;
-  --route: #e6e8f5;
-  --dates: #f7edbc;
-  --travelers: #f5e1e5;
-  --budget: #deeee4;
+  --border: #d4dff0;
+  --input: #b9c9e2;
+  --ring: #3162cf;
+  --route: #e0eaff;
+  --dates: #f7efcf;
+  --travelers: #f6e6ef;
+  --budget: #e0f1ed;
   --transport: #263f67;
   --warning: #f7d9cd;
-  --recommendation: #eee4f6;
+  --recommendation: #eae6fa;
+  --canvas-glow:
+    radial-gradient(ellipse at 8% 0%, rgb(143 181 247 / 30%), transparent 48%),
+    radial-gradient(
+      ellipse at 95% 30%,
+      rgb(182 175 240 / 20%),
+      transparent 48%
+    ),
+    radial-gradient(ellipse at 30% 95%, rgb(162 219 240 / 22%), transparent 48%);
+  --glass-highlight: linear-gradient(
+    135deg,
+    rgb(255 255 255 / 42%),
+    rgb(255 255 255 / 5%)
+  );
+  --primary-gradient: linear-gradient(135deg, #386bd4, #264db0);
+  --progress-gradient: linear-gradient(145deg, #3568cd, #203d83);
+  --shadow-control:
+    0 3px 10px rgb(40 86 189 / 18%), inset 0 1px 0 rgb(255 255 255 / 22%);
   --radius: 0.75rem;
-  --radius-card: 1.5rem;
-  --shadow-card: 0 8px 28px rgb(40 45 41 / 4%);
-  --shadow-raised: 0 16px 40px rgb(40 45 41 / 10%);
+  --radius-card: 1.375rem;
+  --shadow-card:
+    0 4px 20px rgb(35 67 125 / 5%), inset 0 1px 0 rgb(255 255 255 / 75%);
+  --shadow-raised: 0 12px 30px rgb(35 67 125 / 12%);
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --duration-layout: 500ms;
@@ -35,6 +53,13 @@
   --destination: var(--primary);
   --destination-soft: var(--secondary);
   --destination-highlight: var(--dates);
+  --photo-foreground: #ffffff;
+  --photo-overlay: linear-gradient(
+    180deg,
+    rgb(13 25 19 / 32%) 0%,
+    rgb(13 25 19 / 8%) 25%,
+    rgb(13 25 19 / 82%) 100%
+  );
 }
 
 [data-theme="colombia"] {
@@ -45,7 +70,7 @@
 [data-theme="france"] {
   --destination: #304c79;
   --destination-soft: #e5ecf7;
-  --destination-highlight: #f7edbc;
+  --destination-highlight: #f7efcf;
 }
 [data-theme="italy"] {
   --destination: #555a2c;

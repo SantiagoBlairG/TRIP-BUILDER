@@ -4,9 +4,11 @@ A frontend-only visual travel planner, built incrementally from [PLAN.md](PLAN.m
 
 ## Current scope
 
-Phases 0–1 provide the application foundation, a responsive home preview, a builder placeholder, and the data/card system. Visit `/card-gallery` (also linked in the footer) to try destination selection, city-scoped activities, preference ranking, saved states, expandable details, and responsive card sizes. Gallery selections are temporary and reset on reload.
+Phases 0–2 provide the application foundation, a trip library, read-only sample-trip pages, a builder placeholder, and the data/card system. The home library groups upcoming, draft, and past trips, with status filters and search by trip, country, or city. Open any trip to review its route, dates, travelers, interests, and saved ideas. Unknown trip links show a recovery page.
 
-The validated catalog contains six countries, 24 cities, 144 activities, and four demo trips. Trip-library navigation, persistence, actual drag and drop, and itinerary planning arrive in subsequent phases. “Roam” is a working product name.
+Visit `/card-gallery` (also linked in the footer) to try destination selection, city-scoped activities, preference ranking, saved states, expandable details, and responsive card sizes. Gallery selections and library filters are temporary and reset on reload.
+
+The validated catalog contains six countries, 24 cities, 144 activities, and four demo trips. Creation/editing, persistence, actual drag and drop, and the full Bento workspace arrive in subsequent phases. “Roam” is a working product name.
 
 ## Run locally
 
@@ -18,6 +20,8 @@ npm run dev
 ```
 
 Open http://localhost:3000. No secrets or environment variables are required. The first development/production compilation downloads Geist and Instrument Serif through `next/font`; subsequent page requests serve the fonts locally.
+
+For a production preview, run `npm run build` then `npm start`. Browse `/` for the trip library, `/trips/japan-spring` for a sample trip, and `/card-gallery` for interactive card previews. `/builder` is still a labeled placeholder. If a previously started preview is no longer available, either command above starts it again.
 
 ## Commands
 

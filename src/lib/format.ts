@@ -17,14 +17,29 @@ export function formatDuration(minutes: number): string {
 }
 export function formatTripDates(startDate?: string, endDate?: string): string {
   if (!startDate || !endDate) return "Dates to dream about";
-  const formatter = new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    timeZone: "UTC",
-  });
-  return formatter.formatRange(
-    new Date(`${startDate}T00:00:00Z`),
-    new Date(`${endDate}T00:00:00Z`),
-  );
+  // Validated calendar dates, not instants. Fixed punctuation avoids Node/browser
+  // ICU formatRange differences during hydration.
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const [startYear, startMonth, startDay] = startDate.split("-").map(Number);
+  const [endYear, endMonth, endDay] = endDate.split("-").map(Number);
+  const start = `${months[startMonth - 1]} ${startDay}`;
+  const end = `${months[endMonth - 1]} ${endDay}`;
+  if (startDate === endDate) return `${start}, ${startYear}`;
+  if (startYear !== endYear)
+    return `${start}, ${startYear} – ${end}, ${endYear}`;
+  if (startMonth !== endMonth) return `${start} – ${end}, ${startYear}`;
+  return `${start}–${endDay}, ${startYear}`;
 }
