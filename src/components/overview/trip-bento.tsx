@@ -48,7 +48,7 @@ export function TripBento({ trip }: { trip: Trip }) {
   return (
     <>
       <Link
-        href="/"
+        href="/trips"
         className="mb-3 inline-flex min-h-11 items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary"
       >
         <ArrowLeft className="size-3.5" aria-hidden="true" />
@@ -93,11 +93,9 @@ export function TripBento({ trip }: { trip: Trip }) {
           </div>
           <div>
             <p className="mb-2 text-xs tracking-wide">A change of scenery.</p>
-            <h2 className="font-display text-7xl leading-none tracking-tight sm:text-8xl">
+            <h2 className="font-bold tracking-tight text-5xl leading-none tracking-tight sm:text-6xl">
               {country?.name ?? "Somewhere new"}
-              <span className="block text-5xl italic sm:text-6xl">
-                at your pace.
-              </span>
+              <span className="block text-4xl sm:text-5xl">at your pace.</span>
             </h2>
             <p className="mt-5 max-w-xs text-sm leading-6 text-white/90">
               {country?.description ?? "A little room for the unexpected."}
@@ -218,10 +216,10 @@ export function TripBento({ trip }: { trip: Trip }) {
             <h2 className={styles.eyebrow}>Your travel mood</h2>
             <Sparkles className="size-4" strokeWidth={1.5} aria-hidden="true" />
           </div>
-          <p className="mt-5 mb-5 font-display text-4xl leading-tight">
+          <p className="mt-5 mb-5 font-bold tracking-tight text-4xl leading-tight">
             A little more
             <br />
-            <span className="italic">you.</span>
+            <span className="text-primary">you.</span>
           </p>
           <ol className="space-y-3">
             {trip.travelStylePriorities.map((id, index) => (

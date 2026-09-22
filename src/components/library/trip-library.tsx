@@ -8,6 +8,7 @@ import { BaseCard } from "@/components/cards/base-card";
 import { Button } from "@/components/ui/button";
 import { cities, countries } from "@/data/catalog";
 import type { Trip } from "@/types/travel";
+import { DraftResume } from "./draft-resume";
 
 const sections = [
   {
@@ -50,31 +51,40 @@ export function TripLibrary({ trips }: { trips: readonly Trip[] }) {
   });
   return (
     <>
-      <section className="mb-6 flex flex-wrap items-end justify-between gap-6">
+      <section className="page-hero mb-6 flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="mb-3 text-xs font-semibold tracking-[0.2em] text-primary uppercase">
+          <p className="mb-3 text-xs font-semibold tracking-[0.2em] hero-copy uppercase">
             Your world, a little closer
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Somewhere <span className="text-primary">to look forward to.</span>
+            Somewhere <span className="hero-copy">to look forward to.</span>
           </h1>
-          <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">
+          <p className="hero-copy mt-3 max-w-xl text-sm leading-6">
             Big adventures, little escapes, and all the ideas in between. Keep
             your next chapter in one place.
           </p>
         </div>
-        <Button asChild>
-          <Link href="/builder">
-            <Plus aria-hidden="true" />
-            Create a new trip
-          </Link>
-        </Button>
       </section>
+      <DraftResume />
       {trips.length === 0 ? (
         <LibraryEmpty />
       ) : (
         <>
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b pb-3">
+          <div className="mb-4 flex flex-wrap items-center gap-3 border-b pb-3">
+            <label className="flex min-h-11 w-full items-center gap-2 rounded-full border bg-card px-3 sm:w-60">
+              <Search
+                className="size-4 shrink-0 text-muted-foreground"
+                aria-hidden="true"
+              />
+              <span className="sr-only">Search trips</span>
+              <input
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Trip, country, or city"
+                className="min-w-0 flex-1 bg-transparent py-2 text-sm"
+              />
+            </label>
             <nav aria-label="Filter trips" className="flex flex-wrap gap-1">
               {(["all", "upcoming", "draft", "past"] as const).map((status) => (
                 <Button
@@ -99,20 +109,12 @@ export function TripLibrary({ trips }: { trips: readonly Trip[] }) {
                 </Button>
               ))}
             </nav>
-            <label className="flex min-h-11 w-full items-center gap-2 rounded-full border bg-card px-3 sm:w-72">
-              <Search
-                className="size-4 shrink-0 text-muted-foreground"
-                aria-hidden="true"
-              />
-              <span className="sr-only">Search trips</span>
-              <input
-                type="search"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Trip, country, or city"
-                className="min-w-0 flex-1 bg-transparent py-2 text-sm"
-              />
-            </label>
+            <Button asChild className="lg:ml-auto">
+              <Link href="/builder">
+                <Plus aria-hidden="true" />
+                Create a new trip
+              </Link>
+            </Button>
           </div>
           <p role="status" className="mb-4 text-xs text-muted-foreground">
             {filtered.length} {filtered.length === 1 ? "trip" : "trips"} in view
@@ -182,7 +184,7 @@ export function TripLibrary({ trips }: { trips: readonly Trip[] }) {
                             strokeWidth={1.5}
                             aria-hidden="true"
                           />
-                          <p className="font-display text-4xl">
+                          <p className="text-4xl font-bold tracking-tight">
                             Where to next?
                           </p>
                           <p className="mt-3 mb-6 text-sm leading-6 text-muted-foreground">
@@ -215,7 +217,7 @@ function LibraryEmpty() {
         strokeWidth={1.5}
         aria-hidden="true"
       />
-      <h2 className="font-display text-4xl">
+      <h2 className="text-4xl font-bold tracking-tight">
         Your first adventure starts here.
       </h2>
       <p className="mx-auto mt-4 mb-6 max-w-md text-sm leading-6 text-muted-foreground">

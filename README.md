@@ -4,11 +4,11 @@ A frontend-only visual travel planner, built incrementally from [PLAN.md](PLAN.m
 
 ## Current scope
 
-Phases 0–2 provide the application foundation, a trip library, read-only sample-trip pages, a builder placeholder, and the data/card system. The home library groups upcoming, draft, and past trips, with status filters and search by trip, country, or city. Open any trip to review its route, dates, travelers, interests, and saved ideas. Unknown trip links show a recovery page.
+Phases 0–2 provide the application foundation, a trip library, read-only sample-trip pages, an interactive draft builder, and the data/card system. The library at `/trips` groups upcoming, draft, and past trips, with status filters and search by trip, country, or city. Open any trip to review its route, dates, travelers, interests, and saved ideas. Unknown trip links show a recovery page.
 
 Visit `/card-gallery` (also linked in the footer) to try destination selection, city-scoped activities, preference ranking, saved states, expandable details, and responsive card sizes. Gallery selections and library filters are temporary and reset on reload.
 
-The validated catalog contains six countries, 24 cities, 144 activities, and four demo trips. Creation/editing, persistence, actual drag and drop, and the full Bento workspace arrive in subsequent phases. “Roam” is a working product name.
+The validated catalog contains six countries, 24 cities, 144 activities, and four demo trips. The builder saves one active draft locally, with destination and city selection, drag/drop and keyboard route ordering, dates, travelers, budget, interests, and saved activities. Apply the Details form to save those fields; other selections save immediately. Resume from My trips or `/builder`. Finished-trip creation and the full editable Bento workspace arrive in Phase 4. “Roam” is a working product name.
 
 ## Run locally
 
@@ -21,7 +21,7 @@ npm run dev
 
 Open http://localhost:3000. No secrets or environment variables are required. The first development/production compilation downloads Geist and Instrument Serif through `next/font`; subsequent page requests serve the fonts locally.
 
-For a production preview, run `npm run build` then `npm start`. Browse `/` for the trip library, `/trips/japan-spring` for a sample trip, and `/card-gallery` for interactive card previews. `/builder` is still a labeled placeholder. If a previously started preview is no longer available, either command above starts it again.
+For a production preview, run `npm run build` then `npm start`. Browse `/` for the animated introduction, `/trips` for the trip library, `/trips/japan-spring` for a sample trip, and `/card-gallery` for interactive card previews. `/builder` opens your current draft (or an empty canvas). Use Start over to clear it after confirmation. If a previously started preview is no longer available, either command above starts it again.
 
 ## Commands
 
@@ -32,7 +32,7 @@ For a production preview, run `npm run build` then `npm start`. Browse `/` for t
 | `npm run typecheck`     | Strict TypeScript check                       |
 | `npm run test`          | Vitest and React Testing Library              |
 | `npm run test:watch`    | Interactive tests                             |
-| `npm run test:e2e`      | Production browser gallery checks             |
+| `npm run test:e2e`      | Production browser flow checks                |
 | `npm run data:generate` | Regenerate normalized JSON from curated seeds |
 | `npm run format`        | Format source and documentation               |
 | `npm run format:check`  | Check formatting                              |
@@ -53,13 +53,16 @@ You can use an installed browser without downloading Chromium. In PowerShell: `$
 - `src/components/ui`: customized shadcn-style primitives with Radix behavior.
 - `src/components/navigation`: shared responsive application shell.
 - `src/components/cards`: reusable domain cards and the internal gallery.
+- `src/components/builder`: contextual tray, route canvas, validated details form, and drag controls.
+- `src/stores/builder-store.ts`: versioned Zustand local draft persistence.
+- `src/lib/builder.ts`: draft schema, dependent-selection cleanup, readiness and mock budget calculations.
 - `src/components/providers.tsx`: Motion configuration respecting reduced motion.
 - `src/styles/tokens.css`: semantic design tokens.
 - `src/types/travel.ts`: Zod schemas and inferred TypeScript domain models.
 - `src/data`: normalized JSON fixtures, validated catalog exports, travel styles, and photo metadata.
 - `src/lib`: relationship validation, destination-aware recommendations, formatting, and shared utilities.
 - `src/test`: shared test setup.
-- `e2e`: Playwright checks for the gallery.
+- `e2e`: Playwright checks for landing motion, library navigation, gallery interactions, and draft building/recovery.
 - `public/images`: checked-in destination photographs and source credits.
 
 Edit curated content in `scripts/generate-fixtures.mjs`, run `npm run data:generate`, then format and test. IDs are deliberately stable; append new activities rather than renumbering existing entries. All mock costs use USD; ratings and activity map pins are simulated. There are six country photos and 24 city photos; activities reuse their own city's image as labeled inspiration. See [country photo credits](public/images/CREDITS.md) and [city photo credits and licenses](public/images/cities/CREDITS.md). The optional `scripts/download-images.mjs` and `scripts/download-city-images.mjs` utilities reproduce those local assets; they are not required to run the app.

@@ -1,6 +1,4 @@
-﻿import { TripLibrary } from "@/components/library/trip-library";
-import { demoTrips } from "@/data/catalog";
-
+import { LandingPage } from "@/components/landing/landing-page";
 export default function HomePage() {
-  return <TripLibrary trips={demoTrips} />;
+  return <LandingPage />;
 }

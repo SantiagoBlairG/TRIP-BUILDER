@@ -101,7 +101,7 @@ export function CardGallery() {
           <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-primary uppercase">
             The Roam collection · Phase 1
           </p>
-          <h1 className="font-display text-5xl tracking-tight sm:text-6xl">
+          <h1 className="font-bold tracking-tight text-5xl tracking-tight sm:text-6xl">
             Small cards.{" "}
             <span className="text-primary italic">Big possibilities.</span>
           </h1>
@@ -314,7 +314,7 @@ export function CardGallery() {
                 size="horizontal"
                 footer="Tokyo → Kyoto → Osaka"
               >
-                <p className="font-display text-4xl">
+                <p className="font-bold tracking-tight text-4xl">
                   A new perspective,
                   <br />
                   one neighborhood at a time.
@@ -354,7 +354,7 @@ export function CardGallery() {
               footer="A little structure, a lot of possibility."
             >
               <Route className="mb-4 size-8" aria-hidden="true" />
-              <p className="font-display text-4xl leading-tight">
+              <p className="font-bold tracking-tight text-4xl leading-tight">
                 Every stop has a story.
               </p>
               <p className="mt-5 text-sm leading-6">

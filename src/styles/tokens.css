@@ -1,4 +1,10 @@
 :root {
+  --brand-blue: #0879d4;
+  --brand-deep: #074999;
+  --brand-sky: #bde7ff;
+  --brand-panel:
+    radial-gradient(ellipse at 100% 100%, #26a9e2, transparent 65%),
+    linear-gradient(145deg, var(--brand-deep), var(--brand-blue));
   --background: #edf2fb;
   --foreground: #182b49;
   --card: rgb(255 255 255 / 76%);
@@ -42,7 +48,7 @@
   --shadow-control:
     0 3px 10px rgb(40 86 189 / 18%), inset 0 1px 0 rgb(255 255 255 / 22%);
   --radius: 0.75rem;
-  --radius-card: 1.375rem;
+  --radius-card: 1.75rem;
   --shadow-card:
     0 4px 20px rgb(35 67 125 / 5%), inset 0 1px 0 rgb(255 255 255 / 75%);
   --shadow-raised: 0 12px 30px rgb(35 67 125 / 12%);

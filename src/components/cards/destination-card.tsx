@@ -30,7 +30,9 @@ export function DestinationCard({
         </span>
       </div>
       <div>
-        <h3 className="font-display text-4xl leading-tight">{country.name}</h3>
+        <h3 className="font-bold tracking-tight text-4xl leading-tight">
+          {country.name}
+        </h3>
         <p className="mt-2 min-h-12 text-sm leading-6 text-muted-foreground">
           {country.description}
         </p>

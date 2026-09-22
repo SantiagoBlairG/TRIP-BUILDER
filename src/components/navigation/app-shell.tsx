@@ -31,11 +31,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             className="order-3 flex w-full items-center gap-2 sm:order-none sm:w-auto"
           >
             <Link
-              href="/"
-              aria-current={pathname === "/" ? "page" : undefined}
+              href="/trips"
+              aria-current={pathname.startsWith("/trips") ? "page" : undefined}
               className={cn(
                 "flex min-h-11 items-center gap-2 rounded-full px-4 text-sm",
-                pathname === "/" || pathname.startsWith("/trips/")
+                pathname.startsWith("/trips")
                   ? "bg-secondary font-medium text-secondary-foreground"
                   : "text-muted-foreground hover:bg-muted",
               )}
@@ -68,7 +68,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <main
         id="main-content"
         tabIndex={-1}
-        className="mx-auto max-w-7xl px-4 py-6 focus:outline-none sm:px-6 lg:px-8 lg:py-8"
+        className={
+          pathname === "/"
+            ? "px-3 py-3 focus:outline-none sm:px-5"
+            : "mx-auto max-w-7xl px-4 py-6 focus:outline-none sm:px-6 lg:px-8 lg:py-8"
+        }
       >
         {children}
       </main>

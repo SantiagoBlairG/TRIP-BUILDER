@@ -32,7 +32,7 @@
 - [x] Add responsive library layouts and a no-trips state.
 - [x] Verify navigation, responsive behavior, tests, lint, and production build.
 - [x] Start and verify a local preview for user review.
-- [ ] Review Phase 2 before broad Phase 3 changes.
+- [x] Review Phase 2 before broad Phase 3 changes (user authorized the next phase).
 
 The interactive builder, persisted drafts, and complete Bento overview remain in Phases 3–4. Reuse the validated catalog and card components instead of recreating them.
 
@@ -115,3 +115,19 @@ Next: Phase 3 — contextual builder tray/canvas, destination and route editing,
 - Reduced page padding, card padding, library section spacing, and bento gutters while preserving responsive card proportions and existing interactions.
 - Lint, strict TypeScript, production build, all 19 unit/component tests, and all 10 Playwright checks passed. Reviewed desktop library and trip screenshots plus tablet and phone trip layouts.
 - Interactive builder and persistence remain upcoming Phase 3 work.
+
+## Landing page and motion refinement - September 21, 2026
+
+- Added the requested introduction at `/`; moved the existing library to `/trips` and updated navigation, trip return links, and route tests.
+- Introduced bold Geist headlines, wide rounded blue hero/finale panels, floating destination cards, and a sticky desktop storytelling section.
+- Added reversible native scroll timelines for hero parallax and card reveals. Unsupported browsers retain static content; reduced motion disables scroll effects and sticky storytelling. Mobile uses a single-column story.
+- Completed the earlier headline refinement and removed the sample-trip banner from the library.
+- Lint, production build (including TypeScript), 19 unit tests, and 14 browser tests passed. Browser coverage includes landing navigation at three widths and scroll reversal/reduced motion.
+- Builder functionality and persistence remain Phase 3 work.
+
+## Shared landing style and stronger motion - September 21, 2026
+
+- Extended bold Geist typography and rounded cards to trip details, the gallery, and recovery pages. My trips and the builder preview now use shared blue hero panels. Builder remains a preview with working links to sample trips and destinations.
+- Promoted brand blues and panel gradient to shared tokens. Increased hero parallax, photo drift, and card reveal distances while retaining reduced-motion support.
+- Fixed a focus-triggered animation reset that moved cards during clicks.
+- Production build, lint, 19 unit tests, and 14 browser tests passed after the fix. No phase advancement.

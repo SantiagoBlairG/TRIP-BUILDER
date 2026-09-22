@@ -7,7 +7,7 @@ test("all sample trips open, survive reload, and return to the library", async (
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   for (const trip of trips) {
-    await page.goto("/");
+    await page.goto("/trips");
     await page
       .getByRole("link", {
         name: `${trip.status === "draft" ? "Review draft" : "View trip"}: ${trip.name}`,
@@ -32,7 +32,7 @@ test("all sample trips open, survive reload, and return to the library", async (
 test("search recovery, new-trip navigation, and unknown trip recovery", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/trips");
   await page
     .getByRole("searchbox", { name: "Search trips" })
     .fill("Not a real trip");
@@ -49,7 +49,7 @@ test("search recovery, new-trip navigation, and unknown trip recovery", async ({
     }),
   ).toBeVisible();
   await page.getByRole("link", { name: "Back to my trips" }).click();
-  await expect(page).toHaveURL("/");
+  await expect(page).toHaveURL("/trips");
 });
 
 for (const width of [375, 768, 1440]) {
@@ -57,7 +57,7 @@ for (const width of [375, 768, 1440]) {
     page,
   }, testInfo) => {
     await page.setViewportSize({ width, height: 1000 });
-    for (const path of ["/", "/trips/japan-spring"]) {
+    for (const path of ["/trips", "/trips/japan-spring"]) {
       await page.goto(path);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
       expect(
@@ -67,7 +67,7 @@ for (const width of [375, 768, 1440]) {
       ).toBe(true);
       await page.screenshot({
         path: testInfo.outputPath(
-          `${path === "/" ? "library" : "trip"}-${width}.png`,
+          `${path === "/trips" ? "library" : "trip"}-${width}.png`,
         ),
         fullPage: true,
       });
