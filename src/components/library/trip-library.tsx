@@ -8,6 +8,7 @@ import { BaseCard } from "@/components/cards/base-card";
 import { Button } from "@/components/ui/button";
 import { cities, countries } from "@/data/catalog";
 import type { Trip } from "@/types/travel";
+import { useTripLibrary } from "@/stores/trip-store";
 import { DraftResume } from "./draft-resume";
 
 const sections = [
@@ -28,7 +29,9 @@ const sections = [
   },
 ] as const;
 
-export function TripLibrary({ trips }: { trips: readonly Trip[] }) {
+export function TripLibrary({ trips: samples }: { trips: readonly Trip[] }) {
+  const {trips: localTrips, error} = useTripLibrary();
+  const trips = [...localTrips, ...samples];
   const [filter, setFilter] = useState<"all" | Trip["status"]>("all");
   const [query, setQuery] = useState("");
   const normalizedQuery = query.trim().toLocaleLowerCase();
@@ -66,6 +69,7 @@ export function TripLibrary({ trips }: { trips: readonly Trip[] }) {
         </div>
       </section>
       <DraftResume />
+      {error && <p role="alert" className="mb-4 text-sm text-destructive">{error}</p>}
       {trips.length === 0 ? (
         <LibraryEmpty />
       ) : (

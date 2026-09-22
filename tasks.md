@@ -150,6 +150,7 @@ One active draft is supported on this browser/device. Details save on Apply; oth
 
 ## Builder timeline refinement - September 22, 2026
 
+- Added country-card instructions pointing to the floating trip bar and disabled drag-induced auto-scrolling across the builder. Verified stationary page position during an edge drag, all 9 builder browser tests, lint, formatting, and production build.
 - Replaced oversized country/city/activity cards in the builder with compact photo-and-title selection cards; the gallery retains its full-detail variants.
 - Replaced the side canvas with a full-width step timeline and floating bottom selection bar, with horizontal choice chips and Back/Next controls. Review expands route ordering, day allocations, interests, saved ideas, and budget without losing the current step.
 - Removed separate drag labels. Whole-card mouse dragging and touch-and-hold dragging share native tap/keyboard selection controls.

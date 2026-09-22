@@ -139,9 +139,13 @@ test("pointer drag adds a destination and keyboard reorders the route", async ({
   const from = await handle.boundingBox();
   const to = await page.locator("[class*=dockDrop]").boundingBox();
   if (!from || !to) throw new Error("Missing drag target");
+  const scrollBeforeDrag = await page.evaluate(() => window.scrollY);
   await page.mouse.move(from.x + 20, from.y + 20);
   await page.mouse.down();
   await page.mouse.move(to.x + 80, to.y + 20, { steps: 20 });
+  // Hold near the viewport edge long enough to catch drag-induced scrolling.
+  await page.waitForTimeout(600);
+  expect(await page.evaluate(() => window.scrollY)).toBe(scrollBeforeDrag);
   await page.mouse.up();
   // dnd-kit suppresses synthetic clicks for 50ms after releasing a pointer drag.
   await page.waitForTimeout(80);

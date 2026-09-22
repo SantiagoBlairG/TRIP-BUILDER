@@ -341,6 +341,7 @@ export function TripBuilder() {
       </p>
       <DndContext
         sensors={sensors}
+        autoScroll={false}
         onDragStart={(e) =>
           setDragLabel(e.active.data.current?.name ?? "Moving route stop")
         }
@@ -409,6 +410,10 @@ export function TripBuilder() {
                       ))}
                     </select>
                   </label>
+                  <p className="mb-4 text-sm text-primary">
+                    Drag and drop your chosen countries into the floating trip
+                    bar below, or tap a card to select it.
+                  </p>
                   <div className={styles.cards}>
                     {visibleCountries.map((c) => (
                       <SelectionCard
