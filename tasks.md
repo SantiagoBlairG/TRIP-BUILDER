@@ -34,25 +34,36 @@
 - [x] Start and verify a local preview for user review.
 - [x] Review Phase 2 before broad Phase 3 changes (user authorized the next phase).
 
-The interactive builder and persisted draft are complete. Finished-trip creation and the complete editable Bento overview remain in Phase 4. Reuse the validated catalog and card components instead of recreating them.
+The interactive builder, persisted draft, local trip creation, and Bento overview are complete. Day-by-day itinerary editing is next in Phase 5. Reuse the validated catalog and card components instead of recreating them.
 
 ## Next phases
 
 - [x] Phase 1: normalized domain data and reusable card variants.
 - [x] Phase 2: trip library and demo trips.
 - [x] Phase 3: interactive builder and persisted drafts.
-- [ ] Phase 4: builder transition and Bento overview.
+- [x] Phase 4: builder transition and Bento overview.
 - [ ] Phase 5: itinerary editing and derived calculations.
 - [ ] Phase 6: places, simulated map, bookings, and budget.
 - [ ] Phase 7: responsive/accessibility polish and end-to-end quality.
 
 ## Phase 0 verification
 
-- `npm run format:check`: passed.
-- `npm run lint`: passed with zero warnings.
-- `npm run typecheck`: passed.
-- `npm run test`: one navigation/accessibility test passed.
-- `npm run build`: passed; `/`, `/builder`, and the not-found page prerendered successfully.
+-
+
+pm run format:check`: passed.
+-
+
+pm run lint`: passed with zero warnings.
+-
+
+pm run typecheck`: passed.
+-
+
+pm run test`: one navigation/accessibility test passed.
+-
+
+pm run build`: passed; `/`, `/builder`, and the not-found page prerendered successfully.
+
 - Test workers and font downloads required execution outside the restricted sandbox.
 - Browser visual inspection and end-to-end flows have not been run in Phase 0.
 
@@ -69,12 +80,25 @@ The interactive builder and persisted draft are complete. Finished-trip creation
 
 Verified the existing implementation at commit `0de9e22`; the repository was clean before this status update. No application code needed rebuilding or replacement.
 
-- `npm run format:check`: passed.
-- `npm run lint`: passed with zero warnings.
-- `npm run typecheck`: passed.
-- `npm run test`: 15 tests passed across four files.
-- `npm run build`: passed; home, builder preview, card gallery, and not-found page prerendered successfully.
-- `npm run test:e2e` with `PLAYWRIGHT_CHANNEL=msedge`: all five tests passed against the production build.
+-
+
+pm run format:check`: passed.
+-
+
+pm run lint`: passed with zero warnings.
+-
+
+pm run typecheck`: passed.
+-
+
+pm run test`: 15 tests passed across four files.
+-
+
+pm run build`: passed; home, builder preview, card gallery, and not-found page prerendered successfully.
+-
+
+pm run test:e2e`with`PLAYWRIGHT_CHANNEL=msedge`: all five tests passed against the production build.
+
 - Browser coverage: all 24 city photos and six country photos load; destination selections scope cities and activities; keyboard saving, expandable details, reset, and fallback work; gallery layouts fit 375px, 768px, and 1440px widths.
 - Reviewed the generated desktop and tablet screenshots. Screenshots remain in ignored `test-results/`.
 - Tests/build/browser processes used approved execution outside the restricted sandbox. Browser output included only the environment's non-blocking NO_COLOR/FORCE_COLOR notice.
@@ -92,8 +116,10 @@ Gallery selections remain temporary. Drag/drop states are visual previews; actua
 - Fixed a browser hydration error caused by Node/browser differences in `Intl.DateTimeFormat.formatRange`. Calendar-date text now uses consistent punctuation, covered by regression tests.
 - Formatting, lint, strict TypeScript, and production build passed. All 19 unit/component tests and all 10 Playwright tests passed.
 - Browser checks cover all four trip links and reloads, unknown trips, filter recovery, and library/trip layouts at 375px, 768px, and 1440px. Reviewed desktop library and phone trip screenshots.
-- Started the development preview at `http://127.0.0.1:3000` and confirmed HTTP 200. If it stops, restart with `npm run dev`.
-- Starting `next dev` appended its managed Next.js guidance block to AGENTS.md; all existing project rules remain intact.
+- Started the development preview at `http://127.0.0.1:3000` and confirmed HTTP 200. If it stops, restart with
+  pm run dev`.
+- Starting
+  ext dev` appended its managed Next.js guidance block to AGENTS.md; all existing project rules remain intact.
 
 Important files: `src/components/library/trip-library.tsx`, `src/components/overview/trip-preview.tsx`, `src/app/trips/[tripId]/page.tsx`, `src/components/cards/trip-card.tsx`, `src/lib/format.ts`, and `e2e/trip-library.spec.ts`.
 
@@ -142,7 +168,7 @@ Next: Phase 3 — contextual builder tray/canvas, destination and route editing,
 - [x] Validate details using React Hook Form/Zod; prevent duration over-allocation and prune dependent choices when destinations change.
 - [x] Persist one active draft using versioned Zustand localStorage; resume from My trips, confirm reset, and recover from malformed/unavailable storage.
 - [x] Verify formatting, lint, TypeScript, production build, 23 unit/component tests, and 21 browser tests.
-- [ ] Review Phase 3 before broad Phase 4 implementation.
+- [x] Review Phase 3 before broad Phase 4 implementation (user authorized continuation).
 
 Browser coverage includes draft creation, invalid dates/custom budgets/durations, dependent cleanup, reload/resume, confirmed reset, pointer drag, keyboard ordering, corrupt/blocked storage, and 375px/768px/1440px layouts. Reviewed populated desktop and phone builder screenshots.
 
@@ -157,3 +183,42 @@ One active draft is supported on this browser/device. Details save on Apply; oth
 - Next requires a destination/city on those steps and submits validated Details before advancing. The last step opens draft review; Phase 4 finished-trip creation remains pending.
 - Fixed a button-reuse edge case that skipped Details and clipped transient mobile animation overflow.
 - Verified 23 unit/component tests, 23 browser tests, lint, TypeScript, formatting, and production build. Reviewed compact desktop and phone layouts; browser checks cover backward/forward navigation, validation, whole-card dragging, route keyboard sorting, touch taps, and persisted drafts.
+
+## Phase 4 verification - September 22, 2026
+
+- [x] Add Create Trip to the final builder step, gated by valid destinations and fully allocated route days; keep optional interests and saved ideas optional.
+- [x] Validate and convert draft choices into a completed local Trip with ordered empty itinerary days, traveler records, dates, preferences, and saved ideas.
+- [x] Persist finished trips before clearing the draft; prevent duplicate clicks and preserve the draft on failed saves.
+- [x] Animate selected summary cards into the existing Bento grid through shared layout IDs; provide a brief fade with reduced motion, lock creation controls, and focus the destination heading.
+- [x] Resolve locally saved trip URLs after hydration and include completed trips in library filters/search. Unknown local IDs show recovery UI.
+- [x] Extend the overview with group/per-person mock budget ranges, custom-budget comparison, planning counts, contextual suggestions, and copyable trip summaries.
+- [x] Verify 26 unit/component tests, lint, TypeScript, formatting, and production build. All 28 browser scenarios passed across the full run and targeted rerun: an initially ambiguous alert selector was corrected; all 10 creation/library checks passed on the final build.
+- [x] Review phone overview and desktop transition screenshots; test 375px, 768px, and 1440px layouts, reduced motion, reload/library recovery, and failed-save retry.
+- [ ] Review Phase 4 before broad Phase 5 implementation.
+
+Trips remain local to this browser. Copy summary exports plain text, not a cross-device sharing link. Saved ideas are not scheduled automatically; itinerary editing and reservation workflows remain future phases. Corrupt library data is not overwritten during creation.
+
+## Longer trip creation sequence - September 22, 2026
+
+- Extended the simulated creation presentation to 8.5 seconds: 5.2 seconds of gently floating selection cards and staged progress messages, followed by a staggered Bento assembly and settling time.
+- Shared destination/date/traveler/route/budget cards expand into place; remaining overview tiles rise and fade in with staggered timing. Reserved action space prevents a layout jump when the finished route opens.
+- Reduced motion retains a short 300ms handoff without floating or shared-layout movement.
+- Verified lint, TypeScript, formatting, production build, and all five creation browser scenarios (including the retry check rerun with the longer animation timeout). Reviewed the staggered desktop assembly screenshot.
+
+## Create Trip readiness fix - September 22, 2026
+
+- Completing the builder no longer requires manually allocating unused days. Creation evenly distributes remaining days across the selected route, preserving existing allocations, with an explicit final-step notice. Review still supports manual allocation. Missing countries/cities remain blocking.
+- Verified 26 unit tests, three targeted browser checks including default-duration creation, lint, TypeScript, and production build.
+
+## Creation fade and full-grid entrance refinement
+
+- Replaced the immediate shared-layout swap with a sequential 850ms loading fade followed by the overview entrance. Every tile, including the hero and first row, starts 96px lower at 94% scale and settles over 1.9 seconds, staggered by 200ms.
+- Extended navigation handoff to 10.8 seconds so the last tile finishes before the route opens. Reduced motion keeps a brief opacity-only transition.
+- Verified lint, TypeScript, formatting, production build, and creation/reload browser tests at 375px, 768px, and 1440px, including reduced motion.
+
+## Trip editing and deletion
+
+- Added a responsive native modal with focus containment, Escape/Cancel, focus restoration, and scroll locking. Edit countries, cities, route order/days, interests, saved ideas, dates, travelers, and budget; save all changes together with existing validation.
+- Preserve scheduled activities on retained city days. Country/city removal cleans dependent choices; removing days removes attached plans, explained before editing.
+- Added confirmed trip deletion and confirmed unfinished-draft deletion in My trips. Edits/deletions of sample trips are stored as browser-local overrides; source fixtures are unchanged. Legacy saved-trip arrays remain readable; deletion records prevent removed samples from reappearing.
+- Verified 27 unit/component tests, lint, TypeScript via production build, and 13 creation/library/action browser checks; added a targeted unfinished-draft deletion check.

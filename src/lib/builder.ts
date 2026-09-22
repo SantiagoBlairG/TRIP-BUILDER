@@ -155,3 +155,20 @@ export function estimateDraft(d: BuilderDraft) {
   };
   return { min: cost("min"), max: cost("max"), people };
 }
+
+/** Keep existing allocations and spread unused days in route order. */
+export function distributeRemainingDays(d: BuilderDraft): BuilderDraft {
+  const remaining = duration(d) - assignedDays(d);
+  const count = d.route.length;
+  if (!count || remaining <= 0) return d;
+  return {
+    ...d,
+    route: d.route.map((stop, index) => ({
+      ...stop,
+      days:
+        stop.days +
+        Math.floor(remaining / count) +
+        (index < remaining % count ? 1 : 0),
+    })),
+  };
+}

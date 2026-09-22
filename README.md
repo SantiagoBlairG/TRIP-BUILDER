@@ -4,11 +4,11 @@ A frontend-only visual travel planner, built incrementally from [PLAN.md](PLAN.m
 
 ## Current scope
 
-Phases 0 through 3 provide the application foundation, a trip library, read-only sample-trip pages, an interactive draft builder, and the data/card system. The library at `/trips` groups upcoming, draft, and past trips, with status filters and search by trip, country, or city. Open any trip to review its route, dates, travelers, interests, and saved ideas. Unknown trip links show a recovery page.
+Phases 0 through 4 provide the application foundation, a trip library, read-only sample-trip pages, an interactive draft builder, and the data/card system. The library at `/trips` groups upcoming, draft, and past trips, with status filters and search by trip, country, or city. Open any trip to review its route, dates, travelers, interests, and saved ideas. Unknown trip links show a recovery page.
 
 Visit `/card-gallery` (also linked in the footer) to try destination selection, city-scoped activities, preference ranking, saved states, expandable details, and responsive card sizes. Gallery selections and library filters are temporary and reset on reload.
 
-The validated catalog contains six countries, 24 cities, 144 activities, and four demo trips. The builder saves one active draft locally, with destination and city selection, drag/drop and keyboard route ordering, dates, travelers, budget, interests, and saved activities. Apply the Details form to save those fields; other selections save immediately. Resume from My trips or `/builder`. Finished-trip creation and the full editable Bento workspace arrive in Phase 4. “Roam” is a working product name.
+The validated catalog contains six countries, 24 cities, 144 activities, and four demo trips. The builder saves one active draft locally, with destination and city selection, drag/drop and keyboard route ordering, dates, travelers, budget, interests, and saved activities. Apply the Details form to save those fields; other selections save immediately. Resume from My trips or `/builder`. On the final step, Create Trip saves a completed local trip and animates the selections into its Bento overview. Day-by-day editing arrives in Phase 5. “Roam” is a working product name.
 
 ## Run locally
 
@@ -69,7 +69,7 @@ Edit curated content in `scripts/generate-fixtures.mjs`, run `npm run data:gener
 
 Tailwind CSS v4 uses CSS-based configuration. The shadcn registry aliases and style configuration live in `components.json`; the initial Button and Card are locally owned, following the [manual installation approach](https://ui.shadcn.com/docs/installation/manual). The Button uses Radix Slot for accessible link composition. Add other primitives as they become necessary.
 
-Zod validates the fixtures and their relationships at the catalog boundary. Motion, dnd-kit, Zustand, and React Hook Form are available for later feature phases. There is no global trip store or drag context yet. See [tasks.md](tasks.md), [design-system.md](design-system.md), and [data-model.md](data-model.md).
+Zod validates fixtures and locally saved trips, including catalog relationships. The builder uses dnd-kit and React Hook Form; Zustand holds the active draft and completed local trips. Create Trip becomes available on the final step once every route day is allocated. Motion gathers the selections into the Bento overview, with a short fade for reduced motion. Finished trips survive reloads in this browser and appear in My trips. Saving must succeed before the draft is cleared; failed saves leave it intact. Copy trip summary shares plain text, not a cross-device link. Itinerary editing remains Phase 5. See [tasks.md](tasks.md), [design-system.md](design-system.md), and [data-model.md](data-model.md).
 
 Compatibility note: ESLint stays on major version 9 because the React lint plugin bundled with `eslint-config-next@16.3.5` crashes on ESLint 10 (`contextOrFilename.getFilename is not a function`). npm reports ESLint 9 as deprecated. Revisit this pin when the bundled plugin supports ESLint 10; lint rules have not been disabled to work around it.
 
@@ -81,3 +81,5 @@ Compatibility note: ESLint stays on major version 9 because the React lint plugi
 4. Keep the root directory at the repository root and the build command as `npm run build`.
 
 The build environment needs internet access for font downloads. Photographs are served locally. No environment secrets, database, or API keys are needed. No deployment has been created.
+
+Trip overviews include Edit and Delete actions. The modal saves selections together, while Cancel/Escape discards edits. Delete requires confirmation; unfinished builder drafts can also be deleted from My trips. Sample-trip edits and deletions apply only in this browser.

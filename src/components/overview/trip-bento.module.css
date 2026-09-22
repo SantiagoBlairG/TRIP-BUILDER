@@ -154,3 +154,19 @@
     grid-column: 1 / -1;
   }
 }
+
+.budget,
+.suggestion {
+  grid-column: 1 / -1;
+}
+.budget {
+  background: var(--budget);
+}
+@media (min-width: 1024px) {
+  .budget {
+    grid-column: 1 / 8;
+  }
+  .suggestion {
+    grid-column: 8 / 13;
+  }
+}

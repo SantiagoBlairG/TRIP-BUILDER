@@ -1,0 +1,99 @@
+.stage {
+  outline: none;
+  min-height: 75vh;
+  pointer-events: none;
+}
+.status {
+  text-align: center;
+  color: var(--primary);
+  font-size: 0.875rem;
+  position: fixed;
+  z-index: 50;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(360px, calc(100% - 32px));
+  padding: 16px 24px;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+  transition: opacity 0.6s;
+}
+.collection {
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-content: center;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.piece {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 1.5rem;
+  background: var(--card);
+  box-shadow: var(--shadow-raised);
+  overflow: hidden;
+}
+.piece:first-child {
+  grid-row: span 2;
+}
+.piece:last-child {
+  grid-column: span 2;
+}
+.piece strong {
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+.piece p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  color: var(--muted-foreground);
+}
+.photo {
+  position: relative;
+  height: 170px;
+  margin: -1.5rem -1.5rem 1rem;
+}
+@media (max-width: 640px) {
+  .collection {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .piece {
+    padding: 1rem;
+  }
+  .piece:first-child {
+    grid-row: auto;
+    grid-column: span 2;
+  }
+  .photo {
+    height: 130px;
+    margin: -1rem -1rem 1rem;
+  }
+}
+
+.stage :global(.travel-card) {
+  animation: none;
+  translate: none;
+  scale: 1;
+}
+
+.status[data-assembled="true"] {
+  opacity: 0;
+}
+.track {
+  height: 3px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: var(--border);
+}
+.track > div {
+  height: 100%;
+  background: var(--primary);
+  transform-origin: left;
+}

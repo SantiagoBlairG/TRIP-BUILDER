@@ -11,14 +11,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { tripId } = await params;
   return {
-    title:
-      demoTrips.find((trip) => trip.id === tripId)?.name ?? "Your trip",
+    title: demoTrips.find((trip) => trip.id === tripId)?.name ?? "Your trip",
   };
 }
 export default async function TripPage({ params }: Props) {
   const { tripId } = await params;
   const trip = demoTrips.find((trip) => trip.id === tripId);
-  if (!trip && /^local-[a-zA-Z0-9-]+$/.test(tripId)) return <LocalTrip id={tripId} />;
+  if (!trip && /^local-[a-zA-Z0-9-]+$/.test(tripId))
+    return <LocalTrip id={tripId} />;
   if (!trip) notFound();
   return <TripPreview trip={trip} />;
 }

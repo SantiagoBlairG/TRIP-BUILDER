@@ -1,3 +1,9 @@
+"use client";
+import { TripActions } from "./trip-actions";
+import { useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { tripEstimate } from "@/lib/trips";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -13,13 +19,74 @@ import {
 import type { Trip } from "@/types/travel";
 import { activityById, cities, countries } from "@/data/catalog";
 import { travelStyleById } from "@/data/travel-styles";
-import { formatDuration, formatTripDates } from "@/lib/format";
+import { formatDuration, formatTripDates, formatMoney } from "@/lib/format";
 import { BaseCard } from "@/components/cards/base-card";
 import { DestinationPhoto } from "./destination-photo";
 import { cn } from "@/lib/utils";
 import styles from "./trip-bento.module.css";
 
-export function TripBento({ trip }: { trip: Trip }) {
+const MotionCard = motion.create(BaseCard);
+export function TripBento({
+  trip,
+  assembling = false,
+}: {
+  trip: Trip;
+  assembling?: boolean;
+}) {
+  const reduced = useReducedMotion();
+  function arrival(index: number) {
+    return {
+      initial:
+        assembling && !reduced
+          ? { opacity: 0, y: 96, scale: 0.94 }
+          : (false as const),
+      animate: { opacity: 1, y: 0, scale: 1 },
+      transition: {
+        duration: 1.9,
+        delay: assembling && !reduced ? 0.2 + index * 0.2 : 0,
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+        layout: {
+          duration: 1.5,
+          delay: index * 0.09,
+          ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+        },
+      },
+    };
+  }
+  const [shareMessage, setShareMessage] = useState("");
+  const estimate = tripEstimate(trip);
+  const midpoint = Math.round((estimate.min + estimate.max) / 2);
+  const scheduled = trip.itinerary.flatMap((day) => day.activities);
+  const confirmed = scheduled.filter(
+    (activity) => activity.status === "confirmed",
+  ).length;
+  const local = trip.id.startsWith("local-");
+  async function share() {
+    const text = [
+      trip.name,
+      formatTripDates(trip.startDate, trip.endDate),
+      trip.totalDays + " days",
+      trip.route
+        .map(
+          (s) =>
+            (cities.find((c) => c.id === s.cityId)?.name ?? "") +
+            " (" +
+            s.days +
+            " days)",
+        )
+        .join(" / "),
+    ].join("\n");
+    try {
+      await navigator.clipboard.writeText(text);
+      setShareMessage(
+        "Trip summary copied. Local trips are stored only on this device.",
+      );
+    } catch {
+      setShareMessage(
+        "Copy unavailable. You can select and copy the trip details below.",
+      );
+    }
+  }
   const country = countries.find((item) => item.id === trip.countryIds[0]);
   const saved = trip.savedActivityIds.flatMap((id) =>
     activityById[id] ? [activityById[id]] : [],
@@ -46,7 +113,7 @@ export function TripBento({ trip }: { trip: Trip }) {
         : "Your next adventure";
 
   return (
-    <>
+    <div inert={assembling || undefined}>
       <Link
         href="/trips"
         className="mb-3 inline-flex min-h-11 items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary"
@@ -59,7 +126,10 @@ export function TripBento({ trip }: { trip: Trip }) {
           <p className={cn(styles.eyebrow, "mb-3 text-muted-foreground")}>
             {status}
           </p>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1
+            tabIndex={-1}
+            className="text-3xl font-semibold tracking-tight sm:text-4xl"
+          >
             {trip.name}
           </h1>
         </div>
@@ -71,12 +141,26 @@ export function TripBento({ trip }: { trip: Trip }) {
               ? "Past trip"
               : "Upcoming"}
           <span aria-hidden="true">·</span>
-          {trip.route.length} stops
+          {trip.route.length} {trip.route.length === 1 ? "stop" : "stops"}
         </span>
       </header>
 
+      {
+        <div
+          style={{ visibility: assembling ? "hidden" : undefined }}
+          className="mb-4 flex flex-wrap items-center gap-3"
+        >
+          {!assembling && <TripActions trip={trip} />}
+          <Button variant="outline" onClick={share}>
+            Copy trip summary <ArrowUpRight />
+          </Button>
+          <span role="status" className="text-xs text-muted-foreground">
+            {shareMessage}
+          </span>
+        </div>
+      }
       <div className={styles.grid} aria-label="Trip overview">
-        <BaseCard className={cn(styles.tile, styles.hero)}>
+        <MotionCard {...arrival(0)} className={cn(styles.tile, styles.hero)}>
           {country && (
             <div className={styles.heroPhoto}>
               <DestinationPhoto src={country.image} priority />
@@ -105,9 +189,9 @@ export function TripBento({ trip }: { trip: Trip }) {
               <span>Destination inspiration</span>
             </div>
           </div>
-        </BaseCard>
+        </MotionCard>
 
-        <BaseCard className={cn(styles.tile, styles.dates)}>
+        <MotionCard {...arrival(1)} className={cn(styles.tile, styles.dates)}>
           <div className="flex items-center justify-between">
             <h2 className={styles.eyebrow}>Time to get away</h2>
             <CalendarDays
@@ -128,9 +212,12 @@ export function TripBento({ trip }: { trip: Trip }) {
           <p className="mt-1 text-xs text-muted-foreground">
             {Math.max(trip.totalDays - 1, 0)} nights · plenty of possibilities
           </p>
-        </BaseCard>
+        </MotionCard>
 
-        <BaseCard className={cn(styles.tile, styles.travelers)}>
+        <MotionCard
+          {...arrival(2)}
+          className={cn(styles.tile, styles.travelers)}
+        >
           <div className="flex items-center justify-between">
             <h2 className={styles.eyebrow}>Better together</h2>
             <Users className="size-4" strokeWidth={1.5} aria-hidden="true" />
@@ -166,15 +253,18 @@ export function TripBento({ trip }: { trip: Trip }) {
               trip.travelers.filter((traveler) => traveler.type === "adult")
                 .length
             }{" "}
-            adults
+            {trip.travelers.filter((t) => t.type === "adult").length === 1
+              ? "adult"
+              : "adults"}
           </p>
-        </BaseCard>
+        </MotionCard>
 
-        <BaseCard className={cn(styles.tile, styles.route)}>
+        <MotionCard {...arrival(3)} className={cn(styles.tile, styles.route)}>
           <div className="mb-4 flex items-center justify-between">
             <h2 className={styles.eyebrow}>A route worth taking</h2>
             <span className="text-xs text-muted-foreground">
-              {trip.route.length} chapters
+              {trip.route.length}{" "}
+              {trip.route.length === 1 ? "chapter" : "chapters"}
             </span>
           </div>
           <ol className={styles.routeStops}>
@@ -209,9 +299,12 @@ export function TripBento({ trip }: { trip: Trip }) {
               Your first stop is still a possibility.
             </p>
           )}
-        </BaseCard>
+        </MotionCard>
 
-        <BaseCard className={cn(styles.tile, styles.interests)}>
+        <MotionCard
+          {...arrival(4)}
+          className={cn(styles.tile, styles.interests)}
+        >
           <div className="flex items-center justify-between">
             <h2 className={styles.eyebrow}>Your travel mood</h2>
             <Sparkles className="size-4" strokeWidth={1.5} aria-hidden="true" />
@@ -236,9 +329,9 @@ export function TripBento({ trip }: { trip: Trip }) {
               Follow your curiosity.
             </p>
           )}
-        </BaseCard>
+        </MotionCard>
 
-        <BaseCard className={cn(styles.tile, styles.ideas)}>
+        <MotionCard {...arrival(5)} className={cn(styles.tile, styles.ideas)}>
           <div className="mb-5 flex items-center justify-between">
             <h2 className={styles.eyebrow}>The wish list</h2>
             <Bookmark className="size-4" strokeWidth={1.5} aria-hidden="true" />
@@ -295,9 +388,12 @@ export function TripBento({ trip }: { trip: Trip }) {
               Save a little something to look forward to.
             </p>
           )}
-        </BaseCard>
+        </MotionCard>
 
-        <BaseCard className={cn(styles.tile, styles.progress)}>
+        <MotionCard
+          {...arrival(6)}
+          className={cn(styles.tile, styles.progress)}
+        >
           <div className="flex items-center justify-between">
             <h2 className={styles.eyebrow}>Taking shape</h2>
             <Check className="size-4" aria-hidden="true" />
@@ -337,17 +433,81 @@ export function TripBento({ trip }: { trip: Trip }) {
           <p className="text-center text-sm">
             {scheduledDays} of {trip.totalDays} days have plans
           </p>
+          <p className="mt-2 text-center text-xs text-white/80">
+            {scheduled.length} activities scheduled / {confirmed} confirmed
+            (simulated)
+          </p>
           <p className="mt-2 text-center text-xs leading-5 text-white/75">
             {scheduledDays === trip.totalDays
               ? "A little adventure in every day."
               : "Leave some room for serendipity."}
           </p>
-        </BaseCard>
+        </MotionCard>
+
+        <MotionCard {...arrival(7)} className={cn(styles.tile, styles.budget)}>
+          <h2 className={styles.eyebrow}>Room for the adventure</h2>
+          <motion.p
+            initial={assembling && !reduced ? { opacity: 0, y: 15 } : false}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mt-4 text-3xl font-bold tracking-tight"
+          >
+            {formatMoney(estimate.min)} - {formatMoney(estimate.max)}
+          </motion.p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {formatMoney(Math.round(estimate.min / estimate.people))} -{" "}
+            {formatMoney(Math.round(estimate.max / estimate.people))} per person
+          </p>
+          {trip.budget.customAmount && (
+            <div className="mt-4">
+              <progress
+                className="h-2 w-full accent-primary"
+                aria-label="Estimated budget used"
+                max={trip.budget.customAmount}
+                value={Math.min(midpoint, trip.budget.customAmount)}
+              />
+              <p className="mt-2 text-sm">
+                {midpoint > trip.budget.customAmount
+                  ? formatMoney(midpoint - trip.budget.customAmount) + " above"
+                  : formatMoney(trip.budget.customAmount - midpoint) +
+                    " remaining in"}{" "}
+                your {formatMoney(trip.budget.customAmount)} budget at the
+                midpoint estimate.
+              </p>
+            </div>
+          )}
+          <p className="mt-4 text-xs text-muted-foreground">
+            Sample USD estimate for the whole group. Land costs only; flights
+            excluded. Saved ideas are included in daily allowances.
+          </p>
+        </MotionCard>
+        <MotionCard
+          {...arrival(8)}
+          className={cn(styles.tile, styles.suggestion)}
+        >
+          <h2 className={styles.eyebrow}>A little nudge</h2>
+          <p className="mt-4 text-2xl font-bold tracking-tight">
+            {saved.length
+              ? "Your wish list is a lovely start."
+              : "Leave room for a favorite find."}
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {saved.length
+              ? saved.length +
+                " saved ideas are ready to explore. Saving an idea does not schedule it."
+              : "Explore your route and collect a few experiences that feel like you."}{" "}
+            Day-by-day planning is coming next.
+          </p>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Planning suggestion based on your trip, not a live recommendation.
+          </p>
+        </MotionCard>
       </div>
       <p className="mt-6 text-center text-xs text-muted-foreground">
-        Sample trip · a little inspiration before the adventure. Editing is
-        coming next.
+        {local
+          ? "Saved on this device. Your next chapter starts here."
+          : "Sample trip. A little inspiration before the adventure."}
       </p>
-    </>
+    </div>
   );
 }

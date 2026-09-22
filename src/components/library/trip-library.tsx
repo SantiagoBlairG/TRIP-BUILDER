@@ -30,8 +30,11 @@ const sections = [
 ] as const;
 
 export function TripLibrary({ trips: samples }: { trips: readonly Trip[] }) {
-  const {trips: localTrips, error} = useTripLibrary();
-  const trips = [...localTrips, ...samples];
+  const { trips: localTrips, deletedIds, error } = useTripLibrary();
+  const trips = [
+    ...localTrips,
+    ...samples.filter((t) => !localTrips.some((local) => local.id === t.id)),
+  ].filter((t) => !deletedIds.includes(t.id));
   const [filter, setFilter] = useState<"all" | Trip["status"]>("all");
   const [query, setQuery] = useState("");
   const normalizedQuery = query.trim().toLocaleLowerCase();
@@ -69,7 +72,11 @@ export function TripLibrary({ trips: samples }: { trips: readonly Trip[] }) {
         </div>
       </section>
       <DraftResume />
-      {error && <p role="alert" className="mb-4 text-sm text-destructive">{error}</p>}
+      {error && (
+        <p role="alert" className="mb-4 text-sm text-destructive">
+          {error}
+        </p>
+      )}
       {trips.length === 0 ? (
         <LibraryEmpty />
       ) : (

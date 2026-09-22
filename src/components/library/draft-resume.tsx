@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useBuilderStore } from "@/stores/builder-store";
@@ -6,6 +7,8 @@ import { useBuilderHydration } from "@/components/builder/use-builder-hydration"
 import { Button } from "@/components/ui/button";
 import { duration } from "@/lib/builder";
 export function DraftResume() {
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deleteError, setDeleteError] = useState("");
   const { ready, storageError } = useBuilderHydration();
   const draft = useBuilderStore((s) => s.draft);
   if (!ready || !draft.updatedAt) return null;
@@ -28,12 +31,42 @@ export function DraftResume() {
             : " · Ready when you are"}
         </p>
       </div>
-      <Button asChild>
-        <Link href="/builder">
-          Resume draft
-          <ArrowUpRight />
-        </Link>
-      </Button>
+      <div className="flex flex-wrap items-center gap-2">
+        <Button variant="ghost" onClick={() => setConfirmDelete(true)}>
+          Delete draft
+        </Button>
+        <Button asChild>
+          <Link href="/builder">
+            Resume draft
+            <ArrowUpRight />
+          </Link>
+        </Button>
+      </div>
+      {confirmDelete && (
+        <div className="w-full border-t pt-4">
+          <p>Delete this unfinished draft? This cannot be undone.</p>
+          <div className="mt-3 flex gap-2">
+            <Button variant="outline" onClick={() => setConfirmDelete(false)}>
+              Keep draft
+            </Button>
+            <Button
+              onClick={() => {
+                try {
+                  localStorage.removeItem("roam-builder-v1");
+                  useBuilderStore.getState().reset();
+                } catch {
+                  setDeleteError(
+                    "Could not delete your draft. Please try again.",
+                  );
+                }
+              }}
+            >
+              Confirm delete draft
+            </Button>
+          </div>
+        </div>
+      )}
+      {deleteError && <p role="alert">{deleteError}</p>}
     </section>
   );
 }

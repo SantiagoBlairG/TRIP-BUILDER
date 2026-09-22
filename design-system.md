@@ -74,3 +74,11 @@ The landing direction now applies throughout the app: bold Geist headings with t
 ## Interactive builder
 
 The builder uses the shared blue hero, pill controls, bold Geist headings, and rounded cards. The builder now uses a full-width horizontal step timeline and a floating bottom selection bar. Country, city, and activity choices are compact photo cards (four across on desktop, two on phones). The entire native button supports mouse dragging, touch-and-hold dragging, and tap/keyboard selection. Route controls, priorities, and budget live in an expandable nonmodal Review panel above the bar. Back/Next navigation preserves selections; Next on Details validates and saves before advancing. Step changes use a short horizontal Motion fade/slide and respect reduced motion. Draggable controls remain stationary while scrolling.
+
+## Trip creation moment
+
+Create Trip is the final-step action once required selections are valid and all route days are assigned. The builder yields to elevated destination, date, traveler, route, and budget cards; shared Motion layout IDs expand them into the approved rounded Bento grid before navigation. Reduced motion uses a brief opacity transition. Creation removes editable controls and announces progress; the resulting trip heading receives keyboard focus. Budget and suggestion cards use shared semantic colors and existing typography.
+
+The creation presentation lasts approximately 8.5 seconds with normal motion: 5.2 seconds of floating summary cards and staged progress, then a staggered 1.5-second shared-layout assembly with settling time. The progress presentation overlays the page so route navigation preserves grid positions. Reduced motion retains the brief fade.
+
+The latest creation handoff supersedes the shared-layout swap: fade the loading collection out first (850ms), then bring every Bento tile into position (96px rise, 94% to full scale, 1.9 seconds, 200ms stagger). Hold navigation until the complete entrance settles at approximately 10.8 seconds. Reduced motion uses only a short fade.

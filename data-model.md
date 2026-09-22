@@ -35,6 +35,12 @@ Versioned Zustand persistence and restored-state recovery arrive with the builde
 
 ## Builder draft (Phase 3)
 
-BuilderDraft is a separate, incomplete model in src/lib/builder.ts. It holds validated details, selected country IDs, ordered city/day allocations, ranked interest IDs, saved activity IDs, and an update timestamp. It does not create Trip or itinerary records yet. The version-1 roam-builder-v1 localStorage record stores one active draft. Hydration validates its schema and removes unknown or incompatible catalog references. Parent removals prune child cities and saved ideas.
+BuilderDraft is a separate, incomplete model in src/lib/builder.ts. It holds validated details, selected country IDs, ordered city/day allocations, ranked interest IDs, saved activity IDs, and an update timestamp. Phase 4 converts a valid, fully allocated draft into Trip and empty itinerary-day records. The version-1 roam-builder-v1 localStorage record stores one active draft. Hydration validates its schema and removes unknown or incompatible catalog references. Parent removals prune child cities and saved ideas.
 
 Mock budget calculations multiply route-weighted country daily ranges by duration, traveler count, and budget tier. Unassigned days use the selected-country average; children use the same allowance as adults. Saved activities are already covered by that allowance; flights are excluded. Custom budgets compare against the balanced estimate.
+
+## Completed local trips (Phase 4)
+
+`src/lib/trips.ts` converts drafts into validated Trip records with local UUID IDs, ordered route/day IDs, traveler records, inclusive dates, budget, priorities, and saved activity IDs. Empty itinerary days reserve the route structure; saved ideas remain unscheduled. `src/stores/trip-store.ts` stores the completed trip array under `roam-trips-v1`, validates schemas and catalog references during hydration, and exposes it to the library and local trip routes. Saving must succeed before draft reset; failures preserve the draft. There is no backend or cross-device synchronization.
+
+Trip edits preserve IDs and retain scheduled activities by city and day-within-city. Saved trip storage accepts legacy arrays or an object containing trips and deletedIds. Sample IDs can be locally overridden; deleted sample IDs are persisted so fixture trips remain hidden after reload. No fixture files are mutated.

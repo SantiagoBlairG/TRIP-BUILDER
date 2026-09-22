@@ -48,7 +48,10 @@ test("bottom bar advances, goes back, and validates Details before Next", async 
   await expect(
     page.getByRole("button", { name: /^Save / }).first(),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Review draft", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Create Trip", exact: true }),
+  ).toBeEnabled();
+  await review(page);
   await expect(page.locator("#trip-review")).toBeVisible();
   await expect(page.locator("#trip-review")).toContainText(
     "A smaller, simpler trip",

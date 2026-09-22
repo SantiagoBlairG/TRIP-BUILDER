@@ -1,5 +1,9 @@
 "use client";
 import { useRef, useState } from "react";
+import { createTrip } from "@/lib/trips";
+import { useTripStore } from "@/stores/trip-store";
+import type { Trip } from "@/types/travel";
+import { CreateTripTransition } from "./create-trip-transition";
 import Link from "next/link";
 import {
   DndContext,
@@ -41,6 +45,7 @@ import type { TravelStyleId } from "@/types/travel";
 import { recommendActivities } from "@/lib/recommendations";
 import {
   assignedDays,
+  distributeRemainingDays,
   duration,
   draftIssues,
   estimateDraft,
@@ -64,6 +69,9 @@ const steps = [
   "Experiences",
 ] as const;
 export function TripBuilder() {
+  const [created, setCreated] = useState<Trip | null>(null);
+  const creating = useRef(false);
+  const [createError, setCreateError] = useState("");
   const { ready, storageError } = useBuilderHydration();
   const draft = useBuilderStore((s) => s.draft);
   const update = useBuilderStore((s) => s.update);
@@ -118,6 +126,8 @@ export function TripBuilder() {
   );
   const remaining = duration(draft) - assignedDays(draft);
   const issues = draftIssues(draft);
+  const creationDraft = distributeRemainingDays(draft);
+  const creationIssues = draftIssues(creationDraft);
   const estimate = estimateDraft(draft);
   const destinationChips = draft.countryIds.map(
     (id) => countryById[id]?.name ?? id,
@@ -251,6 +261,31 @@ export function TripBuilder() {
   ).filter((a) =>
     `${a.name} ${cityById[a.cityId]?.name}`.toLowerCase().includes(search),
   );
+  function finishTrip() {
+    if (creating.current || creationIssues.length) return;
+    creating.current = true;
+    try {
+      const trip = createTrip(
+        creationDraft,
+        "local-" + crypto.randomUUID(),
+        new Date().toISOString().slice(0, 10),
+      );
+      if (!useTripStore.getState().save(trip))
+        throw new Error(
+          "Your trip could not be saved on this device. Your draft is intact. Free some browser storage and try again.",
+        );
+      setCreated(trip);
+      reset();
+    } catch (error) {
+      creating.current = false;
+      setCreateError(
+        error instanceof Error
+          ? error.message
+          : "Could not create trip. Please try again.",
+      );
+    }
+  }
+  if (created) return <CreateTripTransition trip={created} />;
   if (!ready)
     return (
       <div className="page-hero">
@@ -339,6 +374,24 @@ export function TripBuilder() {
       <p aria-live="polite" className="mb-3 min-h-5 text-sm text-primary">
         {message}
       </p>
+      {createError && (
+        <p role="alert" className="mb-4 text-sm text-destructive">
+          {createError}
+        </p>
+      )}
+      {step === "Experiences" && creationIssues.length > 0 && (
+        <p className="mb-4 text-sm text-muted-foreground">
+          Before creating your trip: {creationIssues.join(" ")} Open Review to
+          adjust your route.
+        </p>
+      )}
+      {step === "Experiences" && remaining > 0 && draft.route.length > 0 && (
+        <p className="mb-4 text-sm text-muted-foreground">
+          Create Trip will distribute the remaining {remaining}{" "}
+          {remaining === 1 ? "day" : "days"} across your selected cities. Open
+          Review to adjust the days yourself.
+        </p>
+      )}
       <DndContext
         sensors={sensors}
         autoScroll={false}
@@ -674,18 +727,8 @@ export function TripBuilder() {
                     variant="ghost"
                     className="mt-2"
                     onClick={() => {
-                      const n = draft.route.length;
                       commit(
-                        {
-                          ...draft,
-                          route: draft.route.map((r, i) => ({
-                            ...r,
-                            days:
-                              r.days +
-                              Math.floor(remaining / n) +
-                              (i < remaining % n ? 1 : 0),
-                          })),
-                        },
+                        distributeRemainingDays(draft),
                         "Remaining days shared across your route.",
                       );
                     }}
@@ -888,19 +931,22 @@ export function TripBuilder() {
                   <Button
                     key="advance-step"
                     type="button"
-                    disabled={!canContinue}
+                    disabled={
+                      !canContinue ||
+                      (step === "Experiences" && creationIssues.length > 0)
+                    }
                     aria-label={
                       stepIndex === steps.length - 1
-                        ? "Review draft"
+                        ? "Create Trip"
                         : "Next step"
                     }
                     onClick={() =>
                       stepIndex === steps.length - 1
-                        ? openReview()
+                        ? finishTrip()
                         : goTo(steps[stepIndex + 1])
                     }
                   >
-                    {stepIndex === steps.length - 1 ? "Review draft" : "Next"}
+                    {stepIndex === steps.length - 1 ? "Create Trip" : "Next"}
                     <ArrowRight />
                   </Button>
                 )}
