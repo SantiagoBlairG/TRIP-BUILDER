@@ -78,6 +78,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </main>
       <footer className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8">
         <span>A little planning. A lot to look forward to.</span>
+        <Link href="/photo-credits" className="inline-flex min-h-11 items-center hover:underline">Photo credits</Link>
         <Link
           href="/card-gallery"
           className="inline-flex min-h-11 items-center gap-1 underline-offset-4 hover:underline"

@@ -434,7 +434,7 @@ export function TripBuilder() {
                   : step === "Interests"
                     ? "Choose your interests. Open Review to put your favorites first."
                     : step === "Experiences"
-                      ? "Ideas from your route, ranked by your interests. Photos are city inspiration; costs are sample estimates."
+                      ? "Ideas from your route, ranked by your interests. Photos illustrate the places and experiences; costs are sample estimates."
                       : "Your choices stay editable as the trip takes shape."}
               </p>
               {["Destinations", "Cities", "Experiences"].includes(step) && (

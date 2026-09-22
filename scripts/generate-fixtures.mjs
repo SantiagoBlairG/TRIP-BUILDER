@@ -1,5 +1,6 @@
 // Curated demo content, not live travel advice. Re-run with npm run data:generate.
 import { mkdir, writeFile } from "node:fs/promises";
+import activityPhotos from "../src/data/activity-images.json" with { type: "json" };
 import cityPhotos from "../src/data/city-images.json" with { type: "json" };
 
 const countries = [
@@ -1402,7 +1403,7 @@ for (const [
       cityId,
       name: activityName,
       description: activityDescription,
-      image,
+      image: activityPhotos.find(photo=>photo.activityId === `${cityId}-${String(index + 1).padStart(2, "0")}`)?.src ?? image,
       category,
       tags: [
         index === 0

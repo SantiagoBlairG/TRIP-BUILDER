@@ -1,3 +1,4 @@
+import activityImages from "./activity-images.json";
 import cityImages from "./city-images.json";
 
 export type DestinationImage = {
@@ -6,12 +7,13 @@ export type DestinationImage = {
   caption: string;
   source: string;
   cityId?: string;
+  activityId?: string;
   credit?: string;
   license?: string;
   licenseUrl?: string;
 };
 
-/** Photos depict their stated destination; activity cards label shared city inspiration. */
+/** Photos carry subject captions and source/license metadata. */
 export const destinationImages: DestinationImage[] = [
   {
     src: "/images/colombia.jpg",
@@ -50,6 +52,7 @@ export const destinationImages: DestinationImage[] = [
     source: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e",
   },
   ...cityImages,
+  ...activityImages,
 ];
 
 export function getDestinationImage(src: string): DestinationImage | undefined {
