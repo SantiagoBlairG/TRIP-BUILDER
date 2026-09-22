@@ -34,13 +34,13 @@
 - [x] Start and verify a local preview for user review.
 - [x] Review Phase 2 before broad Phase 3 changes (user authorized the next phase).
 
-The interactive builder, persisted drafts, and complete Bento overview remain in Phases 3–4. Reuse the validated catalog and card components instead of recreating them.
+The interactive builder and persisted draft are complete. Finished-trip creation and the complete editable Bento overview remain in Phase 4. Reuse the validated catalog and card components instead of recreating them.
 
 ## Next phases
 
 - [x] Phase 1: normalized domain data and reusable card variants.
 - [x] Phase 2: trip library and demo trips.
-- [ ] Phase 3: interactive builder and persisted drafts.
+- [x] Phase 3: interactive builder and persisted drafts.
 - [ ] Phase 4: builder transition and Bento overview.
 - [ ] Phase 5: itinerary editing and derived calculations.
 - [ ] Phase 6: places, simulated map, bookings, and budget.
@@ -131,3 +131,28 @@ Next: Phase 3 — contextual builder tray/canvas, destination and route editing,
 - Promoted brand blues and panel gradient to shared tokens. Increased hero parallax, photo drift, and card reveal distances while retaining reduced-motion support.
 - Fixed a focus-triggered animation reset that moved cards during clicks.
 - Production build, lint, 19 unit tests, and 14 browser tests passed after the fix. No phase advancement.
+
+## Phase 3 verification - September 22, 2026
+
+- [x] Replace builder placeholder with contextual destination, city, details, interests, and experience trays.
+- [x] Reuse existing catalog and card components with the approved blue panels, bold type, rounded surfaces, photo parallax, and reduced-motion-aware step transitions.
+- [x] Add dnd-kit pointer dragging and keyboard route sorting, plus selection buttons, move controls, and city-day controls.
+- [x] Support multiple countries, country-scoped cities, route cleanup, duration allocation, exact dates, traveler presets/counts/names, budget levels, and ranked interests.
+- [x] Add city-scoped ranked activities, saved ideas, a live summary, and deterministic mock land-only budget estimates.
+- [x] Validate details using React Hook Form/Zod; prevent duration over-allocation and prune dependent choices when destinations change.
+- [x] Persist one active draft using versioned Zustand localStorage; resume from My trips, confirm reset, and recover from malformed/unavailable storage.
+- [x] Verify formatting, lint, TypeScript, production build, 23 unit/component tests, and 21 browser tests.
+- [ ] Review Phase 3 before broad Phase 4 implementation.
+
+Browser coverage includes draft creation, invalid dates/custom budgets/durations, dependent cleanup, reload/resume, confirmed reset, pointer drag, keyboard ordering, corrupt/blocked storage, and 375px/768px/1440px layouts. Reviewed populated desktop and phone builder screenshots.
+
+One active draft is supported on this browser/device. Details save on Apply; other selections save immediately. Creating a finished local trip and the signature builder-to-overview transition are Phase 4. No backend or live prices were introduced.
+
+## Builder timeline refinement - September 22, 2026
+
+- Replaced oversized country/city/activity cards in the builder with compact photo-and-title selection cards; the gallery retains its full-detail variants.
+- Replaced the side canvas with a full-width step timeline and floating bottom selection bar, with horizontal choice chips and Back/Next controls. Review expands route ordering, day allocations, interests, saved ideas, and budget without losing the current step.
+- Removed separate drag labels. Whole-card mouse dragging and touch-and-hold dragging share native tap/keyboard selection controls.
+- Next requires a destination/city on those steps and submits validated Details before advancing. The last step opens draft review; Phase 4 finished-trip creation remains pending.
+- Fixed a button-reuse edge case that skipped Details and clipped transient mobile animation overflow.
+- Verified 23 unit/component tests, 23 browser tests, lint, TypeScript, formatting, and production build. Reviewed compact desktop and phone layouts; browser checks cover backward/forward navigation, validation, whole-card dragging, route keyboard sorting, touch taps, and persisted drafts.

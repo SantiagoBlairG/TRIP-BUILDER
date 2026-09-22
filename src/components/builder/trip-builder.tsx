@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import {
   DndContext,
   DragOverlay,
   KeyboardSensor,
-  PointerSensor,
+  MouseSensor,
+  TouchSensor,
   useSensor,
   useSensors,
   type DragEndEvent,
@@ -17,7 +18,17 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowUp, Check, Compass, MapPin, RotateCcw, X } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ChevronUp,
+  ArrowUp,
+  Check,
+  Compass,
+  MapPin,
+  RotateCcw,
+  X,
+} from "lucide-react";
 import {
   activities,
   cities,
@@ -35,15 +46,13 @@ import {
   estimateDraft,
   type BuilderDraft,
 } from "@/lib/builder";
-import { formatMoney } from "@/lib/format";
+import { formatDuration, formatMoney } from "@/lib/format";
 import { useBuilderStore } from "@/stores/builder-store";
 import { Button } from "@/components/ui/button";
-import { DestinationCard } from "@/components/cards/destination-card";
-import { CityCard } from "@/components/cards/city-card";
 import { PreferenceCard } from "@/components/cards/preference-card";
-import { ActivityCard } from "@/components/cards/activity-card";
+import { SelectionCard } from "./selection-card";
 import { DetailsForm } from "./details-form";
-import { DraggableCard, RouteStop, TripDropZone } from "./drag-cards";
+import { RouteStop, TripDropZone } from "./drag-cards";
 import { useBuilderHydration } from "./use-builder-hydration";
 import styles from "./builder.module.css";
 
@@ -66,8 +75,43 @@ export function TripBuilder() {
   const [dragLabel, setDragLabel] = useState<string | null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
   const reduced = useReducedMotion();
+  const [reviewOpen, setReviewOpen] = useState(false);
+  const panelRef = useRef<HTMLElement>(null);
+  const reviewButtonRef = useRef<HTMLButtonElement>(null);
+  const stepIndex = steps.indexOf(step);
+  const canContinue =
+    step === "Destinations"
+      ? draft.countryIds.length > 0
+      : step === "Cities"
+        ? draft.route.length > 0
+        : true;
+  function goTo(next: (typeof steps)[number]) {
+    setStep(next);
+    setQuery("");
+    setReviewOpen(false);
+    requestAnimationFrame(() => {
+      const heading = document.getElementById("builder-step-title");
+      heading?.focus({ preventScroll: true });
+      heading?.scrollIntoView({
+        block: "start",
+        behavior: reduced ? "instant" : "smooth",
+      });
+    });
+  }
+  function openReview() {
+    setReviewOpen(true);
+    requestAnimationFrame(() => panelRef.current?.focus());
+  }
+  function closeReview() {
+    setReviewOpen(false);
+    reviewButtonRef.current?.focus();
+  }
+
   const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(MouseSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(TouchSensor, {
+      activationConstraint: { delay: 250, tolerance: 6 },
+    }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
@@ -75,6 +119,22 @@ export function TripBuilder() {
   const remaining = duration(draft) - assignedDays(draft);
   const issues = draftIssues(draft);
   const estimate = estimateDraft(draft);
+  const destinationChips = draft.countryIds.map(
+    (id) => countryById[id]?.name ?? id,
+  );
+  const routeChips = draft.route.map(
+    (stop) => cityById[stop.cityId]?.name ?? stop.cityId,
+  );
+  const interestChips = draft.priorities.map((id) => travelStyleById[id].name);
+  const activityChips = draft.savedIds.map(
+    (id) => activities.find((a) => a.id === id)?.name ?? id,
+  );
+  const selectionChips =
+    step === "Interests"
+      ? [...interestChips, ...routeChips, ...destinationChips]
+      : step === "Experiences"
+        ? [...activityChips, ...routeChips, ...destinationChips]
+        : [...destinationChips, ...routeChips];
   function commit(next: BuilderDraft, notice: string) {
     update(next);
     setMessage(notice);
@@ -162,7 +222,11 @@ export function TripBuilder() {
         );
       return;
     }
-    if (over.id !== "trip-canvas" && !String(over.id).startsWith("route:"))
+    if (
+      over.id !== "trip-canvas" &&
+      over.id !== "trip-details" &&
+      !String(over.id).startsWith("route:")
+    )
       return;
     if (data?.kind === "country") country(data.id);
     if (data?.kind === "city") city(data.id);
@@ -197,19 +261,17 @@ export function TripBuilder() {
       </div>
     );
   return (
-    <>
-      <header className="page-hero">
+    <div className={styles.builder}>
+      <header className={`page-hero ${styles.hero}`}>
         <p className="hero-copy mb-3 text-xs font-semibold uppercase tracking-widest">
           Your next chapter
         </p>
         <h1 className="text-4xl sm:text-5xl">
-          Good trips start
-          <br />
-          with a little curiosity.
+          A little closer to your next adventure.
         </h1>
         <p className="hero-copy mt-4 max-w-xl text-sm leading-6">
           Collect destinations, shape your route, and save the things you love.
-          Drag a card into your trip or use its add button.
+          Tap to choose, or drag a card into your trip bar below.
         </p>
       </header>
       <div className="my-4 flex flex-wrap items-center justify-between gap-3">
@@ -257,11 +319,6 @@ export function TripBuilder() {
           </div>
         </div>
       )}
-      <div className="my-3 flex gap-3 text-sm text-primary lg:hidden">
-        <a href="#trip-canvas" className="inline-flex min-h-11 items-center">
-          Jump to your trip canvas ?
-        </a>
-      </div>
       <nav aria-label="Builder steps" className={styles.tabs}>
         {steps.map((label, i) => (
           <Button
@@ -269,11 +326,12 @@ export function TripBuilder() {
             variant={step === label ? "default" : "outline"}
             aria-current={step === label ? "step" : undefined}
             onClick={() => {
-              setStep(label);
-              setQuery("");
+              goTo(label);
             }}
           >
-            <span className="opacity-60">0{i + 1}</span>
+            <span className={styles.stepNumber}>
+              {i < stepIndex ? <Check size={14} /> : `0${i + 1}`}
+            </span>
             {label}
           </Button>
         ))}
@@ -297,11 +355,15 @@ export function TripBuilder() {
           >
             <motion.div
               key={step}
-              initial={reduced ? false : { opacity: 0.5, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={reduced ? false : { opacity: 0.5, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.25 }}
             >
-              <h2 className="mb-2 text-2xl font-bold tracking-tight">
+              <h2
+                id="builder-step-title"
+                tabIndex={-1}
+                className="mb-2 scroll-mt-6 text-2xl font-bold tracking-tight outline-none"
+              >
                 {step === "Destinations"
                   ? "Where is calling you?"
                   : step === "Cities"
@@ -316,9 +378,9 @@ export function TripBuilder() {
                 {step === "Cities"
                   ? "Cities come from your selected countries. Suggested days never exceed your remaining time."
                   : step === "Interests"
-                    ? "Choose your interests, then move your favorites to the top in the canvas."
+                    ? "Choose your interests. Open Review to put your favorites first."
                     : step === "Experiences"
-                      ? "Only ideas from your route, ranked by your travel interests. Save them for later itinerary planning."
+                      ? "Ideas from your route, ranked by your interests. Photos are city inspiration; costs are sample estimates."
                       : "Your choices stay editable as the trip takes shape."}
               </p>
               {["Destinations", "Cities", "Experiences"].includes(step) && (
@@ -349,21 +411,18 @@ export function TripBuilder() {
                   </label>
                   <div className={styles.cards}>
                     {visibleCountries.map((c) => (
-                      <DraggableCard
+                      <SelectionCard
                         key={c.id}
                         id={c.id}
                         kind="country"
                         name={c.name}
-                        disabled={draft.countryIds.includes(c.id)}
-                      >
-                        <DestinationCard
-                          country={c}
-                          selected={draft.countryIds.includes(c.id)}
-                          onToggle={() =>
-                            country(c.id, draft.countryIds.includes(c.id))
-                          }
-                        />
-                      </DraggableCard>
+                        image={c.image}
+                        detail={c.continent}
+                        selected={draft.countryIds.includes(c.id)}
+                        onSelect={() =>
+                          country(c.id, draft.countryIds.includes(c.id))
+                        }
+                      />
                     ))}
                   </div>
                   {!visibleCountries.length && (
@@ -389,30 +448,26 @@ export function TripBuilder() {
                   ) : (
                     <div className={styles.cards}>
                       {visibleCities.map((c) => (
-                        <DraggableCard
+                        <SelectionCard
                           key={c.id}
                           id={c.id}
                           kind="city"
                           name={c.name}
-                          disabled={
-                            draft.route.some((s) => s.cityId === c.id) ||
-                            remaining < 1
+                          image={c.image}
+                          detail={
+                            countryById[c.countryId]?.name +
+                            " \u00b7 " +
+                            c.recommendedDays +
+                            " days suggested"
                           }
-                        >
-                          <CityCard
-                            city={c}
-                            countryName={countryById[c.countryId]?.name ?? ""}
-                            selected={draft.route.some(
-                              (s) => s.cityId === c.id,
-                            )}
-                            onToggle={() =>
-                              city(
-                                c.id,
-                                draft.route.some((s) => s.cityId === c.id),
-                              )
-                            }
-                          />
-                        </DraggableCard>
+                          selected={draft.route.some((s) => s.cityId === c.id)}
+                          onSelect={() =>
+                            city(
+                              c.id,
+                              draft.route.some((s) => s.cityId === c.id),
+                            )
+                          }
+                        />
                       ))}
                     </div>
                   )}
@@ -426,37 +481,31 @@ export function TripBuilder() {
                   key={JSON.stringify(draft.details)}
                   value={draft.details}
                   assigned={assignedDays(draft)}
-                  onApply={(details) =>
+                  onApply={(details, advance) => {
                     commit(
                       { ...draft, details },
                       "Trip details applied and saved.",
-                    )
-                  }
+                    );
+                    if (advance) goTo("Interests");
+                  }}
                 />
               )}
               {step === "Interests" && (
                 <div className={styles.cards}>
                   {travelStyles.map((p) => (
-                    <DraggableCard
+                    <PreferenceCard
                       key={p.id}
-                      id={p.id}
-                      kind="interest"
-                      name={p.name}
-                      disabled={draft.priorities.includes(p.id)}
-                    >
-                      <PreferenceCard
-                        styleId={p.id}
-                        selected={draft.priorities.includes(p.id)}
-                        priority={
-                          draft.priorities.includes(p.id)
-                            ? draft.priorities.indexOf(p.id) + 1
-                            : undefined
-                        }
-                        onToggle={() =>
-                          preference(p.id, draft.priorities.includes(p.id))
-                        }
-                      />
-                    </DraggableCard>
+                      styleId={p.id}
+                      selected={draft.priorities.includes(p.id)}
+                      priority={
+                        draft.priorities.includes(p.id)
+                          ? draft.priorities.indexOf(p.id) + 1
+                          : undefined
+                      }
+                      onToggle={() =>
+                        preference(p.id, draft.priorities.includes(p.id))
+                      }
+                    />
                   ))}
                 </div>
               )}
@@ -482,22 +531,25 @@ export function TripBuilder() {
                   ) : (
                     <div className={styles.cards}>
                       {recommendations.map((a) => (
-                        <DraggableCard
+                        <SelectionCard
                           key={a.id}
                           id={a.id}
                           kind="activity"
                           name={a.name}
-                          disabled={draft.savedIds.includes(a.id)}
-                        >
-                          <ActivityCard
-                            activity={a}
-                            cityName={cityById[a.cityId]?.name ?? ""}
-                            saved={draft.savedIds.includes(a.id)}
-                            onSave={() =>
-                              save(a.id, draft.savedIds.includes(a.id))
-                            }
-                          />
-                        </DraggableCard>
+                          image={a.image}
+                          detail={
+                            cityById[a.cityId]?.name +
+                            " \u00b7 " +
+                            formatDuration(a.durationMinutes) +
+                            " \u00b7 " +
+                            formatMoney(a.estimatedCost) +
+                            " est."
+                          }
+                          selected={draft.savedIds.includes(a.id)}
+                          onSelect={() =>
+                            save(a.id, draft.savedIds.includes(a.id))
+                          }
+                        />
                       ))}
                     </div>
                   )}
@@ -505,247 +557,351 @@ export function TripBuilder() {
               )}
             </motion.div>
           </section>
-          <aside
-            id="trip-canvas"
-            className={styles.canvas}
-            aria-label="Your trip canvas"
-          >
-            <a
-              href="#option-tray"
-              className="mb-2 inline-flex min-h-11 items-center text-sm text-primary lg:hidden"
+          <div className={styles.dock}>
+            <aside
+              ref={panelRef}
+              tabIndex={-1}
+              hidden={!reviewOpen}
+              id="trip-review"
+              className={styles.canvas}
+              aria-label="Your trip canvas"
+              onKeyDown={(e) => {
+                if (e.key === "Escape") closeReview();
+              }}
             >
-              Back to the options ?
-            </a>
-            <TripDropZone>
-              <h2>{draft.details.name}</h2>
-              <p className={`${styles.note} mt-2`}>
-                {duration(draft)} days · {estimate.people}{" "}
-                {estimate.people === 1 ? "traveler" : "travelers"} ·{" "}
-                {draft.details.budgetLevel}
-              </p>
-              {draft.details.dateMode === "dates" && (
-                <p className={styles.note}>
-                  {draft.details.startDate} → {draft.details.endDate}
-                </p>
-              )}
-              {draft.details.names && (
-                <p className={`${styles.note} break-words`}>
-                  {draft.details.names}
-                </p>
-              )}
-              <div className="my-3 flex flex-wrap gap-2">
-                {draft.countryIds.map((id) => (
-                  <Button
-                    key={id}
-                    variant="outline"
-                    size="sm"
-                    onClick={() => country(id, true)}
-                    aria-label={`Remove country ${countryById[id]?.name}`}
-                  >
-                    {countryById[id]?.name}
-                    <X />
-                  </Button>
-                ))}
-              </div>
-              {!draft.countryIds.length && (
-                <p className={`${styles.empty} my-4`}>
-                  Drop your first destination here.
-                  <br />
-                  <span className={styles.note}>
-                    Or use Add on any destination card.
-                  </span>
-                </p>
-              )}
-              <h3 className="mt-4 text-sm font-bold">
-                Your route{" "}
-                <span className="font-normal text-muted-foreground">
-                  · {remaining} days left
-                </span>
-              </h3>
-              <SortableContext
-                items={draft.route.map((s) => `route:${s.cityId}`)}
-                strategy={verticalListSortingStrategy}
-              >
-                <ol>
-                  {draft.route.map((s, i) => (
-                    <RouteStop
-                      key={s.cityId}
-                      {...s}
-                      index={i}
-                      count={draft.route.length}
-                      remaining={remaining}
-                      onRemove={() => city(s.cityId, true)}
-                      onDays={(delta) => {
-                        if (s.days + delta < 1 || delta > remaining) return;
-                        commit(
-                          {
-                            ...draft,
-                            route: draft.route.map((r, j) =>
-                              j === i ? { ...r, days: r.days + delta } : r,
-                            ),
-                          },
-                          "City days updated.",
-                        );
-                      }}
-                      onMove={(delta) =>
-                        commit(
-                          {
-                            ...draft,
-                            route: arrayMove(draft.route, i, i + delta),
-                          },
-                          "Route reordered.",
-                        )
-                      }
-                    />
-                  ))}
-                </ol>
-              </SortableContext>
-              {draft.route.length > 0 && remaining > 0 && (
+              <div className={styles.reviewHeading}>
+                <span>Review your trip</span>
                 <Button
+                  size="icon"
                   variant="ghost"
-                  className="mt-2"
-                  onClick={() => {
-                    const n = draft.route.length;
-                    commit(
-                      {
-                        ...draft,
-                        route: draft.route.map((r, i) => ({
-                          ...r,
-                          days:
-                            r.days +
-                            Math.floor(remaining / n) +
-                            (i < remaining % n ? 1 : 0),
-                        })),
-                      },
-                      "Remaining days shared across your route.",
-                    );
-                  }}
+                  aria-label="Close trip review"
+                  onClick={closeReview}
                 >
-                  Distribute remaining days
+                  <X />
                 </Button>
-              )}
-              {draft.route.length > 1 && (
+              </div>
+              <TripDropZone id="trip-details">
+                <h2>{draft.details.name}</h2>
                 <p className={`${styles.note} mt-2`}>
-                  Allow roughly 2–4 hours between cities (simulated; no live
-                  routing).
+                  {duration(draft)} days · {estimate.people}{" "}
+                  {estimate.people === 1 ? "traveler" : "travelers"} ·{" "}
+                  {draft.details.budgetLevel}
                 </p>
-              )}
-              {draft.priorities.length > 0 && (
-                <>
-                  <h3 className="mt-5 text-sm font-bold">
-                    Your interests, in order
-                  </h3>
+                {draft.details.dateMode === "dates" && (
+                  <p className={styles.note}>
+                    {draft.details.startDate} → {draft.details.endDate}
+                  </p>
+                )}
+                {draft.details.names && (
+                  <p className={`${styles.note} break-words`}>
+                    {draft.details.names}
+                  </p>
+                )}
+                <div className="my-3 flex flex-wrap gap-2">
+                  {draft.countryIds.map((id) => (
+                    <Button
+                      key={id}
+                      variant="outline"
+                      size="sm"
+                      onClick={() => country(id, true)}
+                      aria-label={`Remove country ${countryById[id]?.name}`}
+                    >
+                      {countryById[id]?.name}
+                      <X />
+                    </Button>
+                  ))}
+                </div>
+                {!draft.countryIds.length && (
+                  <p className={`${styles.empty} my-4`}>
+                    Your selections will appear here.
+                    <br />
+                    <span className={styles.note}>
+                      Tap a destination card to get started.
+                    </span>
+                  </p>
+                )}
+                <h3 className="mt-4 text-sm font-bold">
+                  Your route{" "}
+                  <span className="font-normal text-muted-foreground">
+                    · {remaining} days left
+                  </span>
+                </h3>
+                <SortableContext
+                  items={draft.route.map((s) => `route:${s.cityId}`)}
+                  strategy={verticalListSortingStrategy}
+                >
                   <ol>
-                    {draft.priorities.map((id, i) => (
-                      <li key={id} className="flex items-center gap-2 text-xs">
-                        <span className="flex-1">
-                          {i + 1}. {travelStyleById[id].name}
-                        </span>
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          disabled={i === 0}
-                          aria-label={`Prioritize ${travelStyleById[id].name}`}
-                          onClick={() =>
-                            commit(
-                              {
-                                ...draft,
-                                priorities: arrayMove(
-                                  draft.priorities,
-                                  i,
-                                  i - 1,
-                                ),
-                              },
-                              "Interest priority updated.",
-                            )
-                          }
-                        >
-                          <ArrowUp />
-                        </Button>
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          aria-label={`Remove interest ${travelStyleById[id].name}`}
-                          onClick={() => preference(id, true)}
-                        >
-                          <X />
-                        </Button>
-                      </li>
+                    {draft.route.map((s, i) => (
+                      <RouteStop
+                        key={s.cityId}
+                        {...s}
+                        index={i}
+                        count={draft.route.length}
+                        remaining={remaining}
+                        onRemove={() => city(s.cityId, true)}
+                        onDays={(delta) => {
+                          if (s.days + delta < 1 || delta > remaining) return;
+                          commit(
+                            {
+                              ...draft,
+                              route: draft.route.map((r, j) =>
+                                j === i ? { ...r, days: r.days + delta } : r,
+                              ),
+                            },
+                            "City days updated.",
+                          );
+                        }}
+                        onMove={(delta) =>
+                          commit(
+                            {
+                              ...draft,
+                              route: arrayMove(draft.route, i, i + delta),
+                            },
+                            "Route reordered.",
+                          )
+                        }
+                      />
                     ))}
                   </ol>
-                </>
-              )}
-              <p className="mt-4 text-sm font-medium">
-                {draft.savedIds.length} saved{" "}
-                {draft.savedIds.length === 1 ? "idea" : "ideas"}
-              </p>
-              {draft.savedIds.length > 0 && (
-                <details className="mt-2">
-                  <summary className="cursor-pointer py-2 text-xs text-primary">
-                    Review saved ideas
-                  </summary>
-                  <ul>
-                    {draft.savedIds.map((id) => (
-                      <li key={id} className="flex items-center gap-2 text-xs">
-                        <span className="flex-1">
-                          {activities.find((a) => a.id === id)?.name}
-                        </span>
-                        <Button
-                          size="icon"
-                          variant="ghost"
-                          aria-label={`Remove saved ${activities.find((a) => a.id === id)?.name}`}
-                          onClick={() => save(id, true)}
+                </SortableContext>
+                {draft.route.length > 0 && remaining > 0 && (
+                  <Button
+                    variant="ghost"
+                    className="mt-2"
+                    onClick={() => {
+                      const n = draft.route.length;
+                      commit(
+                        {
+                          ...draft,
+                          route: draft.route.map((r, i) => ({
+                            ...r,
+                            days:
+                              r.days +
+                              Math.floor(remaining / n) +
+                              (i < remaining % n ? 1 : 0),
+                          })),
+                        },
+                        "Remaining days shared across your route.",
+                      );
+                    }}
+                  >
+                    Distribute remaining days
+                  </Button>
+                )}
+                {draft.route.length > 1 && (
+                  <p className={`${styles.note} mt-2`}>
+                    Allow roughly 2–4 hours between cities (simulated; no live
+                    routing).
+                  </p>
+                )}
+                {draft.priorities.length > 0 && (
+                  <>
+                    <h3 className="mt-5 text-sm font-bold">
+                      Your interests, in order
+                    </h3>
+                    <ol>
+                      {draft.priorities.map((id, i) => (
+                        <li
+                          key={id}
+                          className="flex items-center gap-2 text-xs"
                         >
-                          <X />
-                        </Button>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              )}
-              <div className={styles.summary}>
-                <p>Estimated trip budget · USD</p>
-                <strong>
-                  {formatMoney(estimate.min)}–{formatMoney(estimate.max)}
-                </strong>
-                <p>
-                  {formatMoney(Math.round(estimate.min / estimate.people))}–
-                  {formatMoney(Math.round(estimate.max / estimate.people))} per
-                  person
-                </p>
-                <p className="mt-2 opacity-80">
-                  Mock land-only estimate. Flights excluded. Saved experiences
-                  are covered by the daily allowance.
-                </p>
-                {draft.details.budgetLevel === "custom" && (
-                  <p className="mt-3">
-                    Your budget: {formatMoney(draft.details.customAmount)}
-                    {estimate.max > draft.details.customAmount
-                      ? " · Upper estimate exceeds your budget."
-                      : " · Within the estimated range."}
-                  </p>
+                          <span className="flex-1">
+                            {i + 1}. {travelStyleById[id].name}
+                          </span>
+                          <Button
+                            size="icon"
+                            variant="ghost"
+                            disabled={i === 0}
+                            aria-label={`Prioritize ${travelStyleById[id].name}`}
+                            onClick={() =>
+                              commit(
+                                {
+                                  ...draft,
+                                  priorities: arrayMove(
+                                    draft.priorities,
+                                    i,
+                                    i - 1,
+                                  ),
+                                },
+                                "Interest priority updated.",
+                              )
+                            }
+                          >
+                            <ArrowUp />
+                          </Button>
+                          <Button
+                            size="icon"
+                            variant="ghost"
+                            aria-label={`Remove interest ${travelStyleById[id].name}`}
+                            onClick={() => preference(id, true)}
+                          >
+                            <X />
+                          </Button>
+                        </li>
+                      ))}
+                    </ol>
+                  </>
                 )}
+                <p className="mt-4 text-sm font-medium">
+                  {draft.savedIds.length} saved{" "}
+                  {draft.savedIds.length === 1 ? "idea" : "ideas"}
+                </p>
+                {draft.savedIds.length > 0 && (
+                  <details className="mt-2">
+                    <summary className="cursor-pointer py-2 text-xs text-primary">
+                      Review saved ideas
+                    </summary>
+                    <ul>
+                      {draft.savedIds.map((id) => (
+                        <li
+                          key={id}
+                          className="flex items-center gap-2 text-xs"
+                        >
+                          <span className="flex-1">
+                            {activities.find((a) => a.id === id)?.name}
+                          </span>
+                          <Button
+                            size="icon"
+                            variant="ghost"
+                            aria-label={`Remove saved ${activities.find((a) => a.id === id)?.name}`}
+                            onClick={() => save(id, true)}
+                          >
+                            <X />
+                          </Button>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
+                <div className={styles.summary}>
+                  <p>Estimated trip budget · USD</p>
+                  <strong>
+                    {formatMoney(estimate.min)}–{formatMoney(estimate.max)}
+                  </strong>
+                  <p>
+                    {formatMoney(Math.round(estimate.min / estimate.people))}–
+                    {formatMoney(Math.round(estimate.max / estimate.people))}{" "}
+                    per person
+                  </p>
+                  <p className="mt-2 opacity-80">
+                    Mock land-only estimate. Flights excluded. Saved experiences
+                    are covered by the daily allowance.
+                  </p>
+                  {draft.details.budgetLevel === "custom" && (
+                    <p className="mt-3">
+                      Your budget: {formatMoney(draft.details.customAmount)}
+                      {estimate.max > draft.details.customAmount
+                        ? " · Upper estimate exceeds your budget."
+                        : " · Within the estimated range."}
+                    </p>
+                  )}
+                </div>
+                <div className="mt-4 border-t pt-4">
+                  {issues.length ? (
+                    <ul className={styles.note}>
+                      {issues.map((issue) => (
+                        <li key={issue}>• {issue}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="flex items-center gap-2 text-sm font-semibold text-primary">
+                      <Check size={18} />
+                      Your draft is ready for the next step.
+                    </p>
+                  )}
+                  <p className={`${styles.note} mt-2`}>
+                    Your draft is saved here. Turning it into a finished trip is
+                    coming next.
+                  </p>
+                </div>
+              </TripDropZone>
+            </aside>
+            <TripDropZone className={styles.dockDrop}>
+              <div className={styles.dockChoices}>
+                <span className={styles.dockLabel}>
+                  {dragLabel
+                    ? "Drop here to add to your trip"
+                    : "Your trip, taking shape"}
+                </span>
+                <div className={styles.chips}>
+                  {draft.countryIds.length ? (
+                    <>
+                      {selectionChips.map((name, i) => (
+                        <span key={`${name}-${i}`} title={name}>
+                          {name}
+                        </span>
+                      ))}
+                      <span>{duration(draft)} days</span>
+                      <span>
+                        {estimate.people}{" "}
+                        {estimate.people === 1 ? "traveler" : "travelers"}
+                      </span>
+                      {draft.savedIds.length > 0 && (
+                        <span>{draft.savedIds.length} saved ideas</span>
+                      )}
+                    </>
+                  ) : (
+                    <span className={styles.placeholder}>
+                      Choose your first destination
+                    </span>
+                  )}
+                </div>
               </div>
-              <div className="mt-4 border-t pt-4">
-                {issues.length ? (
-                  <ul className={styles.note}>
-                    {issues.map((issue) => (
-                      <li key={issue}>• {issue}</li>
-                    ))}
-                  </ul>
+              <div className={styles.dockActions}>
+                <Button
+                  ref={reviewButtonRef}
+                  variant="ghost"
+                  aria-label="Review trip"
+                  aria-expanded={reviewOpen}
+                  aria-controls="trip-review"
+                  onClick={() => (reviewOpen ? closeReview() : openReview())}
+                >
+                  <ChevronUp className={reviewOpen ? "rotate-180" : ""} />
+                  <span className={styles.reviewLabel}>Review</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  aria-label="Previous step"
+                  disabled={stepIndex === 0}
+                  onClick={() => goTo(steps[stepIndex - 1])}
+                >
+                  <ArrowLeft />
+                  <span className={styles.backLabel}>Back</span>
+                </Button>
+                {step === "Details" ? (
+                  <Button
+                    key="apply-details"
+                    type="submit"
+                    form="builder-details-form"
+                    data-continue="true"
+                    aria-label="Next step"
+                  >
+                    Next
+                    <ArrowRight />
+                  </Button>
                 ) : (
-                  <p className="flex items-center gap-2 text-sm font-semibold text-primary">
-                    <Check size={18} />
-                    Your draft is ready for the next step.
-                  </p>
+                  <Button
+                    key="advance-step"
+                    type="button"
+                    disabled={!canContinue}
+                    aria-label={
+                      stepIndex === steps.length - 1
+                        ? "Review draft"
+                        : "Next step"
+                    }
+                    onClick={() =>
+                      stepIndex === steps.length - 1
+                        ? openReview()
+                        : goTo(steps[stepIndex + 1])
+                    }
+                  >
+                    {stepIndex === steps.length - 1 ? "Review draft" : "Next"}
+                    <ArrowRight />
+                  </Button>
                 )}
-                <p className={`${styles.note} mt-2`}>
-                  Your draft is saved here. Turning it into a finished trip is
-                  coming next.
-                </p>
               </div>
             </TripDropZone>
-          </aside>
+          </div>
         </div>
         <DragOverlay>
           {dragLabel ? (
@@ -755,6 +911,6 @@ export function TripBuilder() {
           ) : null}
         </DragOverlay>
       </DndContext>
-    </>
+    </div>
   );
 }

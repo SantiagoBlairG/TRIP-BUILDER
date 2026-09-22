@@ -32,3 +32,9 @@ The schema allows undated trips and incomplete draft routes. Completed routes mu
 `citiesForCountries` only returns cities in selected countries. `recommendActivities` filters by selected cities before ranking travel-style priorities, then mock rating and stable ID. Empty or unknown selections return no results. Neither utility mutates fixture arrays.
 
 Versioned Zustand persistence and restored-state recovery arrive with the builder. Future totals, pace, and progress should remain derived pure calculations. The gallery only holds transient React state and never writes localStorage.
+
+## Builder draft (Phase 3)
+
+BuilderDraft is a separate, incomplete model in src/lib/builder.ts. It holds validated details, selected country IDs, ordered city/day allocations, ranked interest IDs, saved activity IDs, and an update timestamp. It does not create Trip or itinerary records yet. The version-1 roam-builder-v1 localStorage record stores one active draft. Hydration validates its schema and removes unknown or incompatible catalog references. Parent removals prune child cities and saved ideas.
+
+Mock budget calculations multiply route-weighted country daily ranges by duration, traveler count, and budget tier. Unassigned days use the selected-country average; children use the same allowance as adults. Saved activities are already covered by that allowance; flights are excluded. Custom budgets compare against the balanced estimate.

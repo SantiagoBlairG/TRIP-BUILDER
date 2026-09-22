@@ -4,7 +4,7 @@ A frontend-only visual travel planner, built incrementally from [PLAN.md](PLAN.m
 
 ## Current scope
 
-Phases 0–2 provide the application foundation, a trip library, read-only sample-trip pages, an interactive draft builder, and the data/card system. The library at `/trips` groups upcoming, draft, and past trips, with status filters and search by trip, country, or city. Open any trip to review its route, dates, travelers, interests, and saved ideas. Unknown trip links show a recovery page.
+Phases 0 through 3 provide the application foundation, a trip library, read-only sample-trip pages, an interactive draft builder, and the data/card system. The library at `/trips` groups upcoming, draft, and past trips, with status filters and search by trip, country, or city. Open any trip to review its route, dates, travelers, interests, and saved ideas. Unknown trip links show a recovery page.
 
 Visit `/card-gallery` (also linked in the footer) to try destination selection, city-scoped activities, preference ranking, saved states, expandable details, and responsive card sizes. Gallery selections and library filters are temporary and reset on reload.
 

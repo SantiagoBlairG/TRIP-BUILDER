@@ -1,5 +1,5 @@
 "use client";
-import { useDraggable, useDroppable } from "@dnd-kit/core";
+import { useDroppable } from "@dnd-kit/core";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { ArrowDown, ArrowUp, GripVertical, Minus, Plus, X } from "lucide-react";
@@ -7,49 +7,18 @@ import { Button } from "@/components/ui/button";
 import { cityById } from "@/data/catalog";
 import styles from "./builder.module.css";
 
-export function DraggableCard({
-  id,
-  kind,
-  name,
+export function TripDropZone({
   children,
-  disabled = false,
+  id = "trip-canvas",
+  className = styles.dropZone,
 }: {
-  id: string;
-  kind: string;
-  name: string;
   children: React.ReactNode;
-  disabled?: boolean;
+  id?: string;
+  className?: string;
 }) {
-  const { attributes, listeners, setNodeRef, transform, isDragging } =
-    useDraggable({ id: `${kind}:${id}`, data: { kind, id, name }, disabled });
+  const { setNodeRef, isOver } = useDroppable({ id });
   return (
-    <div
-      ref={setNodeRef}
-      className={styles.draggable}
-      style={{
-        transform: CSS.Translate.toString(transform),
-        opacity: isDragging ? 0.4 : 1,
-        zIndex: isDragging ? 10 : undefined,
-      }}
-    >
-      <button
-        type="button"
-        className={styles.dragHandle}
-        disabled={disabled}
-        aria-label={`Drag ${name} to trip canvas`}
-        {...attributes}
-        {...listeners}
-      >
-        <GripVertical size={16} /> Drag to trip
-      </button>
-      {children}
-    </div>
-  );
-}
-export function TripDropZone({ children }: { children: React.ReactNode }) {
-  const { setNodeRef, isOver } = useDroppable({ id: "trip-canvas" });
-  return (
-    <div ref={setNodeRef} className={styles.dropZone} data-over={isOver}>
+    <div ref={setNodeRef} className={className} data-over={isOver}>
       {children}
     </div>
   );

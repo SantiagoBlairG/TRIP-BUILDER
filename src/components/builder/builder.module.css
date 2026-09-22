@@ -1,60 +1,230 @@
+.builder {
+  padding-bottom: 150px;
+}
+.hero {
+  padding: 26px 32px;
+}
+.hero h1 {
+  font-size: clamp(26px, 3.5vw, 40px);
+}
 .workspace {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 24px;
-  align-items: start;
+  min-width: 0;
 }
 .tabs {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
-  margin: 24px 0;
+  margin: 24px 0 16px;
+  padding: 4px;
+  overflow-x: auto;
+}
+.tabs::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: var(--input);
+  left: 30px;
+  right: 30px;
+  top: 50%;
+}
+.tabs > button {
+  position: relative;
+  flex: 1;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+}
+.tabs > button[aria-current="step"] {
+  border-color: var(--primary);
+}
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--primary);
+  font-size: 11px;
 }
 .tray {
   min-width: 0;
+  overflow: clip;
+  padding: 3px;
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
-.draggable {
+.selectionCard {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   min-width: 0;
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow-card);
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  transition:
+    border-color var(--duration-fast),
+    box-shadow var(--duration-fast);
 }
-.dragHandle {
+.selectionCard:hover {
+  box-shadow: var(--shadow-raised);
+  border-color: var(--input);
+}
+.selectionCard[data-selected="true"] {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 25%, transparent);
+}
+.selectionCard[data-dragging="true"] {
+  opacity: 0.35;
+}
+.selectionPhoto {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 126px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.selectionCopy {
+  display: grid;
+  gap: 5px;
+  padding: 13px 38px 15px 14px;
+}
+.selectionCopy strong {
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.selectionCopy > span {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  line-height: 1.5;
+}
+.selectionMark {
+  position: absolute;
+  right: 10px;
+  bottom: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background: var(--secondary);
+  color: var(--primary);
+  border-radius: 50%;
+}
+.selectionCard[data-selected="true"] .selectionMark {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.dock {
+  position: fixed;
+  z-index: 40;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1216px;
+}
+.dockDrop {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  min-height: 44px;
-  font-size: 11px;
-  color: var(--primary);
-  touch-action: none;
-  cursor: grab;
+  gap: 20px;
+  padding: 14px 18px;
+  border: 1px solid var(--input);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--background) 94%, transparent);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-raised);
 }
-.dragHandle:disabled {
-  opacity: 0.4;
-  cursor: default;
+.dockDrop[data-over="true"] {
+  background: var(--route);
+  outline: 2px solid var(--primary);
 }
-.canvas {
-  position: sticky;
-  top: 20px;
+.dockChoices {
+  flex: 1;
   min-width: 0;
-  max-height: calc(100dvh - 40px);
-  overflow-y: auto;
+}
+.dockLabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 7px;
+  color: var(--primary);
+}
+.chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
   scrollbar-width: thin;
 }
-.dropZone {
-  border: 2px dashed var(--border);
-  border-radius: var(--radius-card);
-  padding: 18px;
+.chips > span {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 5px 9px;
   background: var(--card);
-  transition: background var(--duration-fast);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 11px;
+}
+.chips > .placeholder {
+  padding-left: 0;
+  background: none;
+  border-color: transparent;
+  color: var(--muted-foreground);
+}
+.dockActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.canvas {
+  margin: 0 0 10px auto;
+  width: min(640px, 100%);
+  max-height: 58dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: 24px;
+  background: var(--background);
+  border: 1px solid var(--input);
+  box-shadow: var(--shadow-raised);
+}
+.canvas[hidden] {
+  display: none;
+}
+.reviewHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  position: sticky;
+  top: 0;
+  background: var(--background);
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 700;
+}
+.dropZone {
+  padding: 0 20px 20px;
 }
 .dropZone[data-over="true"] {
   background: var(--route);
-  border-color: var(--primary);
 }
 .dropZone h2 {
   font-size: 24px;
@@ -154,35 +324,75 @@
   translate: none;
   scale: 1;
 }
-@media (max-width: 1000px) {
-  .workspace {
-    grid-template-columns: minmax(0, 1fr) 310px;
-    gap: 16px;
-  }
+
+.form {
+  max-width: 850px;
+}
+.search {
+  max-width: 440px;
+}
+.builder :is(input, select, button) {
+  scroll-margin-block: 160px;
+}
+@media (max-width: 1024px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-@media (max-width: 700px) {
-  .workspace {
-    display: flex;
-    flex-direction: column;
+@media (max-width: 640px) {
+  .builder {
+    padding-bottom: 190px;
   }
-  .tray,
-  .canvas {
+  .hero {
+    padding: 22px;
+  }
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .selectionPhoto {
+    height: 100px;
+  }
+  .selectionCopy {
+    padding: 12px 32px 12px 11px;
+  }
+  .selectionCopy strong {
+    font-size: 15px;
+  }
+  .selectionCard {
+    border-radius: 18px;
+  }
+  .dock {
+    width: calc(100% - 24px);
+    bottom: max(10px, env(safe-area-inset-bottom));
+  }
+  .dockDrop {
+    flex-wrap: wrap;
+    padding: 12px;
+    gap: 9px;
+    border-radius: 20px;
+  }
+  .dockChoices {
+    flex-basis: 100%;
+  }
+  .dockActions {
     width: 100%;
+    justify-content: space-between;
+  }
+  .dockLabel {
+    font-size: 9px;
   }
   .canvas {
-    max-height: none;
-    overflow: visible;
-    position: static;
+    max-height: 50dvh;
+  }
+  .tabs {
+    gap: 6px;
+  }
+  .tabs > button {
+    padding-inline: 10px;
+    font-size: 12px;
   }
   .form {
     padding: 18px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .canvas {
-    position: static;
   }
 }

@@ -12,7 +12,7 @@ export function DetailsForm({
 }: {
   value: BuilderDetails;
   assigned: number;
-  onApply: (details: BuilderDetails) => void;
+  onApply: (details: BuilderDetails, advance: boolean) => void;
 }) {
   const {
     register,
@@ -27,7 +27,7 @@ export function DetailsForm({
   });
   const mode = useWatch({ control, name: "dateMode" });
   const level = useWatch({ control, name: "budgetLevel" });
-  const apply = handleSubmit((d) => {
+  const apply = handleSubmit((d, event) => {
     const days =
       d.dateMode === "dates" ? dateDays(d.startDate, d.endDate) : d.totalDays;
     if (days < assigned) {
@@ -36,10 +36,19 @@ export function DetailsForm({
       });
       return;
     }
-    onApply({ ...d, totalDays: days });
+    const advance =
+      (event?.nativeEvent as SubmitEvent | undefined)?.submitter?.getAttribute(
+        "data-continue",
+      ) === "true";
+    onApply({ ...d, totalDays: days }, advance);
   });
   return (
-    <form onSubmit={apply} className={styles.form} noValidate>
+    <form
+      id="builder-details-form"
+      onSubmit={apply}
+      className={styles.form}
+      noValidate
+    >
       <label>
         Trip name
         <input {...register("name")} maxLength={80} />
