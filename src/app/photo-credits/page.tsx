@@ -1,4 +1,49 @@
 import type { Metadata } from "next";
 import { destinationImages } from "@/data/images";
-export const metadata: Metadata = {title:"Photo credits"};
-export default function PhotoCredits(){return <><header className="page-hero mb-6"><h1 className="text-4xl font-bold tracking-tight">The views behind your plans.</h1><p className="hero-copy mt-3">Photography credits and original sources. Activity photos illustrate a place, food, or experience, not a specific tour operator.</p></header><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{destinationImages.map(photo=><article key={photo.src} className="rounded-3xl border bg-card p-5"><h2 className="font-semibold">{photo.caption}</h2><p className="mt-2 text-sm text-muted-foreground">{photo.credit || "See original source for photographer"}</p><a className="mt-3 inline-block text-sm text-primary underline" href={photo.source} target="_blank" rel="noreferrer">Original photograph</a>{photo.license && <p className="mt-2 text-xs"><a className="underline" href={photo.licenseUrl} target="_blank" rel="noreferrer">{photo.license}</a> / resized, display cropped</p>}</article>)}</div></>}
+export const metadata: Metadata = { title: "Photo credits" };
+export default function PhotoCredits() {
+  return (
+    <>
+      <header className="page-hero mb-6">
+        <h1 className="text-4xl font-bold tracking-tight">
+          The views behind your plans.
+        </h1>
+        <p className="hero-copy mt-3">
+          Photography credits and original sources. Activity photos illustrate a
+          place, food, or experience, not a specific tour operator.
+        </p>
+      </header>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {destinationImages.map((photo) => (
+          <article key={photo.src} className="rounded-3xl border bg-card p-5">
+            <h2 className="font-semibold">{photo.caption}</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {photo.credit || "See original source for photographer"}
+            </p>
+            <a
+              className="mt-3 inline-block text-sm text-primary underline"
+              href={photo.source}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Original photograph
+            </a>
+            {photo.license && (
+              <p className="mt-2 text-xs">
+                <a
+                  className="underline"
+                  href={photo.licenseUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {photo.license}
+                </a>{" "}
+                / resized, display cropped
+              </p>
+            )}
+          </article>
+        ))}
+      </div>
+    </>
+  );
+}

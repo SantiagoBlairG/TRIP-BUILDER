@@ -27,7 +27,7 @@ export function CreateTripTransition({ trip }: { trip: Trip }) {
       window.setTimeout(() => setChapter(index + 1), delay),
     );
     const navigate = window.setTimeout(
-      () => router.replace("/trips/" + trip.id),
+      () => router.replace("/trips/" + trip.id, { scroll: false }),
       reduced ? 600 : 10800,
     );
     return () => {

@@ -222,3 +222,11 @@ Trips remain local to this browser. Copy summary exports plain text, not a cross
 - Preserve scheduled activities on retained city days. Country/city removal cleans dependent choices; removing days removes attached plans, explained before editing.
 - Added confirmed trip deletion and confirmed unfinished-draft deletion in My trips. Edits/deletions of sample trips are stored as browser-local overrides; source fixtures are unchanged. Legacy saved-trip arrays remain readable; deletion records prevent removed samples from reappearing.
 - Verified 27 unit/component tests, lint, TypeScript via production build, and 13 creation/library/action browser checks; added a targeted unfinished-draft deletion check.
+
+## Activity photography - September 23, 2026
+
+- Replaced shared city-photo assignment with 144 local activity photo entries from 142 credited Wikimedia sources. Landmark photos and representative food/experience photos now appear in builder cards, the gallery, and saved-trip wish lists.
+- Reviewed contact sheets and replaced maps, portraits, signs, and unrelated automatic matches. Representative images remain labeled as illustrations; they do not claim to show a specific tour operator.
+- Added a public Photo credits page and committed-asset attribution manifest. The download utility now reproduces the curated sources rather than searching again. Fixture generation preserves activity-photo assignments.
+- Verified all 144 image URLs, metadata/asset consistency, 27 unit tests, five gallery browser tests, two activity-photo browser tests, lint, formatting, TypeScript via production build, and the Italy activity-grid screenshot. Fixed footer link access beneath the floating builder bar.
+- Photos deploy with public/images and work for all visitors; trip data remains browser-local. No runtime photo API or backend was added.

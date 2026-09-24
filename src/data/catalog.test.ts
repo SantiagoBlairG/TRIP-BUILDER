@@ -64,7 +64,7 @@ describe("normalized destination fixtures", () => {
     for (const path of paths) {
       const metadata = getDestinationImage(path);
       expect(metadata?.alt.length).toBeGreaterThan(15);
-      expect(metadata?.caption).toContain("inspiration");
+      expect(metadata?.caption).toMatch(/inspiration|illustration/);
       const bytes = readFileSync(
         new URL(
           `../..${path.replace("/images/", "/public/images/")}`,
@@ -78,8 +78,14 @@ describe("normalized destination fixtures", () => {
     }
     for (const city of cities)
       expect(getDestinationImage(city.image)?.cityId).toBe(city.id);
-    for (const activity of activities)
-      expect(getDestinationImage(activity.image)?.cityId).toBe(activity.cityId);
+    for (const activity of activities) {
+      const photo = getDestinationImage(activity.image);
+      expect(photo?.cityId).toBe(activity.cityId);
+      expect(photo?.activityId).toBe(activity.id);
+      expect(photo?.credit).toBeTruthy();
+      expect(photo?.licenseUrl).toMatch(/^https?:/);
+      expect(activity.image).toMatch(/^\/images\/activities\//);
+    }
   });
 });
 

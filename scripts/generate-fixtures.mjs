@@ -1403,7 +1403,12 @@ for (const [
       cityId,
       name: activityName,
       description: activityDescription,
-      image: activityPhotos.find(photo=>photo.activityId === `${cityId}-${String(index + 1).padStart(2, "0")}`)?.src ?? image,
+      image:
+        activityPhotos.find(
+          (photo) =>
+            photo.activityId ===
+            `${cityId}-${String(index + 1).padStart(2, "0")}`,
+        )?.src ?? image,
       category,
       tags: [
         index === 0

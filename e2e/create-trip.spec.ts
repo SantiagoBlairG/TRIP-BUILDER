@@ -135,3 +135,37 @@ test("default duration creates without manually allocating leftover days", async
   expect(trip.route[0].days).toBe(10);
   expect(trip.itinerary).toHaveLength(10);
 });
+
+for (const width of [375, 1440])
+  test(
+    "creation handoff preserves scroll and card position at " + width,
+    async ({ page }) => {
+      await page.setViewportSize({ width, height: 800 });
+      await prepare(page);
+      await page
+        .getByRole("button", { name: "Create Trip", exact: true })
+        .click();
+      await page.waitForTimeout(9900);
+      await page.evaluate(() =>
+        window.scrollTo({ top: 400, behavior: "instant" }),
+      );
+      const before = await page.evaluate(() => ({
+        scroll: scrollY,
+        top: document
+          .querySelector('[aria-label="Trip overview"]')!
+          .getBoundingClientRect().top,
+      }));
+      await expect(page).toHaveURL(/\/trips\/local-/, { timeout: 5000 });
+      await expect(
+        page.getByRole("button", { name: "Edit", exact: true }),
+      ).toBeVisible();
+      const after = await page.evaluate(() => ({
+        scroll: scrollY,
+        top: document
+          .querySelector('[aria-label="Trip overview"]')!
+          .getBoundingClientRect().top,
+      }));
+      expect(Math.abs(after.scroll - before.scroll)).toBeLessThan(2);
+      expect(Math.abs(after.top - before.top)).toBeLessThan(2);
+    },
+  );

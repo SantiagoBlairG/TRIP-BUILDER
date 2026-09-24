@@ -99,12 +99,7 @@ export function TripBento({
     ...stop,
     city: cities.find((city) => city.id === stop.cityId),
   }));
-  const featured = saved
-    .filter(
-      (activity, index, array) =>
-        array.findIndex((item) => item.cityId === activity.cityId) === index,
-    )
-    .slice(0, 3);
+  const featured = saved.slice(0, 3);
   const status =
     trip.status === "draft"
       ? "A trip in the making"
@@ -146,18 +141,21 @@ export function TripBento({
       </header>
 
       {
-        <div
-          style={{ visibility: assembling ? "hidden" : undefined }}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: assembling ? 0 : 1 }}
+          transition={{ duration: reduced ? 0.15 : 0.6 }}
+          aria-hidden={assembling || undefined}
           className="mb-4 flex flex-wrap items-center gap-3"
         >
-          {!assembling && <TripActions trip={trip} />}
+          <TripActions trip={trip} />
           <Button variant="outline" onClick={share}>
             Copy trip summary <ArrowUpRight />
           </Button>
           <span role="status" className="text-xs text-muted-foreground">
             {shareMessage}
           </span>
-        </div>
+        </motion.div>
       }
       <div className={styles.grid} aria-label="Trip overview">
         <MotionCard {...arrival(0)} className={cn(styles.tile, styles.hero)}>
@@ -347,7 +345,7 @@ export function TripBento({
                 </div>
                 <p className="mt-2 text-xs text-muted-foreground">
                   {cities.find((city) => city.id === activity.cityId)?.name} ·
-                  inspiration
+                  activity illustration
                 </p>
                 <h3 className="mt-1 text-sm font-medium leading-5">
                   {activity.name}

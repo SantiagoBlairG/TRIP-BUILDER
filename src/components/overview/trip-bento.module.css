@@ -170,3 +170,10 @@
     grid-column: 8 / 13;
   }
 }
+
+/* Motion owns card arrival. Keep the same geometry before and after routing. */
+.grid :global(.travel-card) {
+  animation: none;
+  translate: none;
+  scale: 1;
+}
