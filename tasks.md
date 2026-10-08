@@ -230,3 +230,24 @@ Trips remain local to this browser. Copy summary exports plain text, not a cross
 - Added a public Photo credits page and committed-asset attribution manifest. The download utility now reproduces the curated sources rather than searching again. Fixture generation preserves activity-photo assignments.
 - Verified all 144 image URLs, metadata/asset consistency, 27 unit tests, five gallery browser tests, two activity-photo browser tests, lint, formatting, TypeScript via production build, and the Italy activity-grid screenshot. Fixed footer link access beneath the floating builder bar.
 - Photos deploy with public/images and work for all visitors; trip data remains browser-local. No runtime photo API or backend was added.
+
+## Stable creation-to-overview handoff - September 23, 2026
+
+- Preserve scroll during the final client-side URL transition with scroll:false. Reserve Edit/Delete/Copy action space throughout assembly and fade controls in after the handoff.
+- Give Motion sole ownership of Bento card arrival so CSS scroll-reveal effects do not restart on the destination route. Keep footer height consistent once the builder dock is gone.
+- Verified production build, TypeScript, lint, formatting, and five creation browser checks. New phone/desktop regressions compare scroll and grid positions before/after URL change; both stay within one pixel.
+
+## Map completion and regression review - October 8, 2026
+
+- Completed the in-progress full-width Bento map card: ordered city routes, single-city day filtering, separate saved-ideas preview, numbered interactive pins, and place previews. Local country outlines and illustrative city streets require no runtime service; these are not navigation directions.
+- Fixed stale day selection after editing removes a day, and adjusted city-map bounds so nearby activity pins remain tappable on phones.
+- Added map logic, edit-selection, country-preview, and mobile day-filter regressions. Reviewed desktop and phone screenshots.
+- Verified 32 unit/component tests, lint, TypeScript via production build, and formatting. All 38 browser scenarios passed across the full suite and targeted map rerun; the first map fixture was corrected to remove both dates for a duration-only trip. Creation handoff preserves scroll on desktop and mobile.
+- Phase 5 itinerary editing remains pending; this addition does not assign saved activities to itinerary days.
+
+## Flexible city selection - October 8, 2026
+
+- Removed the initial ten-day cap on collecting cities. Each added city keeps its recommended stay, and flexible duration grows to accommodate the route. The bottom bar labels flexible duration as suggested days.
+- Exact dates remain unchanged. Overallocated drafts can be saved and resumed, with route reconciliation required before creation. Fixed the decrement control so city days can be reduced when the route exceeds the chosen dates.
+- Added unit coverage for growing suggestions, unchanged exact dates, and recoverable overallocated drafts, plus a browser regression selecting five cities and reloading before Details.
+- Verified 34 unit/component tests, all 18 builder/creation browser checks, lint, formatting, and production build.

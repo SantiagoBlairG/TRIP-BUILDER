@@ -1,4 +1,10 @@
 :root {
+  --map-water: #acd8ef;
+  --map-land: #f0eee5;
+  --map-park: #d0dfba;
+  --map-road: #fffefa;
+  --map-building: #dddcd6;
+  --map-route: #245dff;
   --brand-blue: #0879d4;
   --brand-deep: #074999;
   --brand-sky: #bde7ff;

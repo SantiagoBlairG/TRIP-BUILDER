@@ -1,5 +1,6 @@
 "use client";
 import { TripActions } from "./trip-actions";
+import { TripMap } from "./trip-map";
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { tripEstimate } from "@/lib/trips";
@@ -499,6 +500,9 @@ export function TripBento({
           <p className="mt-4 text-xs text-muted-foreground">
             Planning suggestion based on your trip, not a live recommendation.
           </p>
+        </MotionCard>
+        <MotionCard {...arrival(9)} className={styles.map}>
+          <TripMap trip={trip} />
         </MotionCard>
       </div>
       <p className="mt-6 text-center text-xs text-muted-foreground">

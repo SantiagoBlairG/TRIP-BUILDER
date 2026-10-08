@@ -76,10 +76,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       >
         {children}
       </main>
-      <footer
-        style={pathname === "/builder" ? { paddingBottom: "180px" } : undefined}
-        className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8"
-      >
+      <footer className="app-footer mx-auto flex max-w-7xl flex-col justify-between gap-3 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:px-6 lg:px-8">
         <span>A little planning. A lot to look forward to.</span>
         <Link
           href="/photo-credits"

@@ -85,3 +85,5 @@ The build environment needs internet access for font downloads. Photographs are 
 Trip overviews include Edit and Delete actions. The modal saves selections together, while Cancel/Escape discards edits. Delete requires confirmation; unfinished builder drafts can also be deleted from My trips. Sample-trip edits and deletions apply only in this browser.
 
 Photos under `public/images` ship with the Vercel deployment and are available to every visitor/device. Commit the image files alongside their metadata before deploying. No photo API keys or runtime Wikimedia calls are needed. Saved trips still live in browser localStorage and do not sync between devices.
+
+Trip details include a map row with ordered city stops or, for a single-city trip, an activity route and day selector. Saved ideas have a separate preview and are not automatically scheduled. Country outlines are bundled locally ([source and license](src/data/map-land.README.md)); city street layouts and connections are illustrative, not navigation directions. Pins and stop chips open place previews, with reduced-motion support.

@@ -1,0 +1,219 @@
+.card {
+  overflow: hidden;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.header h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  margin-top: 0.5rem;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--primary);
+}
+.subtitle {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  margin-top: 0.35rem;
+}
+.selector {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+.selector select {
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.65rem 1rem;
+  background: var(--card);
+  color: var(--foreground);
+  font: inherit;
+  font-weight: 600;
+}
+.canvas {
+  position: relative;
+  height: 440px;
+  margin: 0 0.75rem;
+  border-radius: 1.35rem;
+  overflow: hidden;
+  background: var(--map-water);
+  isolation: isolate;
+}
+.map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.compass {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  background: var(--card);
+  border-radius: 2rem;
+  padding: 0.6rem;
+  font-size: 0.7rem;
+}
+.pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.pin > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--map-route);
+  color: white;
+  border: 3px solid white;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 750;
+  box-shadow: 0 3px 12px #2856bd40;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.pin strong {
+  position: absolute;
+  left: 34px;
+  white-space: nowrap;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 2rem 2rem 0;
+  background: var(--popover);
+  font-size: 0.75rem;
+  box-shadow: var(--shadow-card);
+  z-index: -1;
+}
+.pin[data-active="true"] {
+  z-index: 3;
+}
+.pin[data-active="true"] > span {
+  transform: scale(1.18);
+}
+.pin[data-active="true"] strong {
+  color: var(--primary);
+}
+.caption {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  border-radius: 1rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--card);
+  font-size: 0.6rem;
+  color: var(--foreground);
+}
+.stops {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 1.5rem 0.25rem;
+}
+.stops button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  background: var(--card);
+  cursor: pointer;
+}
+.stops span {
+  color: var(--primary);
+  font-weight: 750;
+}
+.stops button[data-active="true"] {
+  background: var(--secondary);
+  border-color: var(--primary);
+}
+.note {
+  color: var(--muted-foreground);
+  font-size: 0.65rem;
+  padding: 0.6rem 1.5rem 1.1rem;
+}
+.preview {
+  position: absolute;
+  bottom: 3rem;
+  left: 1rem;
+  max-width: min(340px, calc(100% - 2rem));
+  padding: 1rem 2.5rem 1rem 1rem;
+  border-radius: 1rem;
+  background: var(--popover);
+  box-shadow: var(--shadow-raised);
+  z-index: 4;
+  font-size: 0.875rem;
+}
+.preview p {
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  color: var(--muted-foreground);
+}
+.preview button {
+  position: absolute;
+  right: 0.7rem;
+  top: 0.8rem;
+  cursor: pointer;
+}
+.empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #ffffff99;
+  font-size: 0.85rem;
+}
+@media (max-width: 639px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.2rem;
+  }
+  .canvas {
+    height: 330px;
+  }
+  .pin strong {
+    display: none;
+  }
+  .pin > span {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pin > span {
+    transition: none;
+  }
+}

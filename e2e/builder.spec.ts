@@ -10,6 +10,32 @@ const step = (page: Page, name: string) =>
     .getByRole("button", { name: new RegExp(name) })
     .click();
 
+test("city selection can grow beyond the initial ten-day suggestion and survive reload", async ({
+  page,
+}) => {
+  await page.goto("/builder");
+  await page.getByRole("button", { name: "Select Japan", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Select France", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Next step", exact: true }).click();
+  for (const city of ["Tokyo", "Kyoto", "Osaka", "Paris", "Lyon"]) {
+    await page
+      .getByRole("button", { name: `Select ${city}`, exact: true })
+      .click();
+  }
+  await page.reload();
+  const draft = await page.evaluate(
+    () => JSON.parse(localStorage.getItem("roam-builder-v1")!).state.draft,
+  );
+  expect(draft.route).toHaveLength(5);
+  expect(draft.details.totalDays).toBeGreaterThan(10);
+  await step(page, "Details");
+  await expect(page.getByLabel("Total days", { exact: true })).toHaveValue(
+    String(draft.details.totalDays),
+  );
+});
+
 test("bottom bar advances, goes back, and validates Details before Next", async ({
   page,
 }) => {

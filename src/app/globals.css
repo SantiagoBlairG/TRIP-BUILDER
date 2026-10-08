@@ -180,3 +180,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Reserve dock clearance only while the editable builder is present. */
+body:has(#option-tray) .app-footer {
+  padding-bottom: 180px;
+}

@@ -156,6 +156,7 @@
 }
 
 .budget,
+.map,
 .suggestion {
   grid-column: 1 / -1;
 }

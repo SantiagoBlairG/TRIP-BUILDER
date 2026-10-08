@@ -50,25 +50,16 @@ export const defaultDetails: BuilderDetails = {
   budgetLevel: "balanced",
   customAmount: 0,
 };
-export const draftSchema = z
-  .object({
-    details: detailsSchema,
-    countryIds: z.array(z.string()),
-    route: z.array(
-      z.object({ cityId: z.string(), days: z.number().int().min(1).max(365) }),
-    ),
-    priorities: z.array(travelStyleIdSchema),
-    savedIds: z.array(z.string()),
-    updatedAt: z.string(),
-  })
-  .refine(
-    (d) =>
-      d.route.reduce((n, s) => n + s.days, 0) <=
-      (d.details.dateMode === "dates"
-        ? dateDays(d.details.startDate, d.details.endDate)
-        : d.details.totalDays),
-    "Route exceeds duration",
-  );
+export const draftSchema = z.object({
+  details: detailsSchema,
+  countryIds: z.array(z.string()),
+  route: z.array(
+    z.object({ cityId: z.string(), days: z.number().int().min(1).max(365) }),
+  ),
+  priorities: z.array(travelStyleIdSchema),
+  savedIds: z.array(z.string()),
+  updatedAt: z.string(),
+});
 export type BuilderDraft = z.infer<typeof draftSchema>;
 export const emptyDraft = (): BuilderDraft => ({
   details: { ...defaultDetails },
@@ -170,5 +161,29 @@ export function distributeRemainingDays(d: BuilderDraft): BuilderDraft {
         Math.floor(remaining / count) +
         (index < remaining % count ? 1 : 0),
     })),
+  };
+}
+
+/** City recommendations guide the route; they never block collecting a city. */
+export function addCityToDraft(d: BuilderDraft, cityId: string): BuilderDraft {
+  const city = cities.find((item) => item.id === cityId);
+  if (
+    !city ||
+    !d.countryIds.includes(city.countryId) ||
+    d.route.some((stop) => stop.cityId === cityId)
+  )
+    return d;
+  const route = [...d.route, { cityId, days: city.recommendedDays }];
+  const suggested = route.reduce((sum, stop) => sum + stop.days, 0);
+  return {
+    ...d,
+    route,
+    details:
+      d.details.dateMode === "duration"
+        ? {
+            ...d.details,
+            totalDays: Math.min(365, Math.max(d.details.totalDays, suggested)),
+          }
+        : d.details,
   };
 }

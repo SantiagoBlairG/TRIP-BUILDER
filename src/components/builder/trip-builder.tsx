@@ -44,6 +44,7 @@ import { travelStyles, travelStyleById } from "@/data/travel-styles";
 import type { TravelStyleId } from "@/types/travel";
 import { recommendActivities } from "@/lib/recommendations";
 import {
+  addCityToDraft,
   assignedDays,
   distributeRemainingDays,
   duration,
@@ -176,23 +177,12 @@ export function TripBuilder() {
       draft.route.some((s) => s.cityId === id)
     )
       return;
-    if (remaining < 1) {
-      setMessage(
-        "All days are assigned. Increase your duration or reduce a city’s days first.",
-      );
-      return;
-    }
     commit(
-      {
-        ...draft,
-        route: [
-          ...draft.route,
-          { cityId: id, days: Math.min(item.recommendedDays, remaining) },
-        ],
-      },
-      `Added ${item.name} to your route.`,
+      addCityToDraft(draft, id),
+      `Added ${item.name} with ${item.recommendedDays} suggested days.`,
     );
   }
+
   function preference(id: TravelStyleId, remove = false) {
     commit(
       {
@@ -430,7 +420,7 @@ export function TripBuilder() {
               </h2>
               <p className={`${styles.note} mb-4`}>
                 {step === "Cities"
-                  ? "Cities come from your selected countries. Suggested days never exceed your remaining time."
+                  ? "Add every city you want to explore. Suggested trip length grows with your route; adjust days in Details."
                   : step === "Interests"
                     ? "Choose your interests. Open Review to put your favorites first."
                     : step === "Experiences"
@@ -681,7 +671,10 @@ export function TripBuilder() {
                 <h3 className="mt-4 text-sm font-bold">
                   Your route{" "}
                   <span className="font-normal text-muted-foreground">
-                    · {remaining} days left
+                    ·{" "}
+                    {remaining < 0
+                      ? `${-remaining} days over your trip length; adjust days before creating`
+                      : `${remaining} days left`}
                   </span>
                 </h3>
                 <SortableContext
@@ -698,7 +691,11 @@ export function TripBuilder() {
                         remaining={remaining}
                         onRemove={() => city(s.cityId, true)}
                         onDays={(delta) => {
-                          if (s.days + delta < 1 || delta > remaining) return;
+                          if (
+                            s.days + delta < 1 ||
+                            (delta > 0 && delta > remaining)
+                          )
+                            return;
                           commit(
                             {
                               ...draft,
@@ -879,7 +876,12 @@ export function TripBuilder() {
                           {name}
                         </span>
                       ))}
-                      <span>{duration(draft)} days</span>
+                      <span>
+                        {duration(draft)}{" "}
+                        {draft.details.dateMode === "duration"
+                          ? "suggested days"
+                          : "days"}
+                      </span>
                       <span>
                         {estimate.people}{" "}
                         {estimate.people === 1 ? "traveler" : "travelers"}
