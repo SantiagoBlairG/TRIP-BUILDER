@@ -106,19 +106,19 @@ test("build a draft, validate details, save ideas, resume and remove dependent s
   await step(page, "Details");
   await page.getByLabel("Trip name", { exact: true }).fill("Autumn in Japan");
   await page.getByLabel("Total days", { exact: true }).fill("1");
-  await page.getByRole("button", { name: "Apply trip details" }).click();
+  await page.getByRole("button", { name: "Next step", exact: true }).click();
   await expect(
     page.getByRole("region", { name: "Option tray" }).getByRole("alert"),
   ).toContainText("route already uses");
   await page.getByLabel("Total days", { exact: true }).fill("12");
   await page.getByLabel("Traveling as").selectOption("couple");
   await page.getByLabel("Budget level").selectOption("custom");
-  await page.getByRole("button", { name: "Apply trip details" }).click();
+  await page.getByRole("button", { name: "Next step", exact: true }).click();
   await expect(
     page.getByRole("region", { name: "Option tray" }).getByRole("alert"),
   ).toContainText("positive budget");
   await page.getByLabel("Total budget (USD)").fill("5000");
-  await page.getByRole("button", { name: "Apply trip details" }).click();
+  await page.getByRole("button", { name: "Next step", exact: true }).click();
   await expect(canvas).toContainText("12 days · 2 travelers");
   await review(page);
   await page.getByRole("button", { name: "Distribute remaining days" }).click();
@@ -214,12 +214,12 @@ test("corrupt storage recovers and exact dates survive reload", async ({
   await page.getByLabel("Date preference").selectOption("dates");
   await page.getByLabel("Start date", { exact: true }).fill("2027-04-10");
   await page.getByLabel("End date", { exact: true }).fill("2027-04-09");
-  await page.getByRole("button", { name: "Apply trip details" }).click();
+  await page.getByRole("button", { name: "Next step", exact: true }).click();
   await expect(
     page.getByRole("region", { name: "Option tray" }).getByRole("alert"),
   ).toContainText("valid dates");
   await page.getByLabel("End date", { exact: true }).fill("2027-04-14");
-  await page.getByRole("button", { name: "Apply trip details" }).click();
+  await page.getByRole("button", { name: "Next step", exact: true }).click();
   await expect(page.locator("#trip-review")).toContainText("5 days");
   await page.reload();
   await expect(page.locator("#trip-review")).toContainText("2027-04-10");

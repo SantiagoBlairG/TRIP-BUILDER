@@ -251,3 +251,8 @@ Trips remain local to this browser. Copy summary exports plain text, not a cross
 - Exact dates remain unchanged. Overallocated drafts can be saved and resumed, with route reconciliation required before creation. Fixed the decrement control so city days can be reduced when the route exceeds the chosen dates.
 - Added unit coverage for growing suggestions, unchanged exact dates, and recoverable overallocated drafts, plus a browser regression selecting five cities and reloading before Details.
 - Verified 34 unit/component tests, all 18 builder/creation browser checks, lint, formatting, and production build.
+
+## Details step simplification - October 8, 2026
+
+- Removed the duplicate Apply trip details button and status label from the builder. Footer Next continues to validate and save the form; the trip edit modal retains Save changes.
+- Updated existing browser flows to use Next. Verified five targeted builder/edit checks, lint, TypeScript, and production build.

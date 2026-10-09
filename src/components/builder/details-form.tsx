@@ -9,7 +9,7 @@ export function DetailsForm({
   value,
   assigned,
   onApply,
-  submitLabel = "Apply trip details",
+  submitLabel,
 }: {
   submitLabel?: string;
   value: BuilderDetails;
@@ -177,14 +177,16 @@ export function DetailsForm({
           ))}
         </ul>
       )}
-      <div className="flex flex-wrap items-center gap-3">
-        <Button type="submit">{submitLabel}</Button>
-        <span className={styles.note}>
-          {isDirty
-            ? "Changes apply when you save these details."
-            : "Your current trip details."}
-        </span>
-      </div>
+      {submitLabel && (
+        <div className="flex flex-wrap items-center gap-3">
+          <Button type="submit">{submitLabel}</Button>
+          <span className={styles.note}>
+            {isDirty
+              ? "Changes apply when you save these details."
+              : "Your current trip details."}
+          </span>
+        </div>
+      )}
     </form>
   );
 }
